@@ -6,7 +6,10 @@ this.initialState = {
     yeast: [],
     cake: [],
     kolaches: [],
-    drinks: []
+    drinks: [],
+    prodImg: '',
+    prodName: '',
+    prodDesc: ''
 }
 
 // action types

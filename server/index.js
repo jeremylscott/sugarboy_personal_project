@@ -8,6 +8,14 @@ const app = express()
 const {} = require('./controller')
 app.use(json())
 
+// connect the database
+massive(process.env.CONNECTION_STRING)
+    .then(db => {
+        app.set('db',db)
+        console.log('Database Connected');
+    })
+    .catch(err => console.log(err))
+
 // create a session
 app.use(session({
     secret: process.env.SECRET,
@@ -18,12 +26,6 @@ app.use(session({
     }
 }))
 
-massive(process.env.CONNECTION_STRING)
-    .then(db => {
-        app.set('db',db)
-        console.log('Database Connected');
-    })
-    .catch(err => console.log(err))
 
 
 
