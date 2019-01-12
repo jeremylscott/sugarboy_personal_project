@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../../images/sugarboy_logo.png'
 import mainpic from '../../images/sugarboy_mainpic.jpg'
+import facebook from '../../images/facebook.png'
+import instagram from '../../images/instagram.png'
 import {connect} from 'react-redux'
 import reducer from '../../ducks/reducer';
 import {login} from '../../ducks/reducer'
@@ -29,6 +31,10 @@ class Home extends Component {
         return (
             <div className='mainPage'>
                 <div className='homeHeadWrapper'>
+                    <div className='social'>
+                        <img className='facebook' src={facebook} alt='facebook'/>
+                        <img className='instagram' src={instagram} alt='instagram'/>
+                    </div>
                     <img className='homeLogo' src={logo} alt='logo'/>
                     <input className='homeInput' onChange={this.handleChange} name='username' value={username} 
                         placeholder='Username'/>
