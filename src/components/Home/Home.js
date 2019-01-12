@@ -35,14 +35,14 @@ class Home extends Component {
                     <button className='homeButt' onClick={() => this.props.login(username,password)}>Login</button>
                     <Link className='reglink' to='/register'>Register</Link>
                 </div>
-                <ul className='homeNavBar'>
+                <nav className='homeNavBar'>
                     <Link className='link' to='/'>Home</Link>
                     <Link className='link' to='/about'>About</Link>
                     <Link className='link' to='/contact'>Contact</Link>
                     <Link className='link' to='/donuts'>Donuts</Link>
                     <Link className='link' to='/kolaches'>Kolaches</Link>
                     <Link className='link2' to='/drinks'>Drinks</Link>
-                </ul>
+                </nav>
                 <div className='mainHome'>
                     <img className='mainPic' src={mainpic} alt='baker'/>
                 </div>

@@ -15,8 +15,8 @@
     background: #F58220;
     justify-content: center;
     list-style-type: none;
-    padding-top: 1vh;
-    height: 2vh;
+    padding-top: .5vh;
+    height: 4vh;
     margin-top: 6vh;
 }
 .link {
