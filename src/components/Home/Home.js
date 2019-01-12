@@ -8,6 +8,7 @@ import {connect} from 'react-redux'
 import reducer from '../../ducks/reducer';
 import {login} from '../../ducks/reducer'
 import './home.css'
+import Donuts from '../Donuts/Donuts'
 
 class Home extends Component {
     constructor(props) {
@@ -15,7 +16,8 @@ class Home extends Component {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            isTrue: false
         }
     }
 
@@ -47,10 +49,11 @@ class Home extends Component {
                     <Link className='link' to='/'>Home</Link>
                     <Link className='link' to='/about'>About</Link>
                     <Link className='link' to='/contact'>Contact</Link>
-                    <Link className='link' to='/donuts'>Donuts</Link>
+                    <Link onClick={!this.state.isTrue} className='link' to='/donuts'>Donuts</Link>
                     <Link className='link' to='/kolaches'>Kolaches</Link>
                     <Link className='link2' to='/drinks'>Drinks</Link>
                 </nav>
+                    {this.state.isTrue ? <Donuts/> : null}
                 <div className='mainHome'>
                     <img className='mainPic' src={mainpic} alt='baker'/>
                 </div>

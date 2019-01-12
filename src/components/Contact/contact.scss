@@ -1,0 +1,14 @@
+$chosenFont: 'Mukta', sans-serif;
+
+.pageTitle {
+    display: flex;
+    justify-content: center;
+    h1 {
+        font-family: $chosenFont;
+        font-size: 40px;
+    }
+}
+.googleMap {
+    width: 40vw;
+    height: 20vw; 
+}

@@ -13,6 +13,7 @@
     "express": "^4.16.4",
     "express-server": "^0.7.0",
     "massive": "^5.7.2",
+    "node-sass": "^4.11.0",
     "nodemailer": "^5.1.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

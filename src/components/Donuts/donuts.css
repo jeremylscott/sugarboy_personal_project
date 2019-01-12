@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 10vw;
     height: 10vh;
-    position: absolute;
     background: black;
     color: white;
 }

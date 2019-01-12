@@ -5,13 +5,14 @@ import store from './store'
 import Home from './components/Home/Home'
 import Contact from './components/Contact/Contact'
 import Cart from './components/Cart/Cart'
+import Donuts from './components/Donuts/Donuts'
 import Yeast from './components/Yeast/Yeast'
 import Cake from './components/Cake/Cake'
 import Kolaches from './components/Kolaches/Kolaches'
 import Drinks from './components/Drinks/Drinks'
 import Reports from './components/Reports/Reports'
 import Signup from './components/Signup/Signup'
-import './App.css'
+import './App.scss'
 
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
               <Route exact path='/' component={Home}/>
               <Route path='/contact' component={Contact}/>
               <Route path='/cart' component={Cart}/>
+              <Route path='/donuts' component={Donuts}/>
               <Route path='/yeast-donuts' component={Yeast}/>
               <Route path='/cake-donuts' component={Cake}/>
               <Route path='/kolaches' component={Kolaches}/>
