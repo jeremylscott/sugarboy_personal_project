@@ -30,10 +30,12 @@ class Home extends Component {
             <div className='mainPage'>
                 <div className='homeHeadWrapper'>
                     <img className='homeLogo' src={logo} alt='logo'/>
-                    <input className='homeInput' onChange={this.handleChange} name='username' value={username} placeholder='Username'/>
-                    <input className='homeInput' onChange={this.handleChange} name='password' value={password} placeholder='Password'/>
+                    <input className='homeInput' onChange={this.handleChange} name='username' value={username} 
+                        placeholder='Username'/>
+                    <input className='homeInput' onChange={this.handleChange} name='password' value={password} 
+                        placeholder='Password'/>
                     <button className='homeButt' onClick={() => this.props.login(username,password)}>Login</button>
-                    <Link className='reglink' to='/register'>Register</Link>
+                    <Link to='/register'><button className='reglink'>Register</button></Link>
                 </div>
                 <nav className='homeNavBar'>
                     <Link className='link' to='/'>Home</Link>
