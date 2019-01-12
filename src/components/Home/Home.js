@@ -2,10 +2,16 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../../images/sugarboy_logo.png'
 import mainpic from '../../images/sugarboy_mainpic.jpg'
+import mainpic2 from '../../images/mainpic2.jpg'
+import mainpic3 from '../../images/mainpic3.jpg'
+import mainpic4 from '../../images/mainpic4.jpg'
+import mainpic5 from '../../images/mainpic5.jpg'
+import mainpic6 from '../../images/mainpic6.jpg'
+import mainpic7 from '../../images/mainpic7.jpg'
 import facebook from '../../images/facebook.png'
 import instagram from '../../images/instagram.png'
 import {connect} from 'react-redux'
-import reducer from '../../ducks/reducer';
+import {Zoom} from 'react-slideshow-image'
 import {login} from '../../ducks/reducer'
 import './home.css'
 import Donuts from '../Donuts/Donuts'
@@ -28,8 +34,40 @@ class Home extends Component {
     }
 
     render() {
-        const {username,password} = this.state  // destructuring off this.state
+        const {username,password} = this.state  // destructuring this.state
+        // const slideImages = [
+        //     '../../images/sugarboy_mainpic.jpg',
+        //     '../../images/mainpic2.jpg',
+        //     '../../images/mainpic3.jpg',
+        //     '../../images/mainpic4.jpg',
+        //     '../../images/mainpic5.jpg',
+        //     '../../images/mainpic6.jpg',
+        //     '../../images/mainpic7.jpg'
+        // ]
 
+        // const zoomOutProps = {
+        //     duration: 5000,
+        //     transitionDuration: 500,
+        //     infinite: true,
+        //     indicators: true,
+        //     scale: 0.4,
+        //     arrows: true
+        // }
+
+        // const Slideshow = () => {
+        //     return (
+        //         <Zoom {...zoomOutProps}>
+        //             {
+        //                 slideImages.map((e,i) => {
+        //                     return (
+        //                         <img key={i} style={{width: '100vw'}}src={e}/>
+        //                     )
+        //                 })
+        //             }
+        //         </Zoom>
+        //     )
+        // }
+        
         return (
             <div className='mainPage'>
                 <div className='homeHeadWrapper'>

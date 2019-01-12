@@ -1,3 +1,3 @@
-INSERT INTO products (prodName,prodType,prodImg)
-VALUES (${prodName},${prodType},${prodImg})
+INSERT INTO products (prodName,prodDesc,prodType,prodImg)
+VALUES (${prodName},${prodDesc},${prodType},${prodImg})
 RETURNING *;

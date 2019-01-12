@@ -8,7 +8,28 @@ $chosenFont: 'Mukta', sans-serif;
         font-size: 40px;
     }
 }
+
 .googleMap {
     width: 40vw;
     height: 20vw; 
+}
+
+.icon {
+    display: flex
+}
+
+.address {
+    display: flex;
+    font-family: $chosenFont;
+    padding-left: 1vw;
+    font-size: 1.15em;
+
+    .addressText {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.map {
+    display: flex;
 }

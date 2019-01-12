@@ -92,10 +92,10 @@ export function updateProdDesc(prodDesc) {
     }
 }
 
-export function addProduct(prodName,prodDesc,prodImg) {
+export function addProduct(prodName,prodDesc,prodType,prodImg) {
     return {
         type: ADD_PRODUCT,
-        payload: axios.post('/api/products', {prodName,prodDesc,prodImg})
+        payload: axios.post('/api/products', {prodName,prodDesc,prodType,prodImg})
     }
 }
 

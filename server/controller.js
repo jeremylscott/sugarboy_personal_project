@@ -83,9 +83,9 @@ const signup = async (req,res) => {
 }
 
 const addProduct = (req,res) => {
-    const {prodName,prodType,prodImg} = req.body
+    const {prodName,prodDesc,prodType,prodImg} = req.body
     const db = req.app.get('db')
-    db.add_product({prodName,prodType,prodImg})
+    db.add_product({prodName,prodDesc,prodType,prodImg})
     .then(response => {
         res.status(200).json(response)
     })
