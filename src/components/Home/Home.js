@@ -1,8 +1,11 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../../images/sugarboy_logo.png'
-import {connect} from 'react-router-dom'
+import mainpic from '../../images/sugarboy_mainpic.jpg'
+import {connect} from 'react-redux'
 import reducer from '../../ducks/reducer';
+import {login} from '../../ducks/reducer'
+import './home.css'
 
 class Home extends Component {
     constructor(props) {
@@ -24,27 +27,34 @@ class Home extends Component {
         const {username,password} = this.state  // destructuring off this.state
 
         return (
-            <div>
-                <div>
+            <div className='mainPage'>
+                <div className='homeHeadWrapper'>
                     <img className='homeLogo' src={logo} alt='logo'/>
-                    <input onChange={this.handleChange} name='username' value={username} placeholder='Username'/>
-                    <input onChange={this.handleChange} name='password' value={password} placeholder='Password'/>
-                    <button onClick={() => this.props.login(username,password)}>Login</button>
-                    <Link to='/register'></Link>
+                    <input className='homeInput' onChange={this.handleChange} name='username' value={username} placeholder='Username'/>
+                    <input className='homeInput' onChange={this.handleChange} name='password' value={password} placeholder='Password'/>
+                    <button className='homeButt' onClick={() => this.props.login(username,password)}>Login</button>
+                    <Link className='reglink' to='/register'>Register</Link>
                 </div>
-                <div>
-                    <ul className='homeNavBar'>
-                        <Link to='/'><li>Homes</li></Link>
-                        <Link to='/about'><li>About</li></Link>
-                        <Link to='/contact'><li>Contact</li></Link>
-                        <Link to='/donuts'><li>Donuts</li></Link>
-                        <Link to='/kolaches'><li>Kolaches</li></Link>
-                        <Link to='/drinks'><li>Drinks</li></Link>
-                    </ul>
+                <ul className='homeNavBar'>
+                    <Link className='link' to='/'>Home</Link>
+                    <Link className='link' to='/about'>About</Link>
+                    <Link className='link' to='/contact'>Contact</Link>
+                    <Link className='link' to='/donuts'>Donuts</Link>
+                    <Link className='link' to='/kolaches'>Kolaches</Link>
+                    <Link className='link2' to='/drinks'>Drinks</Link>
+                </ul>
+                <div className='mainHome'>
+                    <img className='mainPic' src={mainpic} alt='baker'/>
                 </div>
             </div>
         )
     }
 }
 
-export default reducer(mapStateToProps,{login})(Home)
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps,{login})(Home)

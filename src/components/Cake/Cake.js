@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Cake extends Component() {
+class Cake extends Component {
     render() {
         return (
             <div>

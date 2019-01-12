@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
 
-class Kolaches extends Component {
+class Cart extends Component {
     render() {
         return (
             <div>
 
             </div>
         )
+
     }
 }
 
-export default Kolaches
-
+export default Cart

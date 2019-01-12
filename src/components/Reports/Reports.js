@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Kolaches extends Component {
+class Reports extends Component {
     render() {
         return (
             <div>
@@ -10,5 +10,4 @@ class Kolaches extends Component {
     }
 }
 
-export default Kolaches
-
+export default Reports
