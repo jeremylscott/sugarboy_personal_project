@@ -5,7 +5,6 @@ import store from './store'
 import Home from './components/Home/Home'
 import Contact from './components/Contact/Contact'
 import Cart from './components/Cart/Cart'
-import Donuts from './components/Donuts/Donuts'
 import Yeast from './components/Yeast/Yeast'
 import Cake from './components/Cake/Cake'
 import Kolaches from './components/Kolaches/Kolaches'
@@ -24,7 +23,6 @@ class App extends Component {
               <Route exact path='/' component={Home}/>
               <Route path='/contact' component={Contact}/>
               <Route path='/cart' component={Cart}/>
-              <Route path='/donuts' component={Donuts}/>
               <Route path='/yeast-donuts' component={Yeast}/>
               <Route path='/cake-donuts' component={Cake}/>
               <Route path='/kolaches' component={Kolaches}/>

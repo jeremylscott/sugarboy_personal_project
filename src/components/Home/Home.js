@@ -13,8 +13,7 @@ import instagram from '../../images/instagram.png'
 import {connect} from 'react-redux'
 import {Zoom} from 'react-slideshow-image'
 import {login} from '../../ducks/reducer'
-import './home.css'
-import Donuts from '../Donuts/Donuts'
+import './home.scss'
 
 class Home extends Component {
     constructor(props) {
@@ -23,13 +22,19 @@ class Home extends Component {
         this.state = {
             username: '',
             password: '',
-            isTrue: false
+            toggle: false      // used to display donut drop down menu or hide it based on status
         }
     }
 
     handleChange = (e) => {   // updating both input fields below
         this.setState({
             [e.target.name]: e.target.value
+        })
+    }
+
+    handleToggle = () => {
+        this.setState({
+            toggle: !this.state.toggle
         })
     }
 
@@ -87,13 +92,21 @@ class Home extends Component {
                     <Link className='link' to='/'>Home</Link>
                     <Link className='link' to='/about'>About</Link>
                     <Link className='link' to='/contact'>Contact</Link>
-                    <Link onClick={!this.state.isTrue} className='link' to='/donuts'>Donuts</Link>
+                    <Link to onClick={this.handleToggle} className='link'>Donuts</Link>
                     <Link className='link' to='/kolaches'>Kolaches</Link>
                     <Link className='link2' to='/drinks'>Drinks</Link>
                 </nav>
-                    {this.state.isTrue ? <Donuts/> : null}
+
+
                 <div className='mainHome'>
                     <img className='mainPic' src={mainpic} alt='baker'/>
+                {this.state.toggle ?              // Determines whether drop down menu shows or not
+                <div className='dropNav'>
+                    <Link className='cd' to='/cake'>Cake Donuts</Link>
+                    <Link className='cd' to='/yeast'>Yeast Donuts</Link>
+                </div>
+                :
+                <div className='hideNav'></div>}
                 </div>
             </div>
         )

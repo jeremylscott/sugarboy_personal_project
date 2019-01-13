@@ -141,3 +141,32 @@
     position: absolute;
     bottom: 0;
 }
+.dropNav {
+    position: absolute;
+    margin-top: -1.5vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 9.6vw;
+    height: auto;
+    background: #001D4A;
+    margin-left: 50.9vw;
+    border-radius: 4px;
+    
+    .cd {
+        display: flex;
+        color: #F58220;
+        text-decoration: none;
+        justify-content: flex-start;
+        padding-top: 1vh;
+        
+
+    }
+}
+.hideNav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 0vw;
+    height: 0vh;
+}
