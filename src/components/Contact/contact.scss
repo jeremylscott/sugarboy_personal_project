@@ -3,19 +3,28 @@ $chosenFont: 'Mukta', sans-serif;
 .pageTitle {
     display: flex;
     justify-content: center;
+    padding-top: 2vw;
+    padding-bottom: 4vh;
     h1 {
         font-family: $chosenFont;
-        font-size: 40px;
+        font-size: 25px;
+        padding-right: 2vw;
     }
 }
 
 .googleMap {
-    width: 40vw;
-    height: 20vw; 
+    width: 45vw;
+    height: 20vw;
+    padding-right: 5vw;
+    border-right: 1px solid #F58220 
 }
 
 .icon {
-    display: flex
+    display: flex;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-left: 13vw;
+    border-left: 1px solid #F58220;
 }
 
 .address {
@@ -27,6 +36,7 @@ $chosenFont: 'Mukta', sans-serif;
     .addressText {
         display: flex;
         flex-direction: column;
+        padding-right: 2vw;
     }
 }
 

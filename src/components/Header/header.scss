@@ -1,0 +1,47 @@
+.headerSetup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.headLogo {
+    width: 15vw;
+    height: 10vh;
+    justify-content: center;
+    padding-right: 1.87vw;
+    align-items: center;
+    align-content: center;
+}
+.navBar {
+    display: flex;
+    width: 100vw;
+    background: #F58220;
+    justify-content: center;
+    list-style-type: none;
+    padding-top: .5vh;
+    padding-bottom: .5vh;
+    height: 2vh;
+    margin-top: 1vh;
+}
+.links {
+    text-decoration: none;
+    margin-right: 1vw;
+    padding-left: 2vh;
+    border-right: 2px solid white;
+    padding-right: 1vw;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+.links2 {
+    text-decoration: none;
+    margin-right: 1vw;
+    padding-right: 1vw;
+    color: black;
+    margin: 0;
+    padding-left: 4vh;
+    color: white;
+    font-weight: bold;
+}
