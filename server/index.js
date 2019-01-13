@@ -36,7 +36,7 @@ app.post('/auth/login', login)      // logs user in
 app.post('/auth/signup', signup)    // user signs up for account
 app.post('/api/products', addProduct)   // adds new product to the database
 
-app.delete('/api/products/:prodId', deleteProduct)      // deletes product from the database
-app.put('/api/products/:prodId', updateProduct)     // updates a product in the database
+app.delete('/api/products/:id', deleteProduct)      // deletes product from the database
+app.put('/api/products/:id', updateProduct)     // updates a product in the database
 
 app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}`))

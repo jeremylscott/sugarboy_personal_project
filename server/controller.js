@@ -97,7 +97,7 @@ const addProduct = (req,res) => {
 
 const deleteProduct = (req,res) => {
     const db = req.app.get('db')
-    db.delete_product()
+    db.delete_product(req.params.id)
     .then(response => {
         res.status(200).json(response)
     })
@@ -108,9 +108,9 @@ const deleteProduct = (req,res) => {
 }
 
 const updateProduct = (req,res) => {
-    const {prodName,prodType,prodImg} = req.body
+    const {prodName,prodType,prodImg,prodDesc} = req.body
     const db = req.app.get('db')
-    db.update_product({prodName,prodType,prodImg})
+    db.update_product([req.params.id,prodName,prodDesc,prodImg,prodType])
     .then(response => {
         res.status(200).json(response)
     })

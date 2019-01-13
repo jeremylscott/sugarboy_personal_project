@@ -106,10 +106,10 @@ export function deleteProduct(prodId) {
     }
 }
 
-export function updateProduct(prodId,prodName,prodDesc,prodImg) {
+export function updateProduct(prodId,prodName,prodDesc,prodImg,prodType) {
     return {
         type: UPDATE_PRODUCT,
-        payload: axios.put(`/api/products/${prodId}`, {prodName,prodDesc,prodImg})
+        payload: axios.put(`/api/products/${prodId}`, {prodName,prodDesc,prodImg,prodType})
     }
 }
 
