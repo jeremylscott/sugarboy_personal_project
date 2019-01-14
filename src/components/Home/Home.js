@@ -12,7 +12,7 @@ import facebook from '../../images/facebook.png'
 import instagram from '../../images/instagram.png'
 import {connect} from 'react-redux'
 import {Zoom} from 'react-slideshow-image'
-import {login} from '../../ducks/reducer'
+import {login,signup} from '../../ducks/reducer'
 import './home.scss'
 
 class Home extends Component {
@@ -22,6 +22,9 @@ class Home extends Component {
         this.state = {
             username: '',
             password: '',
+            regUsername: '',
+            regPassword: '',
+            email: '',
             toggle: false,      // used to display donut drop down menu or hide it based on status
             regToggle: false    // used to show or hide the register form
         }
@@ -46,9 +49,15 @@ class Home extends Component {
         })
     }
 
+    handleReg = (e) => {
+        e.preventDefault()
+        this.props.signup(this.state.regUsername,this.state.regPassword,this.state.email)
+        this.handleRegToggle()
+    }
+
     render() {
         console.log(this.state);
-        const {username,password} = this.state  // destructuring this.state
+        const {username,password,email,regPassword,regUsername} = this.state  // destructuring this.state
 
         
         // const slideImages = [
@@ -96,8 +105,8 @@ class Home extends Component {
                         placeholder='Username'/>
                     <input className='homeInput' onChange={this.handleChange} name='password' value={password} 
                         placeholder='Password'/>
-                    <button className='homeButt' onClick={() => this.props.login(username,password)}>Login</button>
-                    <button onClick={this.handleRegToggle} className='reglink'>Register</button>
+                    <button title='Login to account' className='homeButt' onClick={() => this.props.login(username,password)}>Login</button>
+                    <button title='Register for an account' onClick={this.handleRegToggle} className='reglink'>Register</button>
                 </div>
                 <nav className='homeNavBar'>
                     <Link className='link' to='/'>Home</Link>
@@ -120,16 +129,15 @@ class Home extends Component {
                     <div className='hideNav'></div>}
 
                     {this.state.regToggle ?
-                        <form className='showRegNav'>
-                            
-
+                        <form onSubmit={this.handleReg} className='showRegNav'>
+                            <h1>Create Account</h1>
+                            <input className='inp' onChange={this.handleChange} name='regUsername' value={regUsername} placeholder='Username'/>
+                            <input className='inp' onChange={this.handleChange} name='regPassword' type='regPassword' value={regPassword} placeholder='Password'/>
+                            <input className='inp' onChange={this.handleChange} name='email' value={email} placeholder='Email'/>
+                            <button>Submit</button>
                         </form>
-
                         :
-
-                        
-                    }
-
+                        <div className='hideRegNav'></div>}
                 </div>
             </div>
         )
@@ -142,4 +150,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{login})(Home)
+export default connect(mapStateToProps,{login,signup})(Home)
