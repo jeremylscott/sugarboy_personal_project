@@ -1,15 +1,22 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Header from '../Header/Header'
+import './yeast.scss'
+import {getYeast} from '../../ducks/reducer'
 
 
 class Yeast extends Component {
+
+componentDidMount() {
+    this.props.getYeast()
+}
+
     render() {
-        const yeastList = this.props.yeasts.map((yeast,i) => {
+        let yeastList = this.props.yeasts.map((yeast,i) => {
             return (
-                <div key={i}>
-                    <span>{yeast.prodImg}</span>
+                <div key={i} className='mappedCards'>
                     <span>{yeast.prodName}</span>
+                    <img src={yeast.prodImg}/>
                     <span>{yeast.prodDesc}</span>
                 </div>
             )
@@ -19,14 +26,8 @@ class Yeast extends Component {
             <div>
                 <div>
                     <Header/>
-                    {/* {this.props.toggle ?     // Determines whether drop down menu shows or not
-                <div className='dropNav2'>
-                    <Link className='cd2' to='/cake-donuts'>Cake Donuts</Link>
-                    <Link className='cd2' to='/yeast-donuts'>Yeast Donuts</Link>
-                </div>
-                :
-                <div className='hideNav2'></div>} */}
-                {yeastList}
+                    <h1>Yeast Donuts</h1>
+                    {yeastList}
                 </div>
             </div>
         )
@@ -39,5 +40,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Yeast)
+export default connect(mapStateToProps,{getYeast})(Yeast)
 

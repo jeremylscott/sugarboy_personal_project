@@ -6,7 +6,7 @@ const session = require('express-session')
 const bcrypt = require('bcryptjs')
 const app = express()
 const {getYeast,getCake,getKolaches,getDrinks,login,signup,addProduct,
-        deleteProduct,updateProduct} = require('./controller')
+        deleteProduct,updateProduct,addToCart} = require('./controller')
 app.use(json())
 
 // connect the database
@@ -23,7 +23,7 @@ app.use(session({
     resave: true,
     saveUnitialized: false,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 7
+        maxAge: 100 * 60 * 60 * 24 * 7
     }
 }))
 
@@ -35,6 +35,7 @@ app.get('/api/products/drinks', getDrinks)      // returns drinks from database
 app.post('/auth/login', login)      // logs user in
 app.post('/auth/signup', signup)    // user signs up for account
 app.post('/api/products', addProduct)   // adds new product to the database
+app.post('/api/cart', addToCart)    // adds product to users cart
 
 app.delete('/api/products/:id', deleteProduct)      // deletes product from the database
 app.put('/api/products/:id', updateProduct)     // updates a product in the database

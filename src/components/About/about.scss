@@ -1,0 +1,65 @@
+$chosenFont: 'Mukta', sans-serif;
+$mainColor: #F58220;
+
+%borderDivs {
+    width: 20vw;
+    height: 60vh;
+
+}
+
+.aboutWrapper {
+    display: flex;
+
+    .leftDiv {
+       @extend %borderDivs;
+    }
+
+    .bodMid {
+        flex-wrap: wrap;
+        width: 60vw;
+        height: 60vh;
+        font-size: 18px;
+
+        .title {
+            text: center;
+        }
+
+        .spacer {
+            height: 4vh;
+
+        }
+
+        .picText {
+            display: flex;
+            border-left: 1px solid $mainColor;
+
+            img {
+                width: 1000px;
+                height: auto;
+                border-radius: 10px;
+                margin-left: 2vw;
+                margin-right: 2vw;
+            }
+
+            p {
+                padding-right: 2vw;
+                font-family: $chosenFont;
+                border-right: 1px solid $mainColor;
+            }
+
+        }
+
+        .title {
+            text-align: center;
+            font-size: 25px;
+            padding-top: 4vh;
+            font-family: $chosenFont;
+            text-decoration: underline;
+        }
+    }
+
+    .rightDiv {
+        @extend %borderDivs
+    }
+
+}

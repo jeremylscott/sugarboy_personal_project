@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Home from '../components/Home/Home'
 
 const initialState = {
     user: {},
@@ -10,7 +11,10 @@ const initialState = {
     prodName: '',
     prodDesc: '',
     product: [],
-    prodId: 0
+    prodId: 0,
+    prodPrice: 10,
+    cart: [],
+    cartTotal: 0
 }
 
 // action types
@@ -26,6 +30,8 @@ const UPDATE_PROD_DESC = 'UPDATE_PROD_DESC'
 const ADD_PRODUCT = 'ADD_PRODUCT'
 const DELETE_PRODUCT = 'DELETE_PRODUCT'
 const UPDATE_PRODUCT = 'CHANGE_PRODUCT'
+const ADD_TO_CART = 'ADD_TO_CART'
+const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL'
 
 
 // action creators 
@@ -78,10 +84,10 @@ export function updateName(prodName) {
     }
 }
 
-export function getImg(img) {
+export function getImg(prodImg) {
     return {
         type: UPDATE_IMG,
-        payload: img
+        payload: prodImg
     }
 }
 
@@ -110,6 +116,20 @@ export function updateProduct(prodId,prodName,prodDesc,prodImg,prodType) {
     return {
         type: UPDATE_PRODUCT,
         payload: axios.put(`/api/products/${prodId}`, {prodName,prodDesc,prodImg,prodType})
+    }
+}
+
+export function addToCart(product) {
+    return {
+        type: ADD_TO_CART,
+        payload: axios.put('/api/cart', product)
+    }
+}
+
+export function updateCartTotal(cartTotal) {
+    return {
+        type: UPDATE_CART_TOTAL,
+        payload: cartTotal
     }
 }
 
@@ -147,7 +167,7 @@ function reducer(state=initialState, action) {
             }
         case `${UPDATE_IMG}_FULFILLED`:
             return {
-                ...state, img: action.payload.data
+                ...state, prodImg: action.payload.data
             }
         case `${UPDATE_PROD_DESC}_FULFILLED`:
             return {
@@ -164,6 +184,14 @@ function reducer(state=initialState, action) {
         case `${UPDATE_PRODUCT}_FULFILLED`:
             return {
                 ...state, product: action.payload.data
+            }
+        case `${ADD_TO_CART}_FULFILLED`:
+            return {
+                ...state, cart: action.payload.data
+            }
+        case UPDATE_CART_TOTAL:
+            return {
+                ...state, cartTotal: action.payload.data
             }
 
             default: return state;

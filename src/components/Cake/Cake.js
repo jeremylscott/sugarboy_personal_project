@@ -1,38 +1,37 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {getCake} from '../../ducks/reducer'
 import Header from '../Header/Header'
 import './cake.scss'
-import {Link} from 'react-router-dom'
-
 
 class Cake extends Component {
     constructor(props) {
         super(props)   
     }
 
+    componentDidMount() {
+        this.props.getCake()
+    }
+
     render() {
-        const cakeList = this.props.cakes.map((cake,i) => {
+        let cakeList = this.props.cakes.map((cake,i) => {
             return (
-                <div key={i}>
-                    <span>{cake.prodImg}</span>
+                <div key={i} className='mappedCake'>
                     <span>{cake.prodName}</span>
+                    <img src={cake.prodImg}/>
                     <span>{cake.prodDesc}</span>
                 </div>
             )
         })
 
         return (
-            <div>
+            <div> 
                 <div>
                     <Header/>
-                    {/* {this.props.toggle ?     // Determines whether drop down menu shows or not
-                <div className='dropNav2'>
-                    <Link className='cd2' to='/cake-donuts'>Cake Donuts</Link>
-                    <Link className='cd2' to='/yeast-donuts'>Yeast Donuts</Link>
-                </div>
-                :
-                <div className='hideNav2'></div>} */}
-                {cakeList}
+                    <div className='pageWrapper'>
+                        <h1>Cake Donuts</h1>
+                        {cakeList}
+                    </div>
                 </div>
             </div>
         )
@@ -45,5 +44,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Cake)
+export default connect(mapStateToProps,{getCake})(Cake)
 

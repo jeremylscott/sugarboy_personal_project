@@ -1,22 +1,36 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Header from '../Header/Header'
+import './kolaches.scss'
+import {getKolaches} from '../../ducks/reducer'
 
 
 class Kolaches extends Component {
+
+    componentDidMount() {
+        this.props.getKolaches()
+    }
+
     render() {
-        const kolaches = this.props.kolaches.map((e,i) => {
+        let kolacheList = this.props.kolaches.map((kolache,i) => {
             return (
                 <div key={i}>
-                    <span>{e.prodImg}</span>
-                    <span>{e.prodName}</span>
-                    <span>{e.prodDesc}</span>
+                    <span>{kolache.prodName}</span>
+                    <img src={kolache.prodImg}/>
+                    <span>{kolache.prodDesc}</span>
                 </div>
             )
         })
 
         return (
             <div>
-                {kolaches}
+                <div>
+                    <Header/>
+                    <div>
+                        <h1>Kolaches</h1>
+                        {kolacheList}
+                    </div>
+                </div>
             </div>
         )
     }
@@ -28,5 +42,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Kolaches)
+export default connect(mapStateToProps,{getKolaches})(Kolaches)
 

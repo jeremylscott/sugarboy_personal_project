@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {Provider} from 'react-redux'
 import store from './store'
 import Home from './components/Home/Home'
+import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import Cart from './components/Cart/Cart'
 import Yeast from './components/Yeast/Yeast'
@@ -21,6 +22,7 @@ class App extends Component {
           <Router>
             <div>
               <Route exact path='/' component={Home}/>
+              <Route exact path='/about' component={About}/>
               <Route path='/contact' component={Contact}/>
               <Route path='/cart' component={Cart}/>
               <Route path='/yeast-donuts' component={Yeast}/>

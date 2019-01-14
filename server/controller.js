@@ -70,7 +70,7 @@ const login = (req,res) => {
 
 const signup = async (req,res) => {
     const db = req.app.get('db')
-    const hash = await bcrypt.hash(req.body.password, 10)
+    const hash = await bcrypt.hash(req.body.password,10)
 
     try {
     const response = await db.add_user({username: req.body.username, password: hash})
@@ -120,6 +120,41 @@ const updateProduct = (req,res) => {
     })
 }
 
+// const addToCart = (req,res) => {
+//     req.session.cart.push(req.body)
+//     res.status(200).json(req.session.cart)
+// }
+
+// const clearCart = (req,res) => {
+//     req.session.cart = []
+//     res.status(200).json(req.session.cart)
+// }
+
+// const deleteFromCart = (req,res) => {
+//     req.session.cart.splice(req.params.id, 1)
+//     res.status(200).json(req.session.cart)
+// }
+
+// async function addOrder (req,res) {
+//     const db = req.app.get('db')
+
+// }
+
+
+const addToCart = (req,res) => {
+    const {prodId,cartTotal} = req.body
+    const {username} = req.session
+    const db = req.app.get('db')
+    db.add_to_cart({prodId,username,cartTotal})
+    .then(response => {
+        res.status(200).json(response)
+    })
+    .catch(err => {
+        res.status(500).json(err)
+        console.log('Error: Item not added to cart')
+    })
+}
+
 module.exports = {
     getYeast,
     getCake,
@@ -129,5 +164,6 @@ module.exports = {
     signup,
     addProduct,
     deleteProduct,
-    updateProduct
+    updateProduct,
+    addToCart
 }

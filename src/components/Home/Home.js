@@ -22,8 +22,10 @@ class Home extends Component {
         this.state = {
             username: '',
             password: '',
-            toggle: false      // used to display donut drop down menu or hide it based on status
+            toggle: false,      // used to display donut drop down menu or hide it based on status
+            regToggle: false    // used to show or hide the register form
         }
+
     }
 
     handleChange = (e) => {   // updating both input fields below
@@ -38,8 +40,17 @@ class Home extends Component {
         })
     }
 
+    handleRegToggle = () => {
+        this.setState({
+            regToggle: !this.state.regToggle
+        })
+    }
+
     render() {
+        console.log(this.state);
         const {username,password} = this.state  // destructuring this.state
+
+        
         // const slideImages = [
         //     '../../images/sugarboy_mainpic.jpg',
         //     '../../images/mainpic2.jpg',
@@ -86,11 +97,11 @@ class Home extends Component {
                     <input className='homeInput' onChange={this.handleChange} name='password' value={password} 
                         placeholder='Password'/>
                     <button className='homeButt' onClick={() => this.props.login(username,password)}>Login</button>
-                    <Link to='/register'><button className='reglink'>Register</button></Link>
+                    <button onClick={this.handleRegToggle} className='reglink'>Register</button>
                 </div>
                 <nav className='homeNavBar'>
                     <Link className='link' to='/'>Home</Link>
-                    <Link className='link' to='/about'>About</Link>
+                    <Link className='link' to='/about'>About Us</Link>
                     <Link className='link' to='/contact'>Contact</Link>
                     <Link to onClick={this.handleToggle} className='link'>Donuts</Link>
                     <Link className='link' to='/kolaches'>Kolaches</Link>
@@ -98,14 +109,27 @@ class Home extends Component {
                 </nav>
 
                 <div className='mainHome'>
-                    <img className='mainPic' src={mainpic} alt='baker'/>
-                {this.state.toggle ?              // Determines whether drop down menu shows or not
-                <div className='dropNav'>
-                    <Link className='cd' to='/cake-donuts'>Cake Donuts</Link>
-                    <Link className='cd' to='/yeast-donuts'>Yeast Donuts</Link>
-                </div>
-                :
-                <div className='hideNav'></div>}
+                        <img className='mainPic' src={mainpic} alt='baker'/>
+
+                    {this.state.toggle ?              // Determines whether drop down menu shows or not
+                    <div className='dropNav'>
+                        <Link className='cd' to='/cake-donuts'>Cake Donuts</Link>
+                        <Link className='cd' to='/yeast-donuts'>Yeast Donuts</Link>
+                    </div>
+                    :
+                    <div className='hideNav'></div>}
+
+                    {this.state.regToggle ?
+                        <form className='showRegNav'>
+                            
+
+                        </form>
+
+                        :
+
+                        
+                    }
+
                 </div>
             </div>
         )

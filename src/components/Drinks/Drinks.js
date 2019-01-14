@@ -1,22 +1,36 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Header from '../Header/Header'
+import './drinks.scss'
+import {getDrinks} from '../../ducks/reducer'
 
 
 class Drinks extends Component {
+
+    componentDidMount() {
+        this.props.getDrinks()
+    }
+
     render() {
-        const drinks = this.props.drinks.map((e,i) => {
+        const drinkList = this.props.drinks.map((drink,i) => {
             return (
                 <div key={i}>
-                    <span>{e.prodImg}</span>
-                    <span>{e.prodName}</span>
-                    <span>{e.prodDesc}</span>
+                    <span>{drink.prodName}</span>
+                    <img src={drink.prodImg}/>
+                    <span>{drink.prodDesc}</span>
                 </div>
             )
         })
 
         return (
             <div>
-                {drinks}
+                <div>
+                    <Header/>
+                    <div>
+                        <h1>Drinks</h1>
+                        {drinkList}
+                    </div>
+                </div>
             </div>
         )
     }
@@ -28,5 +42,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Drinks)
+export default connect(mapStateToProps,{getDrinks})(Drinks)
 

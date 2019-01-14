@@ -1,21 +1,26 @@
+$mainColor: #F58220;
+$chosenFont: 'Mukta', sans-serif;
+
 .headerSetup {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .headLogo {
     width: 15vw;
     height: 10vh;
     justify-content: center;
-    padding-right: 1.87vw;
+    padding-right: 0vw;
     align-items: center;
     align-content: center;
 }
+
 .navBar {
     display: flex;
     width: 100vw;
-    background: #F58220;
+    background: $mainColor;
     justify-content: center;
     list-style-type: none;
     padding-top: .5vh;
@@ -23,25 +28,69 @@
     height: 2vh;
     margin-top: 1vh;
 }
+
 .links {
     text-decoration: none;
+    font-family: $chosenFont;
     margin-right: 1vw;
+    padding-top: .2vh;
     padding-left: 2vh;
     border-right: 2px solid white;
     padding-right: 1vw;
-    color: white;
-    font-weight: bold;
     margin: 0;
     padding-left: 3vw;
     padding-right: 3vw;
+    color: #001D4A;
+    font-weight: bold;
+    font-size: 1.2em;
 }
+
 .links2 {
     text-decoration: none;
+    font-family: $chosenFont;
     margin-right: 1vw;
-    padding-right: 1vw;
-    color: black;
+    padding-top: .2vh;
+    padding-right: 5vw;
     margin: 0;
     padding-left: 4vh;
-    color: white;
+    color: #001D4A;
     font-weight: bold;
+    font-size: 1.2em;
+}
+
+.toggleOpt {
+    width: 17vh;
+    height: 1vh;
+    margin-left: 10vw;
+
+    .dropNav2 {
+        position: absolute;
+        margin-top: .01vh;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 165px;
+        height: auto;
+        background: #001D4A;
+        margin-left: -1vw;
+        border-radius: 4px;
+        
+        .cd2 {
+            display: flex;
+            color: $mainColor;
+            text-decoration: none;
+            justify-content: flex-start;
+            padding-top: 1vh;
+            
+    
+        }
+    }
+}
+
+.hideNav2 {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 0vw;
+    height: 0vh;
 }

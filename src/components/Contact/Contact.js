@@ -10,7 +10,7 @@ function Contact() {
             <div>
                 <Header/>
                 <div className='pageTitle'>
-                    <h1>Store Location(s):</h1>
+                    <h1>Store Locations:</h1>
                 </div>
                 <div className='icon'>
                     <div className='donutPic'>
