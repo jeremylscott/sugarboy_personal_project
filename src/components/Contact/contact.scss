@@ -1,10 +1,44 @@
 $chosenFont: 'Mukta', sans-serif;
 
+%address {
+    display: flex;
+    flex-direction: column;
+    padding-right: 2vw;
+}
+
+%loc {
+    text-decoration: underline;
+    padding-bottom: 1vh;
+}
+
+%addressWrap {
+    display: flex;
+    font-family: $chosenFont;
+    padding-left: 1vw;
+    font-size: 1.15em;
+}
+
+%icon {
+    display: flex;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-left: 13vw;
+    border-left: 1px solid #F58220;
+}
+
+%googleMap {
+    width: 45vw;
+    height: 10vw;
+    padding-right: 5vw;
+    border-right: 1px solid #F58220
+}
+
 .pageTitle {
     display: flex;
     justify-content: center;
     padding-top: 2vw;
     padding-bottom: 4vh;
+
     h1 {
         font-family: $chosenFont;
         font-size: 25px;
@@ -13,33 +47,49 @@ $chosenFont: 'Mukta', sans-serif;
 }
 
 .googleMap {
-    width: 45vw;
-    height: 20vw;
-    padding-right: 5vw;
-    border-right: 1px solid #F58220 
+    @extend %googleMap;
 }
 
 .icon {
-    display: flex;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    margin-left: 13vw;
-    border-left: 1px solid #F58220;
+    @extend %icon;
 }
 
 .address {
-    display: flex;
-    font-family: $chosenFont;
-    padding-left: 1vw;
-    font-size: 1.15em;
+    @extend %addressWrap;
 
     .addressText {
-        display: flex;
-        flex-direction: column;
-        padding-right: 2vw;
+        @extend %address;
+
+        .loc1 {
+            @extend %loc;
+        }
     }
 }
 
-.map {
+.map2 {
     display: flex;
+}
+.address2 {
+    @extend %addressWrap;
+
+    .addressText2 {
+        @extend %address;
+
+        .loc2 {
+            @extend %loc;
+        }
+    }
+}
+
+.map2 {
+    display: flex;
+}
+
+.icon2 {
+    @extend %icon;
+    margin-top: 8vh;
+}
+
+.googleMap2 {
+    @extend %googleMap;
 }

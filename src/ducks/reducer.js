@@ -2,22 +2,22 @@ import axios from 'axios'
 
 const initialState = {
     user: {},
-    yeast: '',
-    cake: '',
-    kolaches: '',
-    drinks: '',
+    yeasts: [],
+    cakes: [],
+    kolaches: [],
+    drinks: [],
     prodImg: '',
     prodName: '',
     prodDesc: '',
-    product: '',
+    product: [],
     prodId: 0
 }
 
 // action types
 const LOGIN = 'LOGIN'
 const SIGN_UP = 'SIGN_UP'
-const GET_YEAST = 'GET_YEAST'
-const GET_CAKE = 'GET_CAKE'
+const GET_YEASTS = 'GET_YEASTS'
+const GET_CAKES = 'GET_CAKES'
 const GET_KOLACHES = 'GET_KOLACHES'
 const GET_DRINKS = 'GET_DRINKS'
 const UPDATE_NAME = 'UPDATE_NAME'
@@ -45,14 +45,14 @@ export function signup(username,email,password) {
 
 export function getYeast() {
     return {
-        type: GET_YEAST,
+        type: GET_YEASTS,
         payload: axios.get('/api/products/yeast')
     }
 }
 
 export function getCake() {
     return {
-        type: GET_CAKE,
+        type: GET_CAKES,
         payload: axios.get('/api/products/cake')
     }
 }
@@ -125,13 +125,13 @@ function reducer(state=initialState, action) {
             return {
                 ...state, user: action.payload.data
             }
-        case `${GET_YEAST}_FULFILLED`:
+        case `${GET_YEASTS}_FULFILLED`:
             return {
-                ...state, yeast: action.payload.data
+                ...state, yeasts: action.payload.data
             }
-        case `${GET_CAKE}_FULFILLED`:
+        case `${GET_CAKES}_FULFILLED`:
             return {
-                ...state, cake: action.payload.data
+                ...state, cakes: action.payload.data
             }
         case `${GET_KOLACHES}_FULFILLED`:
             return {

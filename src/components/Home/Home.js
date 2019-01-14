@@ -97,13 +97,12 @@ class Home extends Component {
                     <Link className='link2' to='/drinks'>Drinks</Link>
                 </nav>
 
-
                 <div className='mainHome'>
                     <img className='mainPic' src={mainpic} alt='baker'/>
                 {this.state.toggle ?              // Determines whether drop down menu shows or not
                 <div className='dropNav'>
-                    <Link className='cd' to='/cake'>Cake Donuts</Link>
-                    <Link className='cd' to='/yeast'>Yeast Donuts</Link>
+                    <Link className='cd' to='/cake-donuts'>Cake Donuts</Link>
+                    <Link className='cd' to='/yeast-donuts'>Yeast Donuts</Link>
                 </div>
                 :
                 <div className='hideNav'></div>}

@@ -1,22 +1,39 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Header from '../Header/Header'
+import './cake.scss'
+import {Link} from 'react-router-dom'
 
 
 class Cake extends Component {
+    constructor(props) {
+        super(props)   
+    }
+
     render() {
-        const cake = this.props.cake.map((e,i) => {
+        const cakeList = this.props.cakes.map((cake,i) => {
             return (
                 <div key={i}>
-                    <span>{e.prodImg}</span>
-                    <span>{e.prodName}</span>
-                    <span>{e.prodDesc}</span>
+                    <span>{cake.prodImg}</span>
+                    <span>{cake.prodName}</span>
+                    <span>{cake.prodDesc}</span>
                 </div>
             )
         })
 
         return (
             <div>
-                {cake}
+                <div>
+                    <Header/>
+                    {/* {this.props.toggle ?     // Determines whether drop down menu shows or not
+                <div className='dropNav2'>
+                    <Link className='cd2' to='/cake-donuts'>Cake Donuts</Link>
+                    <Link className='cd2' to='/yeast-donuts'>Yeast Donuts</Link>
+                </div>
+                :
+                <div className='hideNav2'></div>} */}
+                {cakeList}
+                </div>
             </div>
         )
     }
@@ -24,7 +41,7 @@ class Cake extends Component {
 
 function mapStateToProps(state) {
     return {
-        cake: state.cake
+        cakes: state.cakes
     }
 }
 

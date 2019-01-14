@@ -1,22 +1,33 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Header from '../Header/Header'
 
 
 class Yeast extends Component {
     render() {
-        const yeast = this.props.yeast.map((e,i) => {
+        const yeastList = this.props.yeasts.map((yeast,i) => {
             return (
                 <div key={i}>
-                    <span>{e.prodImg}</span>
-                    <span>{e.prodName}</span>
-                    <span>{e.prodDesc}</span>
+                    <span>{yeast.prodImg}</span>
+                    <span>{yeast.prodName}</span>
+                    <span>{yeast.prodDesc}</span>
                 </div>
             )
         })
 
         return (
             <div>
-                {yeast}
+                <div>
+                    <Header/>
+                    {/* {this.props.toggle ?     // Determines whether drop down menu shows or not
+                <div className='dropNav2'>
+                    <Link className='cd2' to='/cake-donuts'>Cake Donuts</Link>
+                    <Link className='cd2' to='/yeast-donuts'>Yeast Donuts</Link>
+                </div>
+                :
+                <div className='hideNav2'></div>} */}
+                {yeastList}
+                </div>
             </div>
         )
     }
@@ -24,7 +35,7 @@ class Yeast extends Component {
 
 function mapStateToProps(state) {
     return {
-        yeast: state.yeast
+        yeasts: state.yeasts
     }
 }
 
