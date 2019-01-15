@@ -53,7 +53,25 @@ class Home extends Component {
         e.preventDefault()
         this.props.signup(this.state.regUsername,this.state.regPassword,this.state.email)
         this.handleRegToggle()
+        this.clearState()
     }
+
+    clearState = () => {
+        this.setState({
+            regUsername: '',
+            regPassword: '',
+            email: '',
+            username: '',
+            password: ''
+        })
+    }
+
+    handleLogClear = () => {
+        const {username,password} = this.state
+        this.props.login(username,password)
+        this.clearState()
+    }
+
 
     render() {
         console.log(this.state);
@@ -74,7 +92,7 @@ class Home extends Component {
         //     duration: 5000,
         //     transitionDuration: 500,
         //     infinite: true,
-        //     indicators: true,
+        //     indicators: true, 
         //     scale: 0.4,
         //     arrows: true
         // }
@@ -103,9 +121,9 @@ class Home extends Component {
                     <img className='homeLogo' src={logo} alt='logo'/>
                     <input className='homeInput' onChange={this.handleChange} name='username' value={username} 
                         placeholder='Username'/>
-                    <input className='homeInput' onChange={this.handleChange} name='password' value={password} 
+                    <input className='homeInput' onChange={this.handleChange} type='password' name='password' value={password} 
                         placeholder='Password'/>
-                    <button title='Login to account' className='homeButt' onClick={() => this.props.login(username,password)}>Login</button>
+                    <button title='Login to account' className='homeButt' onClick={this.handleLogClear}>Login</button>
                     <button title='Register for an account' onClick={this.handleRegToggle} className='reglink'>Register</button>
                 </div>
                 <nav className='homeNavBar'>
@@ -132,7 +150,7 @@ class Home extends Component {
                         <form onSubmit={this.handleReg} className='showRegNav'>
                             <h1>Create Account</h1>
                             <input className='inp' onChange={this.handleChange} name='regUsername' value={regUsername} placeholder='Username'/>
-                            <input className='inp' onChange={this.handleChange} name='regPassword' type='regPassword' value={regPassword} placeholder='Password'/>
+                            <input className='inp' onChange={this.handleChange} name='regPassword' type='password' value={regPassword} placeholder='Password'/>
                             <input className='inp' onChange={this.handleChange} name='email' value={email} placeholder='Email'/>
                             <button>Submit</button>
                         </form>

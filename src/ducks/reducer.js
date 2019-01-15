@@ -33,7 +33,6 @@ const UPDATE_PRODUCT = 'CHANGE_PRODUCT'
 const ADD_TO_CART = 'ADD_TO_CART'
 const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL'
 
-
 // action creators 
 export function login(username,password) {
     return {
@@ -42,7 +41,7 @@ export function login(username,password) {
     }
 }
 
-export function signup(username,email,password) {
+export function signup(username,password,email) {
     return {
         type: SIGN_UP,
         payload: axios.post('/auth/signup', {username,email,password})

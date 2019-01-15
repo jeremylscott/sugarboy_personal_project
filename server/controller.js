@@ -49,6 +49,7 @@ const getDrinks = (req,res) => {
 }
 
 const login = (req,res) => {
+    console.log(req.body);
     const db = req.app.get('db')
     db.find_user(req.body)
     .then(async users => {
@@ -73,7 +74,8 @@ const signup = async (req,res) => {
     const hash = await bcrypt.hash(req.body.password,10)
 
     try {
-    const response = await db.add_user({username: req.body.username, password: hash})
+    const {username,email} = req.body
+    const response = await db.add_user({username, password: hash, email})
     res.json({username: response[0].username})
     }
     catch(e) {
