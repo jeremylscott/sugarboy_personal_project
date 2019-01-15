@@ -1,0 +1,85 @@
+$chosenFont: 'Mukta', sans-serif;
+$mainColor: #F58220;
+$secondaryColor: #001D4A;
+
+%pageStructure {
+    display: flex;
+}
+
+%topStructure {
+    padding-left: 0px;
+}
+
+%cardWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    width: 300px;
+    height: 435px;
+    border-radius: 6px;
+    padding-top: 10px;
+    margin-top: 40px; 
+    background: $mainColor;
+}
+
+%butt {
+    margin-top: 25px;
+    background: #001D4A;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    width: 100px;
+    font-family: $chosenFont;
+    font-size: 16px;
+    text-align: center;
+}
+
+%name {
+    width: 200px;
+    height: 30px;
+    font-size: 25px;
+    text-decoration: underline;
+    font-family: $chosenFont;
+    text-align: center;
+}
+
+%cardImg {
+    width: 275px;
+    height: 275px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+%descrip {
+    width: 250px;
+    height: 60px;
+    font-family: $chosenFont;
+}
+
+%prodTitle {
+    font-size: 20px;
+    font-family: $chosenFont;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+%leftCol {
+    width: 150px;
+    height: 600px;
+}
+
+%rightCol {
+    width: 150px;
+    height: 600px;
+}
+
+%middleCol {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 1620px;
+}

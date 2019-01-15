@@ -1,0 +1,49 @@
+@import '../partial';
+
+.pageStructure4 {
+    @extend %pageStructure;
+}
+
+.topStructure4 {
+    @extend %topStructure;
+}
+
+.cardWrapper4 {
+    @extend %cardWrapper;
+}
+        
+.name4 {
+    @extend %prodTitle;
+}
+
+.cardImg4 {
+    @extend %cardImg;
+}
+       
+.descrip4 {
+    @extend %descrip;
+    color: w;
+}
+
+.kolacheBody {
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+    
+    h1 {
+        @extend %name;
+    }
+}
+
+.mainDisplay4 {
+    display: flex;
+}
+
+.leftCol4 {@extend %leftCol;}
+
+.rightCol4 {@extend %rightCol;}
+
+.kolacheDisplay {
+   @extend %middleCol;
+}
+

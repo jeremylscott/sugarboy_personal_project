@@ -73,7 +73,6 @@ class Home extends Component {
     }
 
     render() {
-        console.log(this.state);
         const {username,password,email,regPassword,regUsername} = this.state  // destructuring this.state
 
         
@@ -114,8 +113,12 @@ class Home extends Component {
             <div className='mainPage'>
                 <div className='homeHeadWrapper'>
                     <div className='social'>
-                        <img className='facebook' src={facebook} alt='facebook'/>
-                        <img className='instagram' src={instagram} alt='instagram'/>
+                        <a href='https://www.facebook.com/sugarboydonutsProsper/'>
+                            <div className='facebook'/>
+                        </a>
+                        <a href='https://www.instagram.com/explore/locations/134289183873973/sugarboy-donuts-prosper?hl=en'>
+                            <div className='instagram'/>
+                        </a>
                     </div>
                     <img className='homeLogo' src={logo} alt='logo'/>
                     <input className='homeInput' onChange={this.handleChange} name='username' value={username} 

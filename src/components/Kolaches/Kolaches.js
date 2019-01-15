@@ -14,21 +14,27 @@ class Kolaches extends Component {
     render() {
         let kolacheList = this.props.kolaches.map((kolache,i) => {
             return (
-                <div key={i}>
-                    <span>{kolache.prodName}</span>
-                    <img src={kolache.prodImg}/>
-                    <span>{kolache.prodDesc}</span>
+                <div key={i}className='cardWrapper4'>
+                    <img className='cardImg4' src={kolache.prodimg}/>
+                    <span className='name4'>{kolache.prodname}</span>
+                    <span className='descrip'>{kolache.proddesc}</span>
                 </div>
             )
         })
 
         return (
-            <div>
-                <div>
+            <div className='pageStructure4'>
+                <div className='topStructure4'>
                     <Header/>
-                    <div>
+                    <div className='kolacheBody'>
                         <h1>Kolaches</h1>
-                        {kolacheList}
+                    </div>
+                    <div className='mainDisplay4'>
+                        <div className='leftCol4'></div>
+                        <div className='kolacheDisplay'>
+                            {kolacheList}
+                        </div>
+                        <div className='rightCol4'></div>
                     </div>
                 </div>
             </div>

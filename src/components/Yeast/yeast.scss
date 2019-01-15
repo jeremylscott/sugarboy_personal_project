@@ -1,15 +1,48 @@
-.mappedCards {
+@import '../partial';
+
+.pageStructure3 {
+    @extend %pageStructure;
+}
+
+.topStructure3 {
+    @extend %topStructure;
+}
+
+.cardWrapper3 {
+    @extend %cardWrapper;
+}
+        
+.name3 {
+    @extend %prodTitle;
+}
+
+.cardImg3 {
+    @extend %cardImg;
+}
+       
+.descrip3 {
+    @extend %descrip;
+}
+
+.yeastBody {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100vw;
-    height: 40vh;
-
-
-    img {
-        width: 18vw;
-        height: 38vh;
+    justify-content: center;
+    margin-top: 4vh;
+    
+    h1 {
+        @extend %name;
     }
+}
+
+.mainDisplay3 {
+    display: flex;
+}
+
+.leftCol3 {@extend %leftCol;}
+
+.rightCol3 {@extend %rightCol;}
+
+.yeastDisplay {
+   @extend %middleCol;
 }
 

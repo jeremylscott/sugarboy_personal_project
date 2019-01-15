@@ -14,20 +14,28 @@ componentDidMount() {
     render() {
         let yeastList = this.props.yeasts.map((yeast,i) => {
             return (
-                <div key={i} className='mappedCards'>
-                    <span>{yeast.prodName}</span>
-                    <img src={yeast.prodImg}/>
-                    <span>{yeast.prodDesc}</span>
+                <div key={i} className='cardWrapper3'>
+                    <img className='cardImg3' src={yeast.prodimg}/>
+                    <span className='name3'>{yeast.prodname}</span>
+                    <span className='descrip3'>{yeast.proddesc}</span>
                 </div>
             )
         })
 
         return (
-            <div>
-                <div>
+            <div className='pageStructure3'>
+                <div className='topStructure3'>
                     <Header/>
-                    <h1>Yeast Donuts</h1>
-                    {yeastList}
+                    <div className='yeastBody'>
+                        <h1>Yeast Donuts</h1>
+                    </div>
+                    <div className='mainDisplay3'>
+                        <div className='leftCol3'></div>
+                        <div className='yeastDisplay'>
+                            {yeastList}
+                        </div>
+                        <div className='rightCol3'></div>
+                    </div>
                 </div>
             </div>
         )
