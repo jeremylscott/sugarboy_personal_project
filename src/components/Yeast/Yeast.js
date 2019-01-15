@@ -22,6 +22,17 @@ componentDidMount() {
             )
         })
 
+        let userYeastList = this.props.yeasts.map((yeast,i) => {
+            return (
+                <div key={i} className='cardWrapper3'>
+                    <img className='cardImg3' src={yeast.prodimg}/>
+                    <span className='name3'>{yeast.prodname}</span>
+                    <span className='descrip3'>{yeast.proddesc}</span>
+                    <button className='butt4'>Add to Cart</button>
+                </div>
+            )
+        })
+       
         return (
             <div className='pageStructure3'>
                 <div className='topStructure3'>
@@ -32,7 +43,11 @@ componentDidMount() {
                     <div className='mainDisplay3'>
                         <div className='leftCol3'></div>
                         <div className='yeastDisplay'>
-                            {yeastList}
+                            {this.props.user.username ?
+                                userYeastList
+                                :
+                                yeastList
+                            }
                         </div>
                         <div className='rightCol3'></div>
                     </div>
@@ -44,7 +59,8 @@ componentDidMount() {
 
 function mapStateToProps(state) {
     return {
-        yeasts: state.yeasts
+        yeasts: state.yeasts,
+        user: state.user
     }
 }
 

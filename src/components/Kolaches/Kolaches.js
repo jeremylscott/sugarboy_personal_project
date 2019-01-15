@@ -14,13 +14,25 @@ class Kolaches extends Component {
     render() {
         let kolacheList = this.props.kolaches.map((kolache,i) => {
             return (
-                <div key={i}className='cardWrapper4'>
-                    <img className='cardImg4' src={kolache.prodimg}/>
-                    <span className='name4'>{kolache.prodname}</span>
-                    <span className='descrip'>{kolache.proddesc}</span>
-                </div>
+                    <div key={i}className='cardWrapper4'>
+                        <img className='cardImg4' src={kolache.prodimg}/>
+                        <span className='name4'>{kolache.prodname}</span>
+                        <span className='descrip'>{kolache.proddesc}</span>
+                    </div>
             )
         })
+
+        let userKolacheList = this.props.kolaches.map((kolache,i) => {
+            return (
+                    <div key={i}className='cardWrapper4'>
+                        <img className='cardImg4' src={kolache.prodimg}/>
+                        <span className='name4'>{kolache.prodname}</span>
+                        <span className='descrip'>{kolache.proddesc}</span>
+                        <button className='butt3'>Add to Cart</button>
+                    </div>
+            )
+        })
+
 
         return (
             <div className='pageStructure4'>
@@ -32,7 +44,11 @@ class Kolaches extends Component {
                     <div className='mainDisplay4'>
                         <div className='leftCol4'></div>
                         <div className='kolacheDisplay'>
-                            {kolacheList}
+                        {this.props.user.username ?
+                            userKolacheList
+                            :
+                            kolacheList   
+                        }
                         </div>
                         <div className='rightCol4'></div>
                     </div>
@@ -44,7 +60,8 @@ class Kolaches extends Component {
 
 function mapStateToProps(state) {
     return {
-        kolaches: state.kolaches
+        kolaches: state.kolaches,
+        user: state.user
     }
 }
 

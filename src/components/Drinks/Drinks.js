@@ -22,6 +22,17 @@ class Drinks extends Component {
             )
         })
 
+        let userDrinkList = this.props.drinks.map((drink,i) => {
+            return (
+                <div key={i} className='cardWrapper'>
+                    <img className='cardImg' src={drink.prodimg}/>
+                    <span className='name'>{drink.prodname}</span>
+                    <span className='descrip'>{drink.proddesc}</span>
+                    <button className='butt'>Add to Cart</button>
+                </div>
+            )
+        })
+
         return (
             <div className='pageStructure'>
                 <div className='topStructure'>
@@ -32,7 +43,11 @@ class Drinks extends Component {
                     <div className='mainDisplay'>
                         <div className='leftCol'></div>
                         <div className='drinkDisplay'>
-                            {drinkList}
+                            {this.props.user.username ?
+                                userDrinkList
+                                :
+                                drinkList
+                            }
                         </div>
                         <div className='rightCol'></div>
                     </div>
@@ -44,7 +59,8 @@ class Drinks extends Component {
 
 function mapStateToProps(state) {
     return {
-        drinks: state.drinks
+        drinks: state.drinks,
+        user: state.user
     }
 }
 
