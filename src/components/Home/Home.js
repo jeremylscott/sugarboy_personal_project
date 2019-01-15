@@ -72,7 +72,6 @@ class Home extends Component {
         this.clearState()
     }
 
-
     render() {
         console.log(this.state);
         const {username,password,email,regPassword,regUsername} = this.state  // destructuring this.state

@@ -15,12 +15,16 @@ class Drinks extends Component {
         const drinkList = this.props.drinks.map((drink,i) => {
             return (
                 <div key={i}>
-                    <span>{drink.prodName}</span>
-                    <img src={drink.prodImg}/>
-                    <span>{drink.prodDesc}</span>
+                    <div className='cardWrapper'>
+                        <span className='name'>{drink.prodName}</span>
+                        <img src={drink.prodImg}/>
+                        <span className='descrip'>{drink.prodDesc}</span>
+                    </div>
                 </div>
             )
         })
+
+        console.log(drinkList);
 
         return (
             <div>

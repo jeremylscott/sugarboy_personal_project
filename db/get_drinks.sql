@@ -1,2 +1,2 @@
 SELECT * FROM products
-WHERE prodtype = 'drink';
+WHERE prodType = 'drink';
