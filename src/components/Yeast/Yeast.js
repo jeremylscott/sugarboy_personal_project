@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Header from '../Header/Header'
+import Home from '../Home/Home'
 import './yeast.scss'
 import {getYeast} from '../../ducks/reducer'
 
@@ -36,7 +36,7 @@ componentDidMount() {
         return (
             <div className='pageStructure3'>
                 <div className='topStructure3'>
-                    <Header/>
+                    <Home/>
                     <div className='yeastBody'>
                         <h1>Yeast Donuts</h1>
                     </div>

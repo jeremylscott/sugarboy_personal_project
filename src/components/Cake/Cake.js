@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getCake} from '../../ducks/reducer'
-import Header from '../Header/Header'
+import Home from '../Home/Home'
 import './cake.scss'
 
 class Cake extends Component {
@@ -45,7 +45,7 @@ class Cake extends Component {
         return (
             <div className='pageStructure2'>
                 <div className='topStructure2'>
-                    <Header/>
+                    <Home/>
                     <div className='cakeBody'>
                         <h1>Cake Donuts</h1>
                     </div>

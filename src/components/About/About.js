@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../Header/Header'
+import Home from '../Home/Home'
 import './about.scss'
 
 function About() {
     return (
         <div>
-            <Header/>
+            <Home/>
             <div className='aboutWrapper'>
                 <div className='leftDiv'></div>
                 <body className='bodMid'>

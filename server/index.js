@@ -5,7 +5,7 @@ const massive = require('massive')
 const session = require('express-session')
 const app = express()
 const {getYeast,getCake,getKolaches,getDrinks,login,signup,addProduct,
-        deleteProduct,updateProduct,addToCart} = require('./controller')
+        deleteProduct,updateProduct,addToCart,getUser,logOut} = require('./controller')
 app.use(json())
 
 // connect the database
@@ -30,6 +30,8 @@ app.get('/api/products/yeast', getYeast)        // returns yeast donuts from dat
 app.get('/api/products/cake', getCake)      // returns cake donuts from database
 app.get('/api/products/kolaches', getKolaches)      // returns kolaches from database
 app.get('/api/products/drinks', getDrinks)      // returns drinks from database
+app.get('/api/user', getUser)
+app.get('/api/delete', logOut)
 
 app.post('/auth/login', login)      // logs user in
 app.post('/auth/signup', signup)    // user signs up for account

@@ -19,8 +19,8 @@ $secondaryColor: #001D4A;
     height: 435px;
     border-radius: 6px;
     padding-top: 10px;
-    margin-top: 40px; 
     background: $mainColor;
+    margin-bottom: 20px;
 }
 
 %butt {
@@ -43,6 +43,7 @@ $secondaryColor: #001D4A;
     text-decoration: underline;
     font-family: $chosenFont;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 %cardImg {

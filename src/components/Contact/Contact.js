@@ -1,14 +1,14 @@
 import React from 'react'
 import './contact.scss'
 import donut from '../../images/sugarboy_donut.png'
-import Header from '../Header/Header'
+import Home from '../Home/Home'
 
 
 function Contact() {
     return (
         <div>
             <div>
-                <Header/>
+                <Home/>
                 <div className='pageTitle'>
                     <h1>Store Locations:</h1>
                 </div>

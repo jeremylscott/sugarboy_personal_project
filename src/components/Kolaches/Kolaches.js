@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Header from '../Header/Header'
+import Home from '../Home/Home'
 import './kolaches.scss'
 import {getKolaches} from '../../ducks/reducer'
 
@@ -37,7 +37,7 @@ class Kolaches extends Component {
         return (
             <div className='pageStructure4'>
                 <div className='topStructure4'>
-                    <Header/>
+                    <Home/>
                     <div className='kolacheBody'>
                         <h1>Kolaches</h1>
                     </div>

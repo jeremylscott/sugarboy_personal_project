@@ -4,19 +4,19 @@ $chosenFont: 'Mukta', sans-serif;
 .mainPage {
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
+
 .social {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-right: 36vw;
-    width: 85px;
-    height: 40px;
-    margin-top: 3.5vh;
+    margin-right: 10vw;
+    margin-top: .97vh;
+    margin-bottom: 1vh;
+    min-width: 70px;
+    min-height: 30px;
+    border-radius: 6px;
     background: white;
-    border-radius: 4px;
-    border: 2px solid $mainColor;
 
 }
 
@@ -24,34 +24,36 @@ $chosenFont: 'Mukta', sans-serif;
     background-image: url('../../images/facebook.png');
     background-size: cover;
     background-position: center;
-    width: 35px;
-    height: 34px;
+    width: 28px;
+    height: 27px;
 }
 
 .instagram {
     background-image: url('../../images/instagram.png');
     background-size: cover;
     background-position: center;
-    width: 35px;
-    height: 34px;
+    width: 28px;
+    height: 27px;
 }
 
 .homeHeadWrapper {
     display: flex;
-    width: 98vw;
+    width: 100vw;
     height: 5vh;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
+
 .homeNavBar {
     display: flex;
     width: 100vw;
     background: $mainColor;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     list-style-type: none;
-    padding-top: .5vh;
-    height: 3vh;
+    height: 5vh;
     margin-top: 6vh;
 }
+
 .link {
     text-decoration: none;
     margin-right: 1vw;
@@ -63,10 +65,10 @@ $chosenFont: 'Mukta', sans-serif;
     font-weight: bold;
     font-size: 1.2em;
     font-family: $chosenFont;
-    margin: 0;
-    padding-left: 3vw;
-    padding-right: 3vw;
+    padding-left: 2.5vw;
+    padding-right: 3.7vw;
 }
+
 .link2 {
     text-decoration: none;
     margin-right: 1vw;
@@ -79,45 +81,37 @@ $chosenFont: 'Mukta', sans-serif;
     font-weight: bold;
     font-size: 1.2em;
 }
+
 .homeLogo {
     width: 15vw;
     height: 10vh;
+    padding-left: 10vw;
     align-items: center;
     align-content: center;
-    padding-right: 7.2vw;
 }
+
 .homeInput {
-    width: 10vw;
+    width: 15vw;
     height: 3vh;
-    margin-top: 4vh;
-    margin-right: 2vh;
-    border-radius: 4px;
-    border: 1px solid #001D4A;
-    padding: 0px 5px;
-   
+    border-radius: 5px;
+    padding: 0px 4px;
+    border: 1px solid #001D4A
 }
+
 .homeInput::placeholder {
     color: $mainColor;
     font-family: $chosenFont;
     font-weight: bold;
     opacity: .6;
 }
+
 .homeButt {
-    min-width: 4vw;
-    height: 3vh;
-    margin-top: 4vh;
-    margin-right: 1vw;
-    border-radius: 4px;
-    font-size: 13px;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
+    border-radius: 6px;
+    min-width: 80px;
     background: $mainColor;
-    border: none;
-    box-shadow: 0 3px #999;
+    height: 30px;
+    font-size: 14px;
+    color: white;
 }
   
 .homeButt:hover {background-color: #001D4A}
@@ -129,54 +123,45 @@ $chosenFont: 'Mukta', sans-serif;
 }
 .reglink {
     text-decoration: none;
-    margin-top: 4.5vh;
-    min-width: 4vw;
-    height: 3vh;
-    margin-top: 4vh;
-    margin-right: 1vw;
-    border-radius: 4px;
-    font-size: 13px;
-    display: inline-block;
+    font-size: 15px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    outline: none;
-    color: #fff;
-    background: #001D4A;
+    color: white;
+    font-family: $chosenFont;
     border: none;
-    box-shadow: 0 3px #999;
-}
-  
-.reglink:hover {background-color: $mainColor}
-  
-.reglink:active {
-    background-color: #001D4A;
-    box-shadow: 0 3px #666;
-    transform: translateY(2px);
+    border-radius: 4px;
+    padding: .4vh;
+    margin-bottom: 2vh;
+    background: #001D4A;
+
+
 }
 
-.mainHome {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 75vh;
+.loginLink {
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: $chosenFont;
+    margin-bottom: 2vh;
+    border: none;
+    border-radius: 4px;
+    padding: .2vh;
+    background: #001D4A;
 }
 
-.mainPic {
-    width: 100vw;
-    height: 86vh;
-    margin-top: none;
-    position: absolute;
-    bottom: 0;
-}
+
 
 .dropNav {
     position: absolute;
-    margin-top: -.5vh;
+    margin-top: 16vh;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    width: 165px;
+    width: 11.2vw;
     height: auto;
     background: #001D4A;
     margin-left: 49.7vw;
@@ -201,7 +186,7 @@ $chosenFont: 'Mukta', sans-serif;
 
 .showRegNav {
     position: absolute;
-    margin-top: 10vh;
+    margin-top: 20vh;
     justify-content: space-evenly;
     align-items: center;
     display: flex;
@@ -230,9 +215,9 @@ $chosenFont: 'Mukta', sans-serif;
 
     button {
         border-radius: 6px;
-        min-width: 5vw;
+        min-width: 80px;
         background: $mainColor;
-        height: 3vh;
+        height: 30px;
         font-size: 14px;
         color: white;
     }
@@ -259,5 +244,91 @@ button:hover {background-color: #001D4A}
     flex-direction: column;
     width: 0vw;
     height: 0vh;
+}   
+
+.userWelc {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+    width: 20vw;
+    height: 5vh;
+    justify-content: flex-start;
+    align-items: center;
+
+    .cartOut {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .cartLinks {
+        font-family: $chosenFont;
+        font-weight: bold;;
+        font-size: 15px;
+        margin-top: 10px;
+        text-decoration: none;
+        color: black
+    }
+
+    .logOut { 
+        margin-top: 1vh;
+        text-decoration: none;
+        font-size: 15px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-family: $chosenFont;
+        border: none;
+        border-radius: 4px;
+        padding: .2vh;
+        height: 5vh;
+        background: $mainColor;
+    }
+}
+
+.buttCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 5vh;
+    width: auto;
+    margin-top: 1.5vh;
+    padding-left: 2vw;
+}
+
+.showRegLogin {
+    position: absolute;
+    margin-top: 20vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 21vw;
+    height: 50vh;
+    background: white;
+    margin-left: 39.3vw;
+    border-radius: 8px;
+    box-shadow: 3px 3px black;
+
+    h1 {
+        color: #001D4A;
+        font-size: 30px;
+        margin-top: -3vh;
+        font-weight: bold;
+    }
+}
+
+.hideRegLogin {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 0vw;
+    height: 0vh;
+}  
+
+homeButt:active {
+    background-color: #001D4A;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
 }
 

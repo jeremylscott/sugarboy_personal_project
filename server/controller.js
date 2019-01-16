@@ -49,7 +49,6 @@ const getDrinks = (req,res) => {
 }
 
 const login = (req,res) => {
-    console.log(req.body);
     const db = req.app.get('db')
     db.find_user(req.body)
     .then(async users => {
@@ -59,7 +58,7 @@ const login = (req,res) => {
         else {
             const isMatch = await bcrypt.compare(req.body.password, users[0].password)
             if(isMatch) {
-                req.session.user = {username: users[0].username}        // added the user to the session
+                req.session.user = {username: users[0].username}    // added the user to the session
                 res.status(200).json({username: users[0].username})
             }
             else {
@@ -122,40 +121,35 @@ const updateProduct = (req,res) => {
     })
 }
 
-// const addToCart = (req,res) => {
-//     req.session.cart.push(req.body)
-//     res.status(200).json(req.session.cart)
-// }
+const logOut = (req,res) => {
+    req.session.destroy()
+}
 
-// const clearCart = (req,res) => {
-//     req.session.cart = []
-//     res.status(200).json(req.session.cart)
-// }
-
-// const deleteFromCart = (req,res) => {
-//     req.session.cart.splice(req.params.id, 1)
-//     res.status(200).json(req.session.cart)
-// }
-
-// async function addOrder (req,res) {
-//     const db = req.app.get('db')
-
-// }
-
+const getUser = (req,res) => {
+    res.status(200).json(req.session.user)
+}
 
 const addToCart = (req,res) => {
-    const {prodId,cartTotal} = req.body
-    const {username} = req.session
-    const db = req.app.get('db')
-    db.add_to_cart({prodId,username,cartTotal})
-    .then(response => {
-        res.status(200).json(response)
-    })
-    .catch(err => {
-        res.status(500).json(err)
-        console.log('Error: Item not added to cart')
-    })
+    console.log(req.body);
+    req.session.cart.push(req.body)
+    res.status(200).json(req.session.cart)
 }
+
+const clearCart = (req,res) => {
+    req.session.cart = []
+    res.status(200).json(req.session.cart)
+}    
+
+const deleteFromCart = (req,res) => {
+    req.session.cart.splice(req.params.id, 1)
+    res.status(200).json(req.session.cart)
+}
+
+async function addOrder (req,res) {
+    const db = req.app.get('db')
+
+}
+
 
 module.exports = {
     getYeast,
@@ -167,5 +161,10 @@ module.exports = {
     addProduct,
     deleteProduct,
     updateProduct,
-    addToCart
+    addToCart,
+    getUser,
+    clearCart,
+    deleteFromCart,
+    addOrder,
+    logOut
 }

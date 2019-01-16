@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {Provider} from 'react-redux'
 import store from './store'
-import Home from './components/Home/Home'
+import HomePic from './components/HomePic/HomePic'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import Cart from './components/Cart/Cart'
@@ -20,7 +20,7 @@ class App extends Component {
         <Provider store={store}>
           <Router>
             <div>
-              <Route exact path='/' component={Home}/>
+              <Route exact path='/' component={HomePic}/>
               <Route exact path='/about' component={About}/>
               <Route path='/contact' component={Contact}/>
               <Route path='/cart' component={Cart}/>

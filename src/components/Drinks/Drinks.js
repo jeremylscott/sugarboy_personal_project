@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Header from '../Header/Header'
+import Home from '../Home/Home'
 import './drinks.scss'
 import {getDrinks} from '../../ducks/reducer'
 
@@ -36,7 +36,7 @@ class Drinks extends Component {
         return (
             <div className='pageStructure'>
                 <div className='topStructure'>
-                    <Header/>
+                    <Home/>
                     <div className='drinkBody'>
                         <h1>Drinks</h1>
                     </div>

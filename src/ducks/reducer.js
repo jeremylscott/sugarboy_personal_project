@@ -32,6 +32,8 @@ const DELETE_PRODUCT = 'DELETE_PRODUCT'
 const UPDATE_PRODUCT = 'CHANGE_PRODUCT'
 const ADD_TO_CART = 'ADD_TO_CART'
 const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL'
+const GET_USER = 'GET_USER'
+const LOG_OUT = 'LOG_OUT'
 
 // action creators 
 export function login(username,password) {
@@ -132,6 +134,20 @@ export function updateCartTotal(cartTotal) {
     }
 }
 
+export function getUser() {
+    return {
+        type:GET_USER,
+        payload: axios.get('/api/user')
+    }
+}
+
+export function logOut(user) {
+    return {
+        type: LOG_OUT,
+        payload: user
+    }
+}
+
 
 // reducer function
 function reducer(state=initialState, action) {
@@ -191,6 +207,14 @@ function reducer(state=initialState, action) {
         case UPDATE_CART_TOTAL:
             return {
                 ...state, cartTotal: action.payload.data
+            }
+        case `${GET_USER}_FULFILLED`:
+            return {
+                ...state, user: action.payload.data
+            }
+        case LOG_OUT:
+            return {
+                ...state, user: ''
             }
 
             default: return state;
