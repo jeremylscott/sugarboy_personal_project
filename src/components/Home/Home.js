@@ -78,8 +78,6 @@ class Home extends Component {
     }
 
     render() {
-       
-        
         const {username,password,email,regPassword,regUsername} = this.state  // destructuring this.state
         console.log(this.props);
         return (
@@ -87,7 +85,7 @@ class Home extends Component {
                 <div className='homeHeadWrapper'>
                     <div className='buttCont'>
                         <div  title='Login to account' onClick={this.handleLogToggle} className='loginLink'>Login</div>
-                        <Link to title='Register for an account' onClick={this.handleRegToggle} className='reglink'>Create Account</Link>
+                        <div title='Register for an account' onClick={this.handleRegToggle} className='reglink'>Create Account</div>
                     </div>
                         <img className='homeLogo' src={logo} alt='logo'/>
                     <div className='userWelc'>
@@ -95,13 +93,12 @@ class Home extends Component {
                         <div className='cartOut'>
 
                         {this.props.user.isadmin === true ?
-
                             <span className='cartLinks'>ADMIN</span>
                             :
                             <Link className='cartLinks' to='/cart'>{this.props.user.username}'s cart: {this.props.cart.length}</Link>
                         }
 
-                            <Link to className='logOut' onClick={this.logOutForceUpdate}>Sign out</Link>
+                            <div to className='logOut' onClick={this.logOutForceUpdate}>Sign out</div>
                         </div>
                         :
                         null

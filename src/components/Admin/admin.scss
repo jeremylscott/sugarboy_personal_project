@@ -1,10 +1,67 @@
 @import '../partial';
 
+.cardWrapper8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    width: 18vw;
+    height: 66vh;
+    border-radius: 6px;
+    padding-top: .5vh;
+    background: $mainColor;
+    margin-bottom: 1.5vh;
+    border: 3px solid $secondaryColor;
+}
+        
+.name8 {
+    @extend %prodTitle;
+}
+
+.cardImg8 {
+    @extend %cardImg;
+}
+       
+.descrip8 {
+    @extend %descrip;
+}
+
+.prodImg {
+    border-radius: 5px;
+    width: 17vw;
+    margin-bottom: 3vh;
+    border: 1px solid $secondaryColor
+}
+
+.prodName {
+    border-radius: 5px;
+    width: 17vw;
+    margin-bottom: 1vh;
+    margin-top: -1vh;
+    border: 1px solid $secondaryColor
+}
+
+.prodDesc {
+    border-radius: 5px;
+    width: 17vw;
+    height: 15vh;
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    border: 1px solid $secondaryColor
+}
+
+.butt8 {
+    border-radius: 5px;
+    width: 9vw;
+    height: 6vh;
+    background: $secondaryColor;
+    border: none;
+    color: white;
+}
+
 .firstAdmin {@extend %pageStructure;}  
 
 .secAdmin {@extend %topStructure;}
-
-.adminTitle {@extend %name;}
 
 .adminBody {
     display: flex;
@@ -16,7 +73,7 @@
     }
 }
 
-.adminMain {
+.adminBody {
     display: flex;
 }
 

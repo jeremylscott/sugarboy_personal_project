@@ -127,14 +127,24 @@ const updateProduct = (req,res) => {
 }
 
 const logOut = (req,res) => {
-    req.session.destroy(() => {
-        'http://localhost:4142/'
-    })
+    req.session.destroy()
     console.log(req.session)
 }
 
 const getUser = (req,res) => {
     res.status(200).json(req.session.user)
+}
+
+const getAllProducts = (req,res) => {
+    const db = req.app.get('db')
+    db.get_all_products()
+    .then(response => {
+        res.status(200).json(response)
+    })
+    .catch(err => {
+        res.status(401).json(err)
+        console.log('error: Get all products failed')
+    })
 }
 
 const addToCart = (req,res) => {
@@ -174,5 +184,6 @@ module.exports = {
     clearCart,
     deleteFromCart,
     addOrder,
-    logOut
+    logOut,
+    getAllProducts
 }

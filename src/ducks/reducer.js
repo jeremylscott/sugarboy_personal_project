@@ -1,5 +1,4 @@
 import axios from 'axios'
-import Home from '../components/Home/Home'
 
 const initialState = {
     user: {},
@@ -7,6 +6,7 @@ const initialState = {
     cakes: [],
     kolaches: [],
     drinks: [],
+    allProducts: [],
     prodImg: '',
     prodName: '',
     prodDesc: '',
@@ -14,7 +14,8 @@ const initialState = {
     prodId: 0,
     prodPrice: 10,
     cart: [],
-    cartTotal: 0
+    cartTotal: 0,
+    currentProp: ''
 }
 
 // action types
@@ -34,6 +35,8 @@ const ADD_TO_CART = 'ADD_TO_CART'
 const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL'
 const GET_USER = 'GET_USER'
 const LOG_OUT = 'LOG_OUT'
+const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS'
+const PROP_INPUT = 'PROP_INPUT'
 
 // action creators 
 export function login(username,password) {
@@ -85,7 +88,7 @@ export function updateName(prodName) {
     }
 }
 
-export function getImg(prodImg) {
+export function updateImg(prodImg) {
     return {
         type: UPDATE_IMG,
         payload: prodImg
@@ -148,6 +151,20 @@ export function logOut() {
     }
 }
 
+export function getAllProducts() {
+    return {
+        type: GET_ALL_PRODUCTS,
+        payload: axios.get('/api/products')
+    }
+}
+
+export function propInput(donuts) {
+    return {
+        type: PROP_INPUT,
+        payload: donuts
+    }
+}
+
 
 // reducer function
 function reducer(state=initialState, action) {
@@ -176,15 +193,15 @@ function reducer(state=initialState, action) {
             return {
                 ...state, drinks: action.payload.data
             }
-        case `${UPDATE_NAME}_FULFILLED`:
+        case UPDATE_NAME:
             return {
                 ...state, prodName: action.payload.data
             }
-        case `${UPDATE_IMG}_FULFILLED`:
+        case UPDATE_IMG:
             return {
                 ...state, prodImg: action.payload.data
             }
-        case `${UPDATE_PROD_DESC}_FULFILLED`:
+        case UPDATE_PROD_DESC:
             return {
                 ...state, prodDesc: action.payload.data
             }
@@ -215,6 +232,17 @@ function reducer(state=initialState, action) {
         case `${LOG_OUT}_FULFILLED`:
             return {
                 ...state, user: {}
+            }
+        case `${GET_ALL_PRODUCTS}_FULFILLED`:
+            return {
+                ...state, allProducts: action.payload.data
+            }
+        case PROP_INPUT:
+            return {
+                ...state, prodName: action.payload.prodName,
+                          prodDesc: action.payload.prodDesc,
+                          prodImg: action.payload.prodImg,
+                          currentProp: action.payload
             }
 
             default: return state;

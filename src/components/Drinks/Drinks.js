@@ -15,7 +15,7 @@ class Drinks extends Component {
         const drinkList = this.props.drinks.map((drink,i) => {
             return (
                 <div key={i} className='cardWrapper'>
-                    <img className='cardImg' src={drink.prodimg}/>
+                    <img className='cardImg' src={drink.prodimg} alt='donut'/>
                     <span className='name'>{drink.prodname}</span>
                     <span className='descrip'>{drink.proddesc}</span>
                 </div>
@@ -25,7 +25,7 @@ class Drinks extends Component {
         let userDrinkList = this.props.drinks.map((drink,i) => {
             return (
                 <div key={i} className='cardWrapper'>
-                    <img className='cardImg' src={drink.prodimg}/>
+                    <img className='cardImg' src={drink.prodimg} alt='donut'/>
                     <span className='name'>{drink.prodname}</span>
                     <span className='descrip'>{drink.proddesc}</span>
                     <button className='butt'>Add to Cart</button>

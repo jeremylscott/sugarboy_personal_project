@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link,Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import './homepic.scss'
 import mainpic from '../../images/sugarboy_mainpic.jpg'
 import Home from '../Home/Home'

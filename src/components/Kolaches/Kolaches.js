@@ -16,7 +16,7 @@ class Kolaches extends Component {
         let kolacheList = this.props.kolaches.map((kolache,i) => {
             return (
                     <div key={i}className='cardWrapper4'>
-                        <img className='cardImg4' src={kolache.prodimg}/>
+                        <img className='cardImg4' src={kolache.prodimg} alt='donut'/>
                         <span className='name4'>{kolache.prodname}</span>
                         <span className='descrip'>{kolache.proddesc}</span>
                     </div>
@@ -26,7 +26,7 @@ class Kolaches extends Component {
         let userKolacheList = this.props.kolaches.map((kolache,i) => {
             return (
                     <div key={i}className='cardWrapper4'>
-                        <img className='cardImg4' src={kolache.prodimg}/>
+                        <img className='cardImg4' src={kolache.prodimg} alt='donut'/>
                         <span className='name4'>{kolache.prodname}</span>
                         <span className='descrip'>{kolache.proddesc}</span>
                         <button className='butt3'>Add to Cart</button>

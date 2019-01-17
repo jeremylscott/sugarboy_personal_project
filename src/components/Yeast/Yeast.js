@@ -16,7 +16,7 @@ componentDidMount() {
         let yeastList = this.props.yeasts.map((yeast,i) => {
             return (
                 <div key={i} className='cardWrapper3'>
-                    <img className='cardImg3' src={yeast.prodimg}/>
+                    <img className='cardImg3' src={yeast.prodimg} alt='donut'/>
                     <span className='name3'>{yeast.prodname}</span>
                     <span className='descrip3'>{yeast.proddesc}</span>
                 </div>
@@ -26,7 +26,7 @@ componentDidMount() {
         let userYeastList = this.props.yeasts.map((yeast,i) => {
             return (
                 <div key={i} className='cardWrapper3'>
-                    <img className='cardImg3' src={yeast.prodimg}/>
+                    <img className='cardImg3' src={yeast.prodimg} alt='donut'/>
                     <span className='name3'>{yeast.prodname}</span>
                     <span className='descrip3'>{yeast.proddesc}</span>
                     <button className='butt4'>Add to Cart</button>

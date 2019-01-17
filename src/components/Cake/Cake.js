@@ -5,9 +5,6 @@ import Home from '../Home/Home'
 import './cake.scss'
 
 class Cake extends Component {
-    constructor(props) {
-        super(props)   
-    }
 
     componentDidMount() {
         this.props.getCake()
@@ -26,7 +23,7 @@ class Cake extends Component {
         let cakeList = this.props.cakes.map((cake,i) => {
             return (
                 <div key={i} className='cardWrapper2'>
-                    <img className='cardImg2' src={cake.prodimg}/>
+                    <img className='cardImg2' src={cake.prodimg} alt='donut'/>
                     <span className='name2'>{cake.prodname}</span>
                     <span className='descrip2'>{cake.proddesc}</span>
                 </div>
@@ -36,7 +33,7 @@ class Cake extends Component {
         let userCakeList = this.props.cakes.map((cake,i) => {
             return (
                 <div key={i} className='cardWrapper2'>
-                    <img className='cardImg2' src={cake.prodimg}/>
+                    <img className='cardImg2' src={cake.prodimg} alt='donut'/>
                     <span className='name2'>{cake.prodname}</span>
                     <span className='descrip2'>{cake.proddesc}</span>
                     <button className='butt2'>Add to Cart</button>
