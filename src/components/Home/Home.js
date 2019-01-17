@@ -79,7 +79,7 @@ class Home extends Component {
 
     render() {
         const {username,password,email,regPassword,regUsername} = this.state  // destructuring this.state
-        console.log(this.props);
+
         return (
             <div className='mainPage'>
                 <div className='homeHeadWrapper'>

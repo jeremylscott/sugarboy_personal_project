@@ -9,13 +9,18 @@
     height: 66vh;
     border-radius: 6px;
     padding-top: .5vh;
-    background: $mainColor;
+    background: #EAF8BF;
     margin-bottom: 1.5vh;
     border: 3px solid $secondaryColor;
 }
         
 .name8 {
-    @extend %prodTitle;
+    width: 16vw;
+    height: 5vh;
+    font-size: 2em;
+    text-decoration: underline;
+    font-family: $chosenFont;
+    text-align: center;
 }
 
 .cardImg8 {
@@ -41,36 +46,101 @@
     border: 1px solid $secondaryColor
 }
 
+.prodType {
+    border-radius: 5px;
+    width: 17vw;
+    margin-bottom: 1vh;
+    border: 1px solid $secondaryColor
+}
+
 .prodDesc {
     border-radius: 5px;
     width: 17vw;
-    height: 15vh;
+    height: 13vh;
     margin-top: 1.5vh;
     margin-bottom: 1vh;
     border: 1px solid $secondaryColor
 }
 
+.adminButts {
+    display: flex;
+    width: 17vw;
+    justify-content: space-around;
+    align-content: center;
+    align-items: baseline;
+    background: $secondaryColor;
+    border-radius: 5px;
+    font-family: $chosenFont;
+}
+
 .butt8 {
     border-radius: 5px;
-    width: 9vw;
-    height: 6vh;
+    width: 4vw;
+    height: 4vh;
+    background: $secondaryColor;
+    border: none;
+    color: rgb(75, 206, 75);
+    margin-top: .5vh;
+    font-family: $chosenFont;
+    font-size: 1em;
+}
+
+.delete {
+    border-radius: 5px;
+    width: 2vw;
+    height: 4vh;
+    background: $secondaryColor;
+    border: none;
+    color: red;
+    font-size: 1em;
+}
+
+.cancel {
+    border-radius: 5px;
+    width: 4vw;
+    height: 4vh;
     background: $secondaryColor;
     border: none;
     color: white;
+    font-family: $chosenFont;
+    font-size: 1em;
 }
 
 .firstAdmin {@extend %pageStructure;}  
 
 .secAdmin {@extend %topStructure;}
 
-.adminBody {
+.adminTitle {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 4vh;
 
     h1 {
-        @extend %name;
+        width: 16vw;
+        height: 5vh;
+        font-size: 2em;
+        text-decoration: underline;
+        font-family: $chosenFont;
+        text-align: center;
+        margin-bottom: 10px;
     }
+}
+
+.addNewButt {
+    border: none;
+    background: $secondaryColor;
+    color: white;
+    border-radius: 5px;
+    margin-top: -1vh;
+    margin-bottom: 1vh;
+}
+.addNew {
+    margin-left: 24vw;
+    width: 12vw;
+    height: 5vh;
+    border-radius: 5px;
 }
 
 .adminBody {
@@ -82,4 +152,69 @@
 .adminDisplay {@extend %middleCol;}
 
 .adminRight {@extend %rightCol;}
+
+.showAddForm {
+    position: absolute;
+    margin-top: 0vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 21vw;
+    height: 50vh;
+    background: white;
+    margin-left: 39.3vw;
+    border-radius: 8px;
+    box-shadow: 3px 3px black;
+    border: 1px solid $secondaryColor;
+
+    .addNew {
+        margin-right: 24vw;
+        width: 15vw;
+        border-radius: 5px;
+        height: 3vh;
+        padding: 0px 4px;
+        border: 1px solid $mainColor;
+    }
+
+    h1 {
+        color: #001D4A;
+        font-size: 30px;
+        margin-top: -3vh;
+        font-weight: bold;
+    }
+
+    button {
+        border-radius: 6px;
+        min-width: 80px;
+        background: $mainColor;
+        height: 30px;
+        font-size: 14px;
+        color: white;
+        border: 1px solid $secondaryColor;
+    }
+}
+
+button:active {
+    background-color: #001D4A;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+button:hover {background-color: #001D4A}
+
+.inp::placeholder {
+    color: #001D4A;
+    padding: 0px 4px;
+    font-weight: bold;
+    opacity: .3;
+}
+
+.hideAddForm {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 0vw;
+    height: 0vh;
+}   
 
