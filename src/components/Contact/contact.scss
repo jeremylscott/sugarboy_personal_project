@@ -40,10 +40,12 @@ $chosenFont: 'Mukta', sans-serif;
     padding-bottom: 4vh;
 
     h1 {
-        font-family: $chosenFont;
-        font-size: 25px;
-        padding-right: 1vw;
+        width: 20vw;
+        height: 5vh;
+        font-size: 2em;
         text-decoration: underline;
+        font-family: $chosenFont;
+        text-align: center;
     }
 }
 

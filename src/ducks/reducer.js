@@ -141,10 +141,10 @@ export function getUser() {
     }
 }
 
-export function logOut(user) {
+export function logOut() {
     return {
         type: LOG_OUT,
-        payload: user
+        payload: axios.get('/api/delete')
     }
 }
 
@@ -212,9 +212,9 @@ function reducer(state=initialState, action) {
             return {
                 ...state, user: action.payload.data
             }
-        case LOG_OUT:
+        case `${LOG_OUT}_FULFILLED`:
             return {
-                ...state, user: ''
+                ...state, user: {}
             }
 
             default: return state;

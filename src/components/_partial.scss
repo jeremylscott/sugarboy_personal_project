@@ -14,32 +14,33 @@ $secondaryColor: #001D4A;
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: space-between;
-    width: 300px;
-    height: 435px;
+    align-content: center;
+    width: 22vw;
+    height: 66vh;
     border-radius: 6px;
-    padding-top: 10px;
+    padding-top: 1.5vh;
     background: $mainColor;
-    margin-bottom: 20px;
+    margin-bottom: 1.5vh;
+    border: 3px solid $secondaryColor;
 }
 
 %butt {
-    margin-top: 25px;
+    margin-top: 3.5vh;
     background: #001D4A;
     color: white;
     border-radius: 5px;
     border: none;
-    height: 30px;
-    width: 100px;
+    height: 4vh;
+    width: 8vw;
     font-family: $chosenFont;
-    font-size: 16px;
+    font-size: 1em;
     text-align: center;
 }
 
 %name {
-    width: 200px;
-    height: 30px;
-    font-size: 25px;
+    width: 20vw;
+    height: 5vh;
+    font-size: 2em;
     text-decoration: underline;
     font-family: $chosenFont;
     text-align: center;
@@ -47,20 +48,21 @@ $secondaryColor: #001D4A;
 }
 
 %cardImg {
-    width: 275px;
-    height: 275px;
+    width: 18vw;
+    height: 38vh;
     border-radius: 6px;
     margin-bottom: 10px;
+    border: 3px solid $secondaryColor;
 }
 
 %descrip {
-    width: 250px;
-    height: 60px;
+    width: 18vw;
+    height: 5vw;
     font-family: $chosenFont;
 }
 
 %prodTitle {
-    font-size: 20px;
+    font-size: 1.2em;
     font-family: $chosenFont;
     display: flex;
     justify-content: center;
@@ -69,18 +71,18 @@ $secondaryColor: #001D4A;
 }
 
 %leftCol {
-    width: 150px;
-    height: 600px;
+    width: 8vw;
+    height: auto;
 }
 
 %rightCol {
-    width: 150px;
-    height: 600px;
+    width: 8vw;
+    height: auto;
 }
 
 %middleCol {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 1620px;
+    width: 84vw;
 }

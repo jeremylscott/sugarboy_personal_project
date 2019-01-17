@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {getCake} from '../../ducks/reducer'
+import {getCake,getUser} from '../../ducks/reducer'
 import Home from '../Home/Home'
 import './cake.scss'
 
@@ -11,7 +11,9 @@ class Cake extends Component {
 
     componentDidMount() {
         this.props.getCake()
+        this.props.getUser()
     } 
+    
 
     componentDidUpdate(previousProps) {
         if(this.props.cakes !== previousProps.cakes) {
@@ -73,5 +75,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getCake})(Cake)
+export default connect(mapStateToProps,{getCake,getUser})(Cake)
 

@@ -1,10 +1,19 @@
+@import '../partial';
 $chosenFont: 'Mukta', sans-serif;
 $mainColor: #F58220;
 
 %borderDivs {
     width: 20vw;
     height: 60vh;
+}
 
+.aboutName {
+    width: 20vw;
+    height: 5vh;
+    font-size: 1.2em;
+    text-decoration: underline;
+    font-family: $chosenFont;
+    text-align: center;
 }
 
 .aboutWrapper {
@@ -18,21 +27,22 @@ $mainColor: #F58220;
         flex-wrap: wrap;
         width: 60vw;
         height: 60vh;
-        font-size: 18px;
 
         .title {
+            display: flex;
+            justify-content: center;
             text: center;
             padding-right: 1vw;
         }
 
         .spacer {
             height: 4vh;
-
         }
 
         .picText {
             display: flex;
             border-left: 1px solid $mainColor;
+            font-size: 18px;
 
             img {
                 width: 1000px;

@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Home from '../Home/Home'
 import './yeast.scss'
-import {getYeast} from '../../ducks/reducer'
+import {getYeast,getUser} from '../../ducks/reducer'
 
 
 class Yeast extends Component {
 
 componentDidMount() {
     this.props.getYeast()
+    this.props.getUser()
 }
 
     render() {
@@ -64,5 +65,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getYeast})(Yeast)
+export default connect(mapStateToProps,{getYeast,getUser})(Yeast)
 

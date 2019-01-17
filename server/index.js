@@ -31,13 +31,13 @@ app.get('/api/products/cake', getCake)      // returns cake donuts from database
 app.get('/api/products/kolaches', getKolaches)      // returns kolaches from database
 app.get('/api/products/drinks', getDrinks)      // returns drinks from database
 app.get('/api/user', getUser)
-app.get('/api/delete', logOut)
 
 app.post('/auth/login', login)      // logs user in
 app.post('/auth/signup', signup)    // user signs up for account
 app.post('/api/products', addProduct)   // adds new product to the database
 app.post('/api/cart', addToCart)    // adds product to users cart
 
+app.get('/api/delete', logOut)
 app.delete('/api/products/:id', deleteProduct)      // deletes product from the database
 app.put('/api/products/:id', updateProduct)     // updates a product in the database
 

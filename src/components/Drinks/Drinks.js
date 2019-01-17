@@ -2,13 +2,13 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Home from '../Home/Home'
 import './drinks.scss'
-import {getDrinks} from '../../ducks/reducer'
-
+import {getDrinks,getUser} from '../../ducks/reducer'
 
 class Drinks extends Component {
 
     componentDidMount() {
         this.props.getDrinks()
+        this.props.getUser()
     }
 
     render() {
@@ -64,5 +64,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getDrinks})(Drinks)
+export default connect(mapStateToProps,{getDrinks,getUser})(Drinks)
 

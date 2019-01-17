@@ -1,5 +1,6 @@
 $mainColor: #F58220;
 $chosenFont: 'Mukta', sans-serif;
+$secondaryColor: #001D4A;
 
 .mainPage {
     display: flex;
@@ -10,9 +11,10 @@ $chosenFont: 'Mukta', sans-serif;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-right: 10vw;
+    margin-right: 7vw;
+    margin-left: 3vw;
     margin-top: .97vh;
-    margin-bottom: 1vh;
+    margin-bottom: 1.05vh;
     min-width: 70px;
     min-height: 30px;
     border-radius: 6px;
@@ -85,7 +87,7 @@ $chosenFont: 'Mukta', sans-serif;
 .homeLogo {
     width: 15vw;
     height: 10vh;
-    padding-left: 10vw;
+    padding-left: 4.5vw;
     align-items: center;
     align-content: center;
 }
@@ -197,6 +199,7 @@ $chosenFont: 'Mukta', sans-serif;
     margin-left: 39.3vw;
     border-radius: 8px;
     box-shadow: 3px 3px black;
+    border: 1px solid $secondaryColor;
 
     input {
         width: 15vw;
@@ -250,10 +253,11 @@ button:hover {background-color: #001D4A}
     display: flex;
     flex-direction: column;
     margin-top: 1vh;
-    width: 20vw;
+    width: 10vw;
     height: 5vh;
+    padding-right: 5vw;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 
     .cartOut {
         display: flex;
@@ -309,6 +313,7 @@ button:hover {background-color: #001D4A}
     margin-left: 39.3vw;
     border-radius: 8px;
     box-shadow: 3px 3px black;
+    border: 1px solid #001D4A;
 
     h1 {
         color: #001D4A;

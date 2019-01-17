@@ -1,0 +1,28 @@
+@import '../partial';
+
+.firstAdmin {@extend %pageStructure;}  
+
+.secAdmin {@extend %topStructure;}
+
+.adminTitle {@extend %name;}
+
+.adminBody {
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+
+    h1 {
+        @extend %name;
+    }
+}
+
+.adminMain {
+    display: flex;
+}
+
+.adminLeft {@extend %leftCol;}
+
+.adminDisplay {@extend %middleCol;}
+
+.adminRight {@extend %rightCol;}
+

@@ -11,6 +11,7 @@ import Cake from './components/Cake/Cake'
 import Kolaches from './components/Kolaches/Kolaches'
 import Drinks from './components/Drinks/Drinks'
 import Reports from './components/Reports/Reports'
+import Admin from './components/Admin/Admin'
 import './App.scss'
 
 
@@ -29,6 +30,7 @@ class App extends Component {
               <Route path='/kolaches' component={Kolaches}/>
               <Route path='/drinks' component={Drinks}/>
               <Route path='/reports' component={Reports}/>
+              <Route path='/admin' component={Admin}/>
             </div>
           </Router>
         </Provider>

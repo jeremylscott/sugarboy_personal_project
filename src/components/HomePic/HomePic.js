@@ -1,9 +1,15 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {Link,Redirect} from 'react-router-dom'
 import './homepic.scss'
 import mainpic from '../../images/sugarboy_mainpic.jpg'
 import Home from '../Home/Home'
 
-function HomePic() {
+function HomePic(props) {
+    
+    if(props.user.isadmin === true) {
+        return <Redirect to='/admin'/>   //  Go to admin portal if user is an admin
+    }
 
     return (
         <div className='homePicCont'>
@@ -15,4 +21,6 @@ function HomePic() {
     )
 }
 
-export default HomePic
+const mapStateToProps = (state) => state 
+
+export default connect(mapStateToProps)(HomePic)

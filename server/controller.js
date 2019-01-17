@@ -58,13 +58,18 @@ const login = (req,res) => {
         else {
             const isMatch = await bcrypt.compare(req.body.password, users[0].password)
             if(isMatch) {
-                req.session.user = {username: users[0].username}    // added the user to the session
-                res.status(200).json({username: users[0].username})
+                req.session.user = {                        // added the user to the session
+                    username: users[0].username,
+                    isadmin: users[0].isadmin,
+                    email: users[0].email
+                }    
+                res.status(200).json(req.session.user)
             }
             else {
                 res.status(401).json('Incorrect password')
             }
         }
+        console.log(req.session.user);
     })
 }
 
@@ -122,7 +127,10 @@ const updateProduct = (req,res) => {
 }
 
 const logOut = (req,res) => {
-    req.session.destroy()
+    req.session.destroy(() => {
+        'http://localhost:4142/'
+    })
+    console.log(req.session)
 }
 
 const getUser = (req,res) => {

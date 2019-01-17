@@ -34,9 +34,7 @@
     }
 }
 
-.butt2 {
-    @extend %butt;
-}
+.butt2 {@extend %butt;}
 
 .mainDisplay2 {
     display: flex;
@@ -46,7 +44,5 @@
 
 .rightCol2 {@extend %rightCol;}
 
-.cakeDisplay {
-   @extend %middleCol;
-}
+.cakeDisplay {@extend %middleCol;}
 

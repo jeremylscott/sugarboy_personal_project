@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Home from '../Home/Home'
 import './kolaches.scss'
-import {getKolaches} from '../../ducks/reducer'
+import {getKolaches,getUser} from '../../ducks/reducer'
 
 
 class Kolaches extends Component {
 
     componentDidMount() {
         this.props.getKolaches()
+        this.props.getUser()
     }
 
     render() {
@@ -65,5 +66,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getKolaches})(Kolaches)
+export default connect(mapStateToProps,{getKolaches,getUser})(Kolaches)
 

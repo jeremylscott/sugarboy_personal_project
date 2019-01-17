@@ -19,7 +19,6 @@ class Home extends Component {
             regToggle: false,    // used to show or hide the register form
             logToggle: false
         }
-
     }
 
     handleChange = (e) => {   // updating both input fields below
@@ -51,7 +50,6 @@ class Home extends Component {
     }
 
     handleReg = (e) => {
-        e.preventDefault()
         this.props.signup(this.state.regUsername,this.state.regPassword,this.state.email)
         this.handleRegToggle()
         this.clearState()
@@ -68,27 +66,42 @@ class Home extends Component {
     }
 
     handleLogClear = () => {
-        const {username,password} = this.state
-        this.props.login(username,password)
-        this.clearState()
+        this.props.login(this.state.username,this.state.password)
+        this.setState({
+            logToggle: !this.state.logToggle
+        })
+    }
+
+    logOutForceUpdate = () => {
+        this.props.logOut()
+        window.location.reload()
     }
 
     render() {
+       
+        
         const {username,password,email,regPassword,regUsername} = this.state  // destructuring this.state
-        console.log(this.props.user);
+        console.log(this.props);
         return (
             <div className='mainPage'>
                 <div className='homeHeadWrapper'>
                     <div className='buttCont'>
-                        <Link to title='Login to account' onClick={this.handleLogToggle} className='loginLink'>Login</Link>
+                        <div  title='Login to account' onClick={this.handleLogToggle} className='loginLink'>Login</div>
                         <Link to title='Register for an account' onClick={this.handleRegToggle} className='reglink'>Create Account</Link>
                     </div>
                         <img className='homeLogo' src={logo} alt='logo'/>
                     <div className='userWelc'>
                         {this.props.user ?
                         <div className='cartOut'>
+
+                        {this.props.user.isadmin === true ?
+
+                            <span className='cartLinks'>ADMIN</span>
+                            :
                             <Link className='cartLinks' to='/cart'>{this.props.user.username}'s cart: {this.props.cart.length}</Link>
-                            <Link to className='logOut' onClick={this.props.logOut}>Sign out</Link>
+                        }
+
+                            <Link to className='logOut' onClick={this.logOutForceUpdate}>Sign out</Link>
                         </div>
                         :
                         null
@@ -131,16 +144,15 @@ class Home extends Component {
                     :
                     <div className='hideRegNav'></div>}
 
-
                 {this.state.logToggle ?              // Determines whether login menu shows or not
-                    <form onSubmit={this.handleLogClear} className='showRegLogin'>
+                    <div  className='showRegLogin'>
                         <h1>Account Login</h1>
                         <input className='homeInput' onChange={this.handleChange} name='username' value={username} 
                             placeholder='Username'/>
                         <input className='homeInput' onChange={this.handleChange} type='password' name='password' value={password} 
                             placeholder='Password'/>
-                        <button title='Login to account' className='homeButt'>Login</button>
-                    </form>
+                        <button onClick={this.handleLogClear} title='Login to account' className='homeButt'>Submit</button>
+                    </div>
                     :
                     <div className='hideRegLogin'></div>}
             </div>
