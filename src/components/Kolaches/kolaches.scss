@@ -11,6 +11,10 @@
 .cardWrapper4 {
     @extend %cardWrapper;
 }
+
+.cardWrapper4:hover {
+    background: rgb(185, 183, 183);
+}
         
 .name4 {
     @extend %prodTitle;
@@ -22,7 +26,6 @@
        
 .descrip4 {
     @extend %descrip;
-    color: w;
 }
 
 .kolacheBody {
@@ -35,9 +38,7 @@
     }
 }
 
-.mainDisplay4 {
-    display: flex;
-}
+.mainDisplay4 {@extend %mainDisplay};
 
 .leftCol4 {@extend %leftCol;}
 

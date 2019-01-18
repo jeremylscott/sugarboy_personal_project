@@ -89,9 +89,10 @@ const signup = async (req,res) => {
 }
 
 const addProduct = (req,res) => {
+    console.log('ADD PRODUCT', req.body)
     const {prodName,prodDesc,prodType,prodImg} = req.body
     const db = req.app.get('db')
-    db.add_product({prodName,prodDesc,prodType,prodImg})
+    db.add_product(prodImg,prodName,prodType,prodDesc)
     .then(response => {
         res.status(200).json(response)
     })
@@ -102,6 +103,7 @@ const addProduct = (req,res) => {
 }
 
 const deleteProduct = (req,res) => {
+    console.log(req.params.id);
     const db = req.app.get('db')
     db.delete_product(req.params.id)
     .then(response => {
@@ -116,7 +118,7 @@ const deleteProduct = (req,res) => {
 const updateProduct = (req,res) => {
     const {prodName,prodType,prodImg,prodDesc} = req.body
     const db = req.app.get('db')
-    db.update_product([req.params.id,prodName,prodDesc,prodImg,prodType])
+    db.update_product([req.params.id,prodImg,prodName,prodType,prodDesc])
     .then(response => {
         res.status(200).json(response)
     })

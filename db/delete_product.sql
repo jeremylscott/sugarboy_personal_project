@@ -1,3 +1,3 @@
 DELETE FROM products
-WHERE prodId = $1;
+WHERE prodid = $1;
 SELECT * FROM products;

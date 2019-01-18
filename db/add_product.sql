@@ -1,3 +1,4 @@
-INSERT INTO products (prodName,prodDesc,prodType,prodImg)
-VALUES (${prodName},${prodDesc},${prodType},${prodImg})
-RETURNING *;
+INSERT INTO products (prodimg,prodname,prodtype,proddesc)
+VALUES ($1,$2,$3,$4);
+
+SELECT * FROM products;

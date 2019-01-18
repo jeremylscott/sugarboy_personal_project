@@ -11,6 +11,10 @@
 .cardWrapper {
     @extend %cardWrapper;
 }
+
+.cardWrapper:hover {
+    background: rgb(185, 183, 183);
+}
         
 .name {
     @extend %prodTitle;
@@ -35,9 +39,7 @@
     }
 }
 
-.mainDisplay {
-    display: flex;
-}
+.mainDisplay {@extend %mainDisplay};
 
 .leftCol {@extend %leftCol;}
 
