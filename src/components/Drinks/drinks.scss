@@ -33,10 +33,10 @@
     display: flex;
     justify-content: center;
     margin-top: 4vh;
-    
-    h1 {
-        @extend %name;
-    }
+}
+
+.pageTopic {
+    @extend %name;
 }
 
 .mainDisplay {@extend %mainDisplay};
@@ -51,5 +51,15 @@
 
 .butt { 
     @extend %butt;
+}
+
+@media (max-width: 1199px) {
+    .pageTopic {
+        width: 150px;
+        height: 20px;
+        font-size: 1.3em;
+        text-align: center;
+        margin-top: -20px;
+    }
 }
 

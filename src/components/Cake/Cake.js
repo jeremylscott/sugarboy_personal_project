@@ -46,7 +46,7 @@ class Cake extends Component {
                 <div className='topStructure2'>
                     <Home/>
                     <div className='cakeBody'>
-                        <h1>Cake Donuts</h1>
+                        <h1 className='pageTopic'>Cake Donuts</h1>
                     </div>
                     <div className='mainDisplay2'>
                         <div className='leftCol2'></div>

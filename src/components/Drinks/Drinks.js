@@ -38,7 +38,7 @@ class Drinks extends Component {
                 <div className='topStructure'>
                     <Home/>
                     <div className='drinkBody'>
-                        <h1>Drinks</h1>
+                        <h1 className='pageTopic'>Drinks</h1>
                     </div>
                     <div className='mainDisplay'>
                         <div className='leftCol'></div>

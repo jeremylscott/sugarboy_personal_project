@@ -1,50 +1,45 @@
 @import '../partial';
 
-.pageStructure2 {
-    @extend %pageStructure;
-}
+.pageStructure2 {@extend %pageStructure;}
 
-.topStructure2 {
-    @extend %topStructure;
-}
+.topStructure2 {@extend %topStructure;}
 
-.cardWrapper2 {
-    @extend %cardWrapper;
-}
+.cardWrapper2 {@extend %cardWrapper;}
 
 .cardWrapper2:hover {
     background: rgb(185, 183, 183);
 }
         
-.name2 {
-    @extend %prodTitle;
-}
+.name2 {@extend %prodTitle;}
 
-.cardImg2 {
-    @extend %cardImg;
-}
+.cardImg2 {@extend %cardImg;}
        
-.descrip2 {
-    @extend %descrip;
-}
+.descrip2 {@extend %descrip;}
 
 .cakeBody {
     display: flex;
     justify-content: center;
     margin-top: 4vh;
-    
-    h1 {
-        @extend %name;
-    }
 }
 
-.butt2 {@extend %butt;}
+.pageTopic {@extend %name;}
+
+.butt2 {@extend %butt};
 
 .mainDisplay2 {@extend %mainDisplay};
 
-.leftCol2 {@extend %leftCol;}
+.leftCol2 {@extend %leftCol};
 
-.rightCol2 {@extend %rightCol;}
+.rightCol2 {@extend %rightCol};
 
-.cakeDisplay {@extend %middleCol;}
+.cakeDisplay {@extend %middleCol};
 
+@media (max-width: 1199px) {
+    .pageTopic {
+        width: 150px;
+        height: 25px;
+        font-size: 1.3em;
+        margin-top: 15px;
+        text-align: center;
+    }
+}

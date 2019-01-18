@@ -84,9 +84,10 @@ $secondaryColor: #001D4A;
 }
 
 .homeLogo {
-    width: 15vw;
-    height: 10vh;
-    padding-left: 4.5vw;
+    display: flex;
+    width: 250px;
+    height: 98px;
+    justify-content: center;
     align-items: center;
     align-content: center;
 }
@@ -330,5 +331,43 @@ homeButt:active {
     background-color: #001D4A;
     box-shadow: 0 2px #666;
     transform: translateY(2px);
+}
+
+@media (min-width: 1200px) {
+    .homeNavBar {}
+    .smallNav {
+      display: none;
+    }
+} 
+
+@media (max-width: 1000px) {
+    .smallNav {}
+    .homeNavBar {
+      display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .smallNav {}
+    .homeLogo {
+        height: 90px;
+        width: 175px;
+        margin-right: 40px;
+    }
+    .homeNavBar {
+      display: none;
+    }
+}
+
+@media (max-width: 510px) {
+    .smallNav {}
+    .homeLogo {
+        height: 50px;
+        width: 90px;
+        margin-right: 40px;
+    }
+    .homeNavBar {
+      display: none;
+    }
 }
 

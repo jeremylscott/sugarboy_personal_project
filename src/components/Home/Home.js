@@ -120,6 +120,9 @@ class Home extends Component {
                     <Link to onClick={this.handleToggle} className='link'>Donuts</Link>
                     <Link className='link' to='/kolaches'>Kolaches</Link>
                     <Link className='link2' to='/drinks'>Drinks</Link>
+
+
+                    
                 </nav>
 
                 {this.state.toggle ?              // Determines whether drop down menu shows or not
