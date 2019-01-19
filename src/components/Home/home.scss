@@ -3,56 +3,8 @@ $chosenFont: 'Mukta', sans-serif;
 $secondaryColor: #001D4A;
 
 .mainPage {
-    display: flex;
-    flex-direction: column;
-}
-
-.social {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: 7vw;
-    margin-left: 3vw;
-    margin-top: .97vh;
-    margin-bottom: 1.05vh;
-    min-width: 70px;
-    min-height: 30px;
-    border-radius: 6px;
-    background: white;
-}
-
-.facebook {  
-    background-image: url('../../images/facebook.png');
-    background-size: cover;
-    background-position: center;
-    width: 28px;
-    height: 27px;
-}
-
-.instagram {
-    background-image: url('../../images/instagram.png');
-    background-size: cover;
-    background-position: center;
-    width: 28px;
-    height: 27px;
-}
-
-.homeHeadWrapper {
-    display: flex;
-    width: 100vw;
-    height: 5vh;
-    justify-content: space-between;
-}
-
-.homeNavBar {
-    display: flex;
-    width: 100vw;
-    background: $mainColor;
-    justify-content: flex-start;
-    align-items: center;
-    list-style-type: none;
-    height: 5vh;
-    margin-top: 6vh;
+    background-image: url('../../images/sugarboy_mainpic.jpg');
+    top: 0;
 }
 
 .link {
@@ -84,12 +36,13 @@ $secondaryColor: #001D4A;
 }
 
 .homeLogo {
-    display: flex;
-    width: 250px;
-    height: 98px;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 8px;
+    width: 22vw;
+    height: 11vh;
 }
 
 .homeInput {
@@ -151,27 +104,6 @@ $secondaryColor: #001D4A;
     border-radius: 4px;
     padding: .2vh;
     background: #001D4A;
-}
-
-.dropNav {
-    position: absolute;
-    margin-top: 16vh;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 11.2vw;
-    height: auto;
-    background: #001D4A;
-    margin-left: 49.7vw;
-    border-radius: 4px;
-    
-    .cd {
-        display: flex;
-        color: white;
-        text-decoration: none;
-        justify-content: center;
-        padding-top: 1vh;
-    }
 }
 
 .hideNav {
@@ -248,6 +180,8 @@ button:hover {background-color: #001D4A}
 .userWelc {
     display: flex;
     flex-direction: column;
+    position: absolute;
+    right: 10px;
     margin-top: 1vh;
     width: 10vw;
     height: 5vh;
@@ -263,10 +197,11 @@ button:hover {background-color: #001D4A}
     .cartLinks {
         font-family: $chosenFont;
         font-weight: bold;;
-        font-size: 15px;
-        margin-top: 10px;
+        font-size: 1em;
+        position: absolute;
+        top: 0;
         text-decoration: none;
-        color: black
+        color: white;
     }
 
     .logOut { 
@@ -319,6 +254,65 @@ button:hover {background-color: #001D4A}
     }
 }
 
+.burgMen {
+    height: 0;
+}
+
+.burgButton {
+    background: $secondaryColor;
+    position: absolute;
+    top: 0;
+    border: none;
+    border-radius: 0 8px 0 0;
+    color: white;
+    min-height: 2vh;
+    width: 7vw;
+    font-size: 1.3em;
+    z-index: 3;
+    position: relative;
+    font-family: $chosenFont;
+    opacity: .9;
+}
+
+.fullDropDownMenu {
+    position: absolute;
+    background: $secondaryColor;
+    height: 63vh;
+    width: 13vw;
+    border-radius: 0 8px 8px 0;
+    left: 0;
+    top: 18.5vh;
+    transition: 1s;
+    font-family: $chosenFont;
+    opacity: .9;
+}
+
+.hideFullDropMenu {
+    position: absolute;
+    background: $secondaryColor;
+    height: 0px;
+    width: 13vw;
+    left: 0;
+    top: 18.5vh;
+    transition: 1s;
+}
+
+.fullDropDownMenuText { 
+    display: flex;
+    flex-direction: column;
+}
+
+.link4 {
+    color: white;
+    font-size: 1.3em;
+    text-decoration: none;
+    margin-top: 3vh;
+    margin-left: 3px;
+    padding-left: 5px;
+    cursor: pointer;
+    opacity: .9;
+}
+
 .hideRegLogin {
     position: fixed;
     display: flex;
@@ -333,41 +327,47 @@ homeButt:active {
     transform: translateY(2px);
 }
 
-@media (min-width: 1200px) {
-    .homeNavBar {}
-    .smallNav {
-      display: none;
-    }
-} 
 
-@media (max-width: 1000px) {
+@media (max-width: 1258px) {
     .smallNav {}
-    .homeNavBar {
-      display: none;
+    // .homeNavBar {
+    //   display: none;
+    // }
+
+    .homeLogo {
+        height: 43px;
+        width: 175px;
+        margin-top: 10px
     }
+
+    .burgButton {
+        right: 10px;
+        top: 10px;
+    }
+    
 }
 
 @media (max-width: 600px) {
     .smallNav {}
     .homeLogo {
-        height: 90px;
+        height: 43px;
         width: 175px;
-        margin-right: 40px;
+       
     }
-    .homeNavBar {
-      display: none;
-    }
+    // .homeNavBar {
+    //   display: none;
+    // }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 515px) {
     .smallNav {}
     .homeLogo {
-        height: 50px;
+        height: 27px;
         width: 90px;
-        margin-right: 40px;
+       
     }
-    .homeNavBar {
-      display: none;
-    }
+    // .homeNavBar {
+    //   display: none;
+    // }
 }
 

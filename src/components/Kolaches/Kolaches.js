@@ -28,8 +28,8 @@ class Kolaches extends Component {
                     <div key={i}className='cardWrapper4'>
                         <img className='cardImg4' src={kolache.prodimg} alt='donut'/>
                         <span className='name4'>{kolache.prodname}</span>
-                        <span className='descrip'>{kolache.proddesc}</span>
-                        <button className='butt3'>Add to Cart</button>
+                        <span className='descrip4'>{kolache.proddesc}</span>
+                        <button className='butt4'>Add to Cart</button>
                     </div>
             )
         })
@@ -40,7 +40,7 @@ class Kolaches extends Component {
                 <div className='topStructure4'>
                     <Home/>
                     <div className='kolacheBody'>
-                        <h1>Kolaches</h1>
+                        <h1 className='pageTopic4'>Kolaches</h1>
                     </div>
                     <div className='mainDisplay4'>
                         <div className='leftCol4'></div>

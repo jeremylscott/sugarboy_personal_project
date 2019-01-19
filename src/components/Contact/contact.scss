@@ -1,3 +1,5 @@
+@import '../partial';
+
 $chosenFont: 'Mukta', sans-serif;
 
 %address {
@@ -36,17 +38,8 @@ $chosenFont: 'Mukta', sans-serif;
 .pageTitle {
     display: flex;
     justify-content: center;
-    padding-top: 2vw;
-    padding-bottom: 4vh;
-
-    h1 {
-        width: 20vw;
-        height: 5vh;
-        font-size: 2em;
-        text-decoration: underline;
-        font-family: $chosenFont;
-        text-align: center;
-    }
+    padding-top: 2.3vw;
+    padding-bottom: 5px;
 }
 
 .googleMap {
@@ -71,7 +64,9 @@ $chosenFont: 'Mukta', sans-serif;
 
 .map2 {
     display: flex;
+    margin-bottom: 180px;
 }
+
 .address2 {
     @extend %addressWrap;
 
@@ -84,10 +79,6 @@ $chosenFont: 'Mukta', sans-serif;
     }
 }
 
-.map2 {
-    display: flex;
-}
-
 .icon2 {
     @extend %icon;
     margin-top: 8vh;
@@ -96,3 +87,34 @@ $chosenFont: 'Mukta', sans-serif;
 .googleMap2 {
     @extend %googleMap;
 }
+
+.social {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: .97vh;
+    margin-bottom: 1.05vh;
+    min-width: 35px;
+    min-height: 30px;
+    border-radius: 6px;
+    background: white;
+}
+
+.facebook {  
+    background-image: url('../../images/facebook.png');
+    background-size: cover;
+    background-position: center;
+    width: 28px;
+    height: 27px;
+    margin-right: 5px;
+}
+
+.instagram {
+    background-image: url('../../images/instagram.png');
+    background-size: cover;
+    background-position: center;
+    width: 28px;
+    height: 27px;
+}
+
+.pageTopicCont {@extend %name;}

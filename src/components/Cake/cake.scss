@@ -22,7 +22,7 @@
     margin-top: 4vh;
 }
 
-.pageTopic {@extend %name;}
+.pageTopic2 {@extend %name;}
 
 .butt2 {@extend %butt};
 
@@ -34,12 +34,18 @@
 
 .cakeDisplay {@extend %middleCol};
 
-@media (max-width: 1199px) {
-    .pageTopic {
+@media (max-width: 767px) {
+    .pageTopic2 {
         width: 150px;
-        height: 25px;
-        font-size: 1.3em;
-        margin-top: 15px;
+        height: 20px;
+        font-size: 1em;
         text-align: center;
+        margin-top: 10px;
+    }
+
+    .cakeBody {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
     }
 }

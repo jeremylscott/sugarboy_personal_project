@@ -29,7 +29,7 @@ componentDidMount() {
                     <img className='cardImg3' src={yeast.prodimg} alt='donut'/>
                     <span className='name3'>{yeast.prodname}</span>
                     <span className='descrip3'>{yeast.proddesc}</span>
-                    <button className='butt4'>Add to Cart</button>
+                    <button className='butt3'>Add to Cart</button>
                 </div>
             )
         })
@@ -39,7 +39,7 @@ componentDidMount() {
                 <div className='topStructure3'>
                     <Home/>
                     <div className='yeastBody'>
-                        <h1>Yeast Donuts</h1>
+                        <h1 className='pageTopic3'>Yeast Donuts</h1>
                     </div>
                     <div className='mainDisplay3'>
                         <div className='leftCol3'></div>

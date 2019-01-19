@@ -26,7 +26,6 @@
        
 .descrip {
     @extend %descrip;
-    color: w;
 }
 
 .drinkBody {
@@ -53,13 +52,19 @@
     @extend %butt;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 767px) {
     .pageTopic {
         width: 150px;
         height: 20px;
-        font-size: 1.3em;
+        font-size: 1em;
         text-align: center;
-        margin-top: -20px;
+        margin-top: 10px;
+    }
+
+    .drinkBody {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
     }
 }
 

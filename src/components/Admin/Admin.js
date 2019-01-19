@@ -81,7 +81,7 @@ class Admin extends Component {
             <div className='secAdmin'>
                 <Home/>
                 <div className='adminTitle'>
-                    <h1>Admin Portal</h1>
+                    <h1 className='pageAdmin'>Admin Portal</h1>
                     <button onClick={this.handleToggle} className='addNewButt'>Add New Product</button>
                 </div>
 

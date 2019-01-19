@@ -32,10 +32,10 @@
     display: flex;
     justify-content: center;
     margin-top: 4vh;
-    
-    h1 {
-        @extend %name;
-    }
+}
+
+.pageTopic3 {
+    @extend %name;
 }
 
 .mainDisplay3 {@extend %mainDisplay};
@@ -51,4 +51,21 @@
 .butt4 { 
     @extend %butt;
 }
+
+@media (max-width: 767px) {
+    .pageTopic3 {
+        width: 150px;
+        height: 20px;
+        font-size: 1em;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .yeastBody {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+}
+
 

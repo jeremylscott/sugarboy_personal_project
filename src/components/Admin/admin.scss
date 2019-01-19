@@ -95,16 +95,16 @@
     justify-content: center;
     align-items: center;
     margin-top: 3vh;
+}
 
-    h1 {
-        width: 60vw;
-        height: 5vh;
-        font-size: 2em;
-        text-decoration: underline;
-        font-family: $chosenFont;
-        text-align: center;
-        margin-bottom: 10px;
-    }
+.pageAdmin {
+    width: 60vw;
+    height: 5vh;
+    font-size: 2em;
+    text-decoration: underline;
+    font-family: $chosenFont;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .addNewButt {
@@ -112,13 +112,9 @@
     background: $secondaryColor;
     color: white;
     border-radius: 5px;
-    margin-bottom: 2vh;
-}
-.addNew {
-    margin-left: 24vw;
-    width: 12vw;
-    height: 5vh;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    height: 30px
 }
 
 .adminBody {@extend %mainDisplay};
@@ -132,32 +128,23 @@
 .showAddForm {
     position: absolute;
     margin-top: 0vh;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 21vw;
-    height: 50vh;
+    width: 400px;
+    height: 600px;
     background: white;
-    margin-left: 39.3vw;
+    margin-left: 482px;
     border-radius: 8px;
     box-shadow: 3px 3px black;
     border: 1px solid $secondaryColor;
 
-    .addNew {
-        margin-right: 24vw;
-        width: 15vw;
-        border-radius: 5px;
-        height: 3vh;
-        padding: 0px 4px;
-        border: 1px solid $mainColor;
-    }
-
     h1 {
         color: #001D4A;
         font-size: 30px;
-        margin-top: -3vh;
         font-weight: bold;
+        margin-top: 30px;
     }
 
     button {
@@ -168,7 +155,19 @@
         font-size: 14px;
         color: white;
         border: 1px solid $secondaryColor;
+        margin-top: 30px;
     }
+}
+
+.addNew {
+    margin-right: 10px;
+    width: 325px;
+    border-radius: 5px;
+    height: 3vh;
+    padding: 0px 4px;
+    border: 1px solid $mainColor;
+    margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 button:active {
@@ -193,4 +192,54 @@ button:hover {background-color: #001D4A}
     width: 0vw;
     height: 0vh;
 }   
+
+@media (max-width: 767px) {
+    .pageAdmin {
+        width: 150px;
+        height: 20px;
+        font-size: 1em;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .adminTitle {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 1027px) {
+    .showAddForm {
+        width: 250px;
+        height: 550px;
+        font-size: 1em;
+        text-align: center;
+        margin-top: 10px;
+        position: absolute;
+        margin-top: 0vh;
+        justify-content: flex-start;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        margin-left: 400px;
+        border-radius: 8px;
+        box-shadow: 3px 3px black;
+        border: 1px solid $secondaryColor;
+    }
+
+    .addNew {
+        margin-left: 310px;
+        width: 200px;
+        height: 5vh;
+        border-radius: 5px;
+    }
+
+    .adminTitle {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+}
 

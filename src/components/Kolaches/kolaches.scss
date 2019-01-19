@@ -31,11 +31,11 @@
 .kolacheBody {
     display: flex;
     justify-content: center;
-    margin-top: 4vh;
-    
-    h1 {
-        @extend %name;
-    }
+    margin-top: 4vh; 
+}
+
+.pageTopic4 {
+    @extend %name;
 }
 
 .mainDisplay4 {@extend %mainDisplay};
@@ -52,3 +52,18 @@
     @extend %butt;
 }
 
+@media (max-width: 767px) {
+    .pageTopic4 {
+        width: 150px;
+        height: 20px;
+        font-size: 1em;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .kolacheBody {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+}

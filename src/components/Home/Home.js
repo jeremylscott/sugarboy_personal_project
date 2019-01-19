@@ -15,9 +15,10 @@ class Home extends Component {
             regUsername: '',
             regPassword: '',
             email: '',
-            toggle: false,      // used to display donut drop down menu or hide it based on status
             regToggle: false,    // used to show or hide the register form
-            logToggle: false
+            logToggle: false,
+            toggle: false,
+            toggleLinks: false
         }
     }
 
@@ -29,12 +30,6 @@ class Home extends Component {
 
     componentDidMount() {
         this.props.getUser()
-    }
-
-    handleToggle = () => {
-        this.setState({
-            toggle: !this.state.toggle
-        })
     }
 
     handleRegToggle = () => {
@@ -49,6 +44,17 @@ class Home extends Component {
         })
     }
 
+    handleToggle = () => {
+        this.setState({
+            toggle: !this.state.toggle
+        })
+        setTimeout(() => {
+            this.setState({
+                toggleLinks: !this.state.toggleLinks
+            })
+        }, 500);
+    }
+
     handleReg = (e) => {
         this.props.signup(this.state.regUsername,this.state.regPassword,this.state.email)
         this.handleRegToggle()
@@ -61,7 +67,7 @@ class Home extends Component {
             regPassword: '',
             email: '',
             username: '',
-            password: ''
+            password: '',
         })
     }
 
@@ -81,57 +87,40 @@ class Home extends Component {
         const {username,password,email,regPassword,regUsername} = this.state  // destructuring this.state
 
         return (
-            <div className='mainPage'>
-                <div className='homeHeadWrapper'>
-                    <div className='buttCont'>
-                        <div  title='Login to account' onClick={this.handleLogToggle} className='loginLink'>Login</div>
-                        <div title='Register for an account' onClick={this.handleRegToggle} className='reglink'>Create Account</div>
-                    </div>
+            <div>
+                {this.state.toggle ?
+                    <nav className='fullDropDownMenu'>
+                        {this.state.toggleLinks ?
+                            <div className='fullDropDownMenuText'>
+                                <Link className='link4' to='/'>Home</Link>
+                                <Link className='link4' to='/about'>About Us</Link>
+                                <Link className='link4' to='/contact'>Contact</Link>
+                                <Link to='/cake-donuts' className='link4'>Cake Donuts</Link>
+                                <Link to='/yeast-donuts' className='link4'>Yeast Donuts</Link>
+                                <Link className='link4' to='/kolaches'>Kolaches</Link>
+                                <Link className='link4' to='/drinks'>Drinks</Link>
+                                <div title='Login to account' onClick={this.handleLogToggle} className='link4'>Login</div>
+                                <div title='Register for an account' onClick={this.handleRegToggle} className='link4'>Create Account</div>
+                                <div to className='link4' onClick={this.logOutForceUpdate}>Sign Out</div>
+                            </div>
+                        : null}
+                    </nav>
+                        : 
+                    <nav className='hideFullDropMenu'></nav>}
+                    <div className='mainPage'>
                         <img className='homeLogo' src={logo} alt='logo'/>
-                    <div className='userWelc'>
-                        {this.props.user ?
+                    <div className='userWelc'> 
                         <div className='cartOut'>
-
-                        {this.props.user.isadmin === true ?
-                            <span className='cartLinks'>ADMIN</span>
-                            :
-                            <Link className='cartLinks' to='/cart'>{this.props.user.username}'s cart: {this.props.cart.length}</Link>
-                        }
-
-                            <div to className='logOut' onClick={this.logOutForceUpdate}>Sign out</div>
+                            <Link className='cartLinks' to='/cart'>Cart: {this.props.cart.length}</Link>
                         </div>
-                        :
-                        null
-                        }
                     </div>
                 </div>
                 <nav className='homeNavBar'>
-                    <div className='social'>
-                        <a href='https://www.facebook.com/sugarboydonutsProsper/'>
-                            <div className='facebook'/>
-                        </a>
-                        <a href='https://www.instagram.com/explore/locations/134289183873973/sugarboy-donuts-prosper?hl=en'>
-                            <div className='instagram'/>
-                        </a>
+                    <div className='burgMen'>
+                        <button className='burgButton' onClick={this.handleToggle}
+                            >Menu &#9776;</button>
                     </div>
-                    <Link className='link' to='/'>Home</Link>
-                    <Link className='link' to='/about'>About Us</Link>
-                    <Link className='link' to='/contact'>Contact</Link>
-                    <Link to onClick={this.handleToggle} className='link'>Donuts</Link>
-                    <Link className='link' to='/kolaches'>Kolaches</Link>
-                    <Link className='link2' to='/drinks'>Drinks</Link>
-
-
-                    
                 </nav>
-
-                {this.state.toggle ?              // Determines whether drop down menu shows or not
-                <div className='dropNav'>
-                    <Link className='cd' to='/cake-donuts'>Cake Donuts</Link>
-                    <Link className='cd' to='/yeast-donuts'>Yeast Donuts</Link>
-                </div>
-                :
-                <div className='hideNav'></div>}
 
                 {this.state.regToggle ?            // Determines whether register menu shows or not
                     <form onSubmit={this.handleReg} className='showRegNav'>

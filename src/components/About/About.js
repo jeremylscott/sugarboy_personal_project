@@ -20,7 +20,6 @@ class About extends Component {
                         <div className='title'>
                             <h1 className='aboutName'>About Us</h1>
                         </div>
-                        <div className='spacer'></div>
                         <div className='picText'>
                             <img src='https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-0/p200x200/28471477_173513783284846_3553170248628699136_n.jpg?_nc_cat=107&_nc_ht=scontent-ort2-1.xx&oh=2e1a539cbc61db5d6fc0995d23c5a8bf&oe=5CC1DD0F' alt='donut'/>
                             <p>
