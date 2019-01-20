@@ -52,18 +52,16 @@
     @extend %butt;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 414px) {
     .pageTopic4 {
-        width: 150px;
-        height: 20px;
-        font-size: 1em;
-        text-align: center;
-        margin-top: 10px;
+        font-size: 1.1em; 
+        margin-top: 8vh;
     }
+}
 
-    .kolacheBody {
-        display: flex;
-        justify-content: center;
-        margin-top: 5px;
+@media (max-width: 320px) {
+    .pageTopic4 {
+        font-size: .8em; 
+        margin-top: 8vh;
     }
 }

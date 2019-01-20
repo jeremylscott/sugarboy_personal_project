@@ -21,8 +21,8 @@ class Contact extends Component {
                         <h1 className='pageTopicCont'>Store Locations:</h1>
                     </div>
                     <div className='icon'>
-                        <div className='donutPic'>
-                            <img src={donut} alt='donut'/>
+                        <div>
+                            <img className='donutPic' src={donut} alt='donut'/>
                         </div>
                         <div className='address'>
                             <div className='addressText'>
@@ -46,8 +46,8 @@ class Contact extends Component {
                         </div>
                     </div>
                     <div className='icon2'>
-                        <div className='donutPic2'>
-                            <img src={donut} alt='donut'/>
+                        <div>
+                            <img className='donutPic' src={donut} alt='donut'/>
                         </div>
                         <div className='address2'>
                             <div className='addressText2'>

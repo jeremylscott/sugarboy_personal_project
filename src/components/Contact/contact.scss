@@ -122,3 +122,98 @@ $chosenFont: 'Mukta', sans-serif;
 }
 
 .pageTopicCont {@extend %name;}
+
+@media (max-width: 1024px) {
+    .pageTopicCont {
+        font-size: 1.7em; 
+        margin-top: 10vh;
+    }
+
+    .googleMap {
+        width: 40vw;
+        height: 17vw;
+        padding-right: 5vw;
+        border-right: 1px solid #F58220
+    }
+}
+
+@media (max-width: 768px) {
+    .pageTopicCont {
+        font-size: 1.5em; 
+        margin-top: 10vh;
+    }
+
+    .donutPic {
+        width: 4vh;
+        height: 4vh;
+    }
+
+    .addressText {
+        font-size: .9em;
+    }
+
+    .addressText2 {
+        font-size: .9em;
+    }
+
+    .googleMap {
+        width: 37vw;
+        height: 20vw;
+        padding-right: 5vw;
+        border-right: 1px solid #F58220
+    }
+}
+
+@media (max-width: 414px) {
+    .pageTopicCont {
+        font-size: 1.2em; 
+        margin-top: 11vh;
+    }
+
+    .donutPic {
+        width: 3vh;
+        height: 3vh;
+    }
+
+    .addressText {
+        font-size: .7em;
+    }
+
+    .addressText2 {
+        font-size: .7em;
+    }
+
+    .googleMap {
+        width: 29vw;
+        height: 28vw;
+        padding-right: 5vw;
+        border-right: 1px solid #F58220
+    }
+}
+
+@media (max-width: 320px) {
+    .pageTopicCont {
+        font-size: .8em; 
+        margin-top: 11vh;
+    }
+
+    .donutPic {
+        width: 3vh;
+        height: 3vh;
+    }
+
+    .addressText {
+        font-size: .6em;
+    }
+
+    .addressText2 {
+        font-size: .6em;
+    }
+
+    .googleMap {
+        width: 29vw;
+        height: 30vw;
+        padding-right: 5vw;
+        border-right: 1px solid #F58220
+    }
+}

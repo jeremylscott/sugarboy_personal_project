@@ -38,6 +38,7 @@ $secondaryColor: #001D4A;
     border-radius: 8px;
     width: 22vw;
     height: 11vh;
+    z-index: 3;
 }
 
 .homeInput {
@@ -184,6 +185,7 @@ button:hover {background-color: #001D4A}
     font-weight: bold;
     font-size: 1em;
     position: fixed;
+    z-index: 3;
     right: 6vw;
     top: 2.5vh;
     text-decoration: none;
@@ -301,6 +303,171 @@ homeButt:active {
     background-color: #001D4A;
     box-shadow: 0 2px #666;
     transform: translateY(2px);
+}
+
+@media (max-width: 1024px) {
+    .burgButton {
+        width: 12vw;
+        height: 5vh;
+    }
+
+    .fullDropDownMenu {
+        width: 20vw;
+        height: 47vh;
+        top: 4.9vh;
+    }
+
+    .hideFullDropMenu {
+        top: 4.9vh;
+    }
+
+    .homeLogo {
+        width: 20vw;
+        height: 7vh
+    }
+
+    .showRegNav {
+        margin-top: 10vh;
+        width: 28vw;
+        height: 40vh;
+    
+        input {
+            width: 20vw;
+            height: 3vh;
+        }
+    
+        h1 {
+            font-size: 2em;
+            margin-top: -2vh;
+        }
+    
+        button {
+            min-width: 10vw;
+            height: 3vh;
+            font-size: 1.2em;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .burgButton {
+        width: 13vw;
+        height: 5vh;
+    }
+
+    .fullDropDownMenu {
+        width: 22vw;
+        height: 52vh;
+    }
+
+    .homeLogo {
+        width: 18vw;
+        height: 6vh
+    }
+
+    .showRegNav {
+        margin-top: 8vh;
+    
+        h1 {
+            font-size: 1.5em;
+        }
+    }
+}
+
+@media (max-width: 414px) {
+    .burgButton {
+        width: 16vw;
+        height: 4vh;
+        font-size: .9em;
+    }
+
+    .fullDropDownMenu {
+        width: 24vw;
+        height: 24vh;
+        top: 3.8vh;
+        font-size: .4em;
+    }
+
+    .link4 {
+        margin-top: 1em;
+    }
+
+    .hideFullDropMenu {
+        top: 3.8vh;
+    }
+
+    .homeLogo {
+        width: 17vw;
+        height: 5vh
+    }
+
+    .showRegNav {
+        margin-top: 7vh;
+        height: 28vh;
+    
+        h1 {
+            font-size: .9em;
+        }
+
+        input {
+            width: 18vw;
+            height: 2vh;
+        }
+    
+        button {
+            min-width: 8vw;
+            height: 3vh;
+            font-size: .9em;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .burgButton {
+        width: 15vw;
+        height: 3vh;
+        font-size: .5em;
+    }
+
+    .fullDropDownMenu {
+        width: 22vw;
+        height: 27vh;
+        top: 3vh;
+        font-size: .4em;
+    }
+
+    .hideFullDropMenu {
+        top: 3vh;
+    }
+
+    .link4 {
+        margin-top: .8em;
+    }
+
+    .homeLogo {
+        width: 16vw;
+        height: 4vh
+    }
+
+    .showRegNav {
+        margin-top: 6vh;
+        height: 26vh;
+    
+        h1 {
+            font-size: .7em;
+        }
+
+        input {
+            width: 17vw;
+            height: 1.5vh;
+        }
+    
+        button {
+            min-width: 7vw;
+            height: 2.5vh;
+            font-size: .6em;
+        }
+    }
 }
 
 

@@ -4,6 +4,14 @@ $mainColor: #F58220;
 
 .aboutName {@extend %name;}
 
+.aboutImg {
+    width: 30vw;
+    max-height: 40vh;
+    border-radius: 10px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
 .aboutWrapper {
     display: flex;
 
@@ -24,26 +32,17 @@ $mainColor: #F58220;
             margin-left: 10vw;
             margin-right: 10vw;
             border-left: 1px solid $mainColor;
-
-            img {
-                width: 30vw;
-                max-height: 40vh;
-                border-radius: 10px;
-                margin-left: 2vw;
-                margin-right: 2vw;
-            }
-
-            p {
-                padding-right: 2vw;
-                font-size: 1.3em;
-                font-family: $chosenFont;
-                border-right: 1px solid $mainColor;
-                height: 510px;
-                margin-bottom: 2vh;
-            }
-
         }
     }
+}
+
+.aboutText {
+    padding-right: 2vw;
+    font-size: 1.3em;
+    font-family: $chosenFont;
+    border-right: 1px solid $mainColor;
+    height: 510px;
+    margin-bottom: 2vh;
 }
 
 .title {
@@ -52,6 +51,48 @@ $mainColor: #F58220;
     justify-content: center;
     padding-top: 2.3vw;
     padding-bottom: 5px;
+}
+
+@media (max-width: 1024px) {
+    .aboutImg {
+        width: 20vw;
+        max-height: 15vh;
+        border-radius: 10px;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .aboutName {
+        margin-top: 10vh;
+    }
+}
+
+@media (max-width: 414px) {
+    .aboutImg {
+        width: 15vw;
+        max-height: 10vh;
+        border-radius: 10px;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .aboutName {
+        font-size: 1.2em;
+    }
+
+    .aboutText {
+        font-size: .9em; 
+    }
+}
+
+@media (max-width: 320px) {
+    .aboutName {
+        font-size: .9em;
+    }
+
+    .aboutText {
+        font-size: .7em;
+    }
 }
 
 
