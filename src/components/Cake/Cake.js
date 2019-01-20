@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {getCake,getUser} from '../../ducks/reducer'
+import {getCake,getUser,addToCart} from '../../ducks/reducer'
 import Home from '../Home/Home'
 import './cake.scss'
 
@@ -20,9 +20,9 @@ class Cake extends Component {
 
     render() {
 
-        let cakeList = this.props.cakes.map((cake,i) => {
+        let cakeList = this.props.cakes.map((cake) => {
             return (
-                <div key={i} className='cardWrapper2'>
+                <div key={cake.prodid} className='cardWrapper2'>
                     <img className='cardImg2' src={cake.prodimg} alt='donut'/>
                     <span className='name2'>{cake.prodname}</span>
                     <span className='descrip2'>{cake.proddesc}</span>
@@ -30,13 +30,14 @@ class Cake extends Component {
             )
         })
 
-        let userCakeList = this.props.cakes.map((cake,i) => {
+        let userCakeList = this.props.cakes.map((cake) => {
             return (
-                <div key={i} className='cardWrapper2'>
+                <div key={cake.prodid} className='cardWrapper2'>
                     <img className='cardImg2' src={cake.prodimg} alt='donut'/>
                     <span className='name2'>{cake.prodname}</span>
                     <span className='descrip2'>{cake.proddesc}</span>
-                    <button className='butt2'>Add to Cart</button>
+                    <span className='price2'>{cake.prodprice}</span>
+                    <button onClick={() => this.props.addToCart(cake)} className='butt2'>Add to Cart</button>
                 </div>
             )
         })
@@ -65,12 +66,7 @@ class Cake extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        cakes: state.cakes,
-        user: state.user
-    }
-}
+const mapStateToProps = state => state
 
-export default connect(mapStateToProps,{getCake,getUser})(Cake)
+export default connect(mapStateToProps,{getCake,getUser,addToCart})(Cake)
 

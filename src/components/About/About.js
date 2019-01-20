@@ -15,7 +15,6 @@ class About extends Component {
             <div>
                 <Home/>
                 <div className='aboutWrapper'>
-                    <div className='leftDiv'></div>
                     <body className='bodMid'>
                         <div className='title'>
                             <h1 className='aboutName'>About Us</h1>
@@ -32,7 +31,6 @@ class About extends Component {
                             </p>
                         </div>
                     </body>
-                    <div className='rightDiv'></div>
                 </div>
             </div>
         )

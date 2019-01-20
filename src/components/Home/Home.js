@@ -83,6 +83,12 @@ class Home extends Component {
         window.location.reload()
     }
 
+    componentDidUpdate = (previousProps) => {
+        if(this.props.cart !== previousProps.cart) {
+            this.forceUpdate()
+        }
+    }
+
     render() {
         const {username,password,email,regPassword,regUsername} = this.state  // destructuring this.state
 
@@ -108,19 +114,11 @@ class Home extends Component {
                         : 
                     <nav className='hideFullDropMenu'></nav>}
                     <div className='mainPage'>
-                        <img className='homeLogo' src={logo} alt='logo'/>
-                    <div className='userWelc'> 
-                        <div className='cartOut'>
-                            <Link className='cartLinks' to='/cart'>Cart: {this.props.cart.length}</Link>
-                        </div>
-                    </div>
-                </div>
-                <nav className='homeNavBar'>
-                    <div className='burgMen'>
                         <button className='burgButton' onClick={this.handleToggle}
                             >Menu &#9776;</button>
+                        <img className='homeLogo' src={logo} alt='logo'/>
+                        <Link className='cartLink' to='/cart'>Cart: {this.props.cart.length ? `(${this.props.cart.length})` : null}</Link>
                     </div>
-                </nav>
 
                 {this.state.regToggle ?            // Determines whether register menu shows or not
                     <form onSubmit={this.handleReg} className='showRegNav'>

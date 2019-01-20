@@ -9,6 +9,7 @@ $secondaryColor: #001D4A;
 
 %pageStructure {
     display: flex;
+    justify-content: center;
 }
 
 %topStructure {
@@ -16,14 +17,16 @@ $secondaryColor: #001D4A;
 }
 
 %name {
-    width: 300px;
+    width: 100vw;
     height: 30px;
-    font-size: 2em;
+    font-size: 1.7em;
     text-decoration: underline;
     font-family: $chosenFont;
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: -20px;
+    margin-bottom: 2vh;
+    margin-top: 8vh;
+    border-top: 1px solid $mainColor;
+    padding-top: 1vh;
 }
 
 %cardWrapper {
@@ -92,18 +95,23 @@ $secondaryColor: #001D4A;
 }
 
 %leftCol {
-    width: 35px;
-    height: 520px;
+    width: 0px;
+    height: 0px;
 }
 
 %rightCol {
-    width: 35px;
-    height: auto;
+    width: 0px;
+    height: 0px;
 }
 
 %middleCol {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 84vw;
+    width: 99vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 34vh;
 }

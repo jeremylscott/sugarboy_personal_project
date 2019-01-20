@@ -62,6 +62,7 @@ class Contact extends Component {
                             </div>
                         </div>
                     </div>
+                    <div className='spaceMe'></div>
                 </div>
             </div>
         )

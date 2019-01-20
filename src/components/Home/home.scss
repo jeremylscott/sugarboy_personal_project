@@ -2,11 +2,6 @@ $mainColor: #F58220;
 $chosenFont: 'Mukta', sans-serif;
 $secondaryColor: #001D4A;
 
-.mainPage {
-    background-image: url('../../images/sugarboy_mainpic.jpg');
-    top: 0;
-}
-
 .link {
     text-decoration: none;
     margin-right: 1vw;
@@ -36,7 +31,7 @@ $secondaryColor: #001D4A;
 }
 
 .homeLogo {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     margin: auto;
@@ -116,6 +111,10 @@ $secondaryColor: #001D4A;
 
 .showRegNav {
     position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    margin: auto;
     margin-top: 20vh;
     justify-content: space-evenly;
     align-items: center;
@@ -124,7 +123,6 @@ $secondaryColor: #001D4A;
     width: 21vw;
     height: 50vh;
     background: white;
-    margin-left: 39.3vw;
     border-radius: 8px;
     box-shadow: 3px 3px black;
     border: 1px solid $secondaryColor;
@@ -175,50 +173,23 @@ button:hover {background-color: #001D4A}
     flex-direction: column;
     width: 0vw;
     height: 0vh;
-}   
+}  
 
-.userWelc {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: 10px;
-    margin-top: 1vh;
-    width: 10vw;
-    height: 5vh;
-    padding-right: 5vw;
-    justify-content: flex-start;
-    align-items: flex-start;
+.cartLink {
+    font-family: $chosenFont;
+    background: black;
+    border: none;
+    border-radius: 5px;
+    padding: .5vh;
+    font-weight: bold;
+    font-size: 1em;
+    position: fixed;
+    right: 6vw;
+    top: 2.5vh;
+    text-decoration: none;
+    color: white;
+    width: 6vw;
 
-    .cartOut {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .cartLinks {
-        font-family: $chosenFont;
-        font-weight: bold;;
-        font-size: 1em;
-        position: absolute;
-        top: 0;
-        text-decoration: none;
-        color: white;
-    }
-
-    .logOut { 
-        margin-top: 1vh;
-        text-decoration: none;
-        font-size: 15px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        color: white;
-        font-family: $chosenFont;
-        border: none;
-        border-radius: 4px;
-        padding: .2vh;
-        height: 5vh;
-        background: $mainColor;
-    }
 }
 
 .buttCont {
@@ -233,6 +204,10 @@ button:hover {background-color: #001D4A}
 
 .showRegLogin {
     position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    margin: auto;
     margin-top: 20vh;
     justify-content: space-evenly;
     align-items: center;
@@ -241,7 +216,6 @@ button:hover {background-color: #001D4A}
     width: 21vw;
     height: 50vh;
     background: white;
-    margin-left: 39.3vw;
     border-radius: 8px;
     box-shadow: 3px 3px black;
     border: 1px solid #001D4A;
@@ -254,46 +228,44 @@ button:hover {background-color: #001D4A}
     }
 }
 
-.burgMen {
-    height: 0;
-}
-
 .burgButton {
     background: $secondaryColor;
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 0;
     border: none;
     border-radius: 0 8px 0 0;
     color: white;
-    min-height: 2vh;
-    width: 7vw;
+    height: 5.5vh;
+    min-width: 7vw;
     font-size: 1.3em;
     z-index: 3;
-    position: relative;
     font-family: $chosenFont;
     opacity: .9;
 }
 
 .fullDropDownMenu {
-    position: absolute;
+    position: fixed;
+    z-index: 5;
     background: $secondaryColor;
     height: 63vh;
     width: 13vw;
     border-radius: 0 8px 8px 0;
     left: 0;
-    top: 18.5vh;
+    top: 5.6vh;
     transition: 1s;
     font-family: $chosenFont;
     opacity: .9;
 }
 
 .hideFullDropMenu {
-    position: absolute;
+    position: fixed;
+    z-index: 5;
     background: $secondaryColor;
     height: 0px;
     width: 13vw;
     left: 0;
-    top: 18.5vh;
+    top: 5.6vh;
     transition: 1s;
 }
 
@@ -313,6 +285,10 @@ button:hover {background-color: #001D4A}
     opacity: .9;
 }
 
+.link4:hover {
+    background: $mainColor;
+}
+
 .hideRegLogin {
     position: fixed;
     display: flex;
@@ -327,47 +303,4 @@ homeButt:active {
     transform: translateY(2px);
 }
 
-
-@media (max-width: 1258px) {
-    .smallNav {}
-    // .homeNavBar {
-    //   display: none;
-    // }
-
-    .homeLogo {
-        height: 43px;
-        width: 175px;
-        margin-top: 10px
-    }
-
-    .burgButton {
-        right: 10px;
-        top: 10px;
-    }
-    
-}
-
-@media (max-width: 600px) {
-    .smallNav {}
-    .homeLogo {
-        height: 43px;
-        width: 175px;
-       
-    }
-    // .homeNavBar {
-    //   display: none;
-    // }
-}
-
-@media (max-width: 515px) {
-    .smallNav {}
-    .homeLogo {
-        height: 27px;
-        width: 90px;
-       
-    }
-    // .homeNavBar {
-    //   display: none;
-    // }
-}
 

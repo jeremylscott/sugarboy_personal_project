@@ -64,7 +64,6 @@ $chosenFont: 'Mukta', sans-serif;
 
 .map2 {
     display: flex;
-    margin-bottom: 180px;
 }
 
 .address2 {
@@ -115,6 +114,11 @@ $chosenFont: 'Mukta', sans-serif;
     background-position: center;
     width: 28px;
     height: 27px;
+}
+
+.spaceMe{
+    height: 28.34vh;
+    width: 1vw;
 }
 
 .pageTopicCont {@extend %name;}

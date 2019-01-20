@@ -151,7 +151,13 @@ const getAllProducts = (req,res) => {
 
 const addToCart = (req,res) => {
     console.log(req.body);
-    req.session.cart.push(req.body)
+    req.session.cart = {
+        prodid: req.body.prodid,
+        prodname: req.body.prodname,
+        proddesc: req.body.proddesc,
+        prodprice: req.body.prodprice
+    }
+    console.log(req.session.cart);
     res.status(200).json(req.session.cart)
 }
 
@@ -169,7 +175,6 @@ async function addOrder (req,res) {
     const db = req.app.get('db')
 
 }
-
 
 module.exports = {
     getYeast,

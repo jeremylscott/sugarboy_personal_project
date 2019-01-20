@@ -2,19 +2,10 @@
 $chosenFont: 'Mukta', sans-serif;
 $mainColor: #F58220;
 
-%borderDivs {
-    width: 20vw;
-    height: 60vh;
-}
-
 .aboutName {@extend %name;}
 
 .aboutWrapper {
     display: flex;
-
-    .leftDiv {
-       @extend %borderDivs;
-    }
 
     .bodMid {
         flex-wrap: wrap;
@@ -27,8 +18,12 @@ $mainColor: #F58220;
 
         .picText {
             display: flex;
+            position: absolute;
+            right: 0;
+            left: 0;
+            margin-left: 10vw;
+            margin-right: 10vw;
             border-left: 1px solid $mainColor;
-            font-size: 18px;
 
             img {
                 width: 30vw;
@@ -40,22 +35,20 @@ $mainColor: #F58220;
 
             p {
                 padding-right: 2vw;
+                font-size: 1.3em;
                 font-family: $chosenFont;
                 border-right: 1px solid $mainColor;
                 height: 510px;
+                margin-bottom: 2vh;
             }
 
         }
     }
-
-    .rightDiv {
-        @extend %borderDivs
-    }
-
 }
 
 .title {
     display: flex;
+    width: 100vw;
     justify-content: center;
     padding-top: 2.3vw;
     padding-bottom: 5px;

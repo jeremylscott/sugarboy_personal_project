@@ -100,7 +100,7 @@ export function updateProduct(prodId,prodImg,prodName,prodType,prodDesc) {
 export function addToCart(product) {
     return {
         type: ADD_TO_CART,
-        payload: axios.put('/api/cart', product)
+        payload: axios.post('/api/cart', product)
     }
 }
 
