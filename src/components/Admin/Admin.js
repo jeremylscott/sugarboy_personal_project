@@ -92,7 +92,7 @@ class Admin extends Component {
                         <input className='addNew' onChange={this.updateName} name='prodName' type='text' placeholder='Product Name'/>
                         <input className='addNew' onChange={this.updateType} name='prodType' type='text' placeholder='Product Type'/>
                         <input className='addNew' onChange={this.updateDesc} name='prodDesc' type='text' placeholder='Product Description'/>
-                        <button onClick={() => this.props.addProduct(prodImg,prodName,prodType,prodDesc)} className>Submit</button>
+                        <button className='subButt' onClick={() => this.props.addProduct(prodImg,prodName,prodType,prodDesc)}>Submit</button>
                     </form>
                     :
                     <div className='hideAddForm'></div>}

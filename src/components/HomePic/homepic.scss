@@ -20,7 +20,6 @@ $chosenFont: 'Mukta', sans-serif;
     z-index: 1;
 }
 
-
 .mainPic8 {
     width: 99vw;
     height: auto;
@@ -40,5 +39,42 @@ $chosenFont: 'Mukta', sans-serif;
 
 .space1 {
     height: 500vh;
- 
+}
+
+@media (max-width: 1024px) {
+    .mainPic9 {
+        width: 100vw; 
+    }
+
+    .mainPic8 {
+        width: 100vw;
+        top: 50vh;
+    }
+
+    .mainPic5 {
+        width: 100vw;
+        top: 110vh;
+    }
+}
+
+@media (max-width: 414px) {
+
+    .mainPic8 {
+        top: 37vh;
+    }
+
+    .mainPic5 {
+        top: 82vh;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .mainPic8 {
+        top: 30vh;
+    }
+
+    .mainPic5 {
+        top: 67vh;
+    }
 }

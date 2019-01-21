@@ -191,7 +191,6 @@ button:hover {background-color: #001D4A}
     text-decoration: none;
     color: white;
     width: 6vw;
-
 }
 
 .buttCont {
@@ -326,6 +325,26 @@ homeButt:active {
         height: 7vh
     }
 
+    .showRegLogin {
+        margin-top: 10vh;
+        width: 26vw;
+        height: 28vh;
+
+        h1 {
+            font-size: 2em;
+            margin-top: -2vh;
+        }
+
+        .homeButt {
+            border-radius: 6px;
+            min-width: 8vw;
+            background: $mainColor;
+            height: 3vh;
+            font-size: 1.2em;
+            color: white;
+        }
+    }
+
     .showRegNav {
         margin-top: 10vh;
         width: 28vw;
@@ -355,6 +374,26 @@ homeButt:active {
         height: 5vh;
     }
 
+    .showRegLogin {
+        margin-top: 10vh;
+        width: 26vw;
+        height: 28vh;
+
+        h1 {
+            font-size: 1.5em;
+            margin-top: -2vh;
+        }
+
+        .homeButt {
+            border-radius: 6px;
+            min-width: 8vw;
+            background: $mainColor;
+            height: 3vh;
+            font-size: 1em;
+            color: white;
+        }
+    }
+
     .fullDropDownMenu {
         width: 22vw;
         height: 52vh;
@@ -379,6 +418,33 @@ homeButt:active {
         width: 16vw;
         height: 4vh;
         font-size: .9em;
+    }
+
+    .showRegLogin {
+        margin-top: 10vh;
+        width: 26vw;
+        height: 22vh;
+
+        h1 {
+            
+            font-size: .8em;
+            margin-top: -1vh;
+        }
+
+        .homeButt {
+            min-width: 7vw;
+            height: 3vh;
+            font-size: .8em;
+        }
+
+        .homeInput {
+            width: 20vw;
+        }
+    }
+
+    .cartLink {
+        font-size: .5em;
+        top: 1.25vh;
     }
 
     .fullDropDownMenu {
@@ -422,11 +488,38 @@ homeButt:active {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
     .burgButton {
         width: 15vw;
         height: 3vh;
         font-size: .5em;
+    }
+
+    .showRegLogin {
+        margin-top: 6vh;
+        width: 26vw;
+        height: 18vh;
+
+        h1 {
+            font-size: .7em;
+            margin-top: -1vh;
+        }
+
+        .homeButt {
+            min-width: 7vw;
+            height: 2.7vh;
+            font-size: .7em;
+        }
+
+        .homeInput {
+            width: 20vw;
+            height: 2vh;
+        }
+    }
+
+    .cartLink {
+        font-size: .35em;
+        top: 1vh;
     }
 
     .fullDropDownMenu {
@@ -459,14 +552,22 @@ homeButt:active {
 
         input {
             width: 17vw;
-            height: 1.5vh;
+            height: 2vh;
         }
     
         button {
             min-width: 7vw;
-            height: 2.5vh;
+            height: 2.7vh;
             font-size: .6em;
         }
+    }
+
+    .inp::placeholder {
+        color: #001D4A;
+        font-size: .7em;
+        padding: 0px 4px;
+        font-weight: bold;
+        opacity: .3;
     }
 }
 

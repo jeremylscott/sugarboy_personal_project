@@ -94,7 +94,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3vh;
+    margin-top: 14vh;
 }
 
 .pageAdmin {
@@ -105,6 +105,8 @@
     font-family: $chosenFont;
     text-align: center;
     margin-bottom: 10px;
+    padding-top: 1vh;
+    border-top: 1px solid $mainColor;
 }
 
 .addNewButt {
@@ -113,7 +115,6 @@
     color: white;
     border-radius: 5px;
     margin-bottom: 20px;
-    margin-top: -10px;
     height: 30px
 }
 
@@ -127,15 +128,18 @@
 
 .showAddForm {
     position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 2;
     margin-top: 0vh;
     justify-content: flex-start;
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 400px;
-    height: 600px;
+    width: 34vw;
+    height: 58vh;
     background: white;
-    margin-left: 482px;
     border-radius: 8px;
     box-shadow: 3px 3px black;
     border: 1px solid $secondaryColor;
@@ -146,17 +150,17 @@
         font-weight: bold;
         margin-top: 30px;
     }
+}
 
-    button {
-        border-radius: 6px;
-        min-width: 80px;
-        background: $mainColor;
-        height: 30px;
-        font-size: 14px;
-        color: white;
-        border: 1px solid $secondaryColor;
-        margin-top: 30px;
-    }
+.subButt {
+    border-radius: 6px;
+    width: 80px;
+    background: $mainColor;
+    height: 30px;
+    font-size: 14px;
+    color: white;
+    border: 1px solid $secondaryColor;
+    margin-top: 30px;
 }
 
 .addNew {
@@ -193,53 +197,147 @@ button:hover {background-color: #001D4A}
     height: 0vh;
 }   
 
-@media (max-width: 767px) {
+
+@media (max-width: 1024px) {
     .pageAdmin {
-        width: 150px;
-        height: 20px;
-        font-size: 1em;
-        text-align: center;
-        margin-top: 10px;
+        margin-top: 8vh;
+        padding-top: 1vh;
+        border-top: 1px solid $mainColor;
     }
-
-    .adminTitle {
-        display: flex;
-        justify-content: center;
-        margin-top: 5px;
+    
+    .addNewButt {
+        margin-top: -2vh;
     }
-}
-
-@media (max-width: 1027px) {
+    
     .showAddForm {
-        width: 250px;
-        height: 550px;
+        width: 30vw;
+        height: 35vh;;
         font-size: 1em;
-        text-align: center;
-        margin-top: 10px;
-        position: absolute;
-        margin-top: 0vh;
-        justify-content: flex-start;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        background: white;
-        margin-left: 400px;
-        border-radius: 8px;
-        box-shadow: 3px 3px black;
-        border: 1px solid $secondaryColor;
     }
-
+    
     .addNew {
-        margin-left: 310px;
-        width: 200px;
-        height: 5vh;
-        border-radius: 5px;
+        margin-left: 1vw;
+        width: 22vw;
+        height: 3vh;
     }
-
+    
     .adminTitle {
-        display: flex;
-        justify-content: center;
-        margin-top: 5px;
+        margin-top: .5vh;
     }
 }
 
+@media (max-width: 768px) {
+    .showAddForm {
+        width: 30vw;
+        height: 35vh;
+        font-size: .8em;
+
+        h1 {
+            margin-bottom: 1vh;
+            margin-top: 1vh;
+        }
+    }
+
+    .subButt {
+        margin-bottom: 2vh;
+    }
+    
+    .addNew {
+        margin-left: 1vw;
+        width: 22vw;
+        height: 3vh;
+        margin-top: 1.3vh;
+    }
+
+    .addNewButt {
+        margin-top: -2vh;
+    }
+}
+
+@media (max-width: 414px) {
+    .pageAdmin {
+        margin-top: 6vh;
+        padding-top: 1vh;
+        font-size: 1.3em;
+       
+    }
+
+    .addNewButt {
+        font-size: .7em;
+        width: 24vw;
+        height: 4vh;
+        margin-bottom: 2vh;
+    }
+
+    .showAddForm {
+        width: 36vw;
+        height: 30vh;
+        font-size: .8em;
+        top: 18.5vh;
+
+        h1 {
+            margin-bottom: 1vh;
+            margin-top: 1vh;
+            font-size: 1.3em;
+        }
+    }
+
+    .subButt {
+       margin-top: 1vh;
+       width: 15vw;
+    }
+    
+    .addNew {
+        width: 26vw;
+        height: 3vh;
+        margin-top: .7vh;
+    }
+
+    .addNew::placeholder {
+        font-size: .7em;
+    }
+}
+
+@media (max-width: 320px) {
+    .pageAdmin {
+        margin-top: 6vh;
+        padding-top: 1vh;
+        font-size: .9em;
+    }
+
+    .addNewButt {
+        font-size: .5em;
+        width: 24vw;
+        height: 4vh;
+        margin-bottom: 1vh;
+    }
+
+    .showAddForm {
+        width: 36vw;
+        height: 28vh;
+        font-size: .8em;
+        top: 18.2vh;
+        
+        h1 {
+            margin-bottom: 1vh;
+            margin-top: 1vh;
+            font-size: 1.1em;
+        }
+    }
+
+    .subButt {
+        font-size: .7em;
+        width: 13vw;
+        height: 3vh;
+    }
+    
+    .addNew {
+        width: 25vw;
+        height: 2vh;
+        margin-top: .3vh;
+    }
+
+    .addNew::placeholder {
+        font-size: .6em;
+    }
+}
