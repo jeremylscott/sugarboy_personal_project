@@ -26,6 +26,8 @@ const ADD_PRODUCT = 'ADD_PRODUCT'
 const DELETE_PRODUCT = 'DELETE_PRODUCT'
 const UPDATE_PRODUCT = 'CHANGE_PRODUCT'
 const ADD_TO_CART = 'ADD_TO_CART'
+const DELETE_FROM_CART = 'REMOVE_FROM_CART'
+const CLEAR_CART = 'CLEAR_CART'
 const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL'
 const GET_USER = 'GET_USER'
 const LOG_OUT = 'LOG_OUT'
@@ -104,10 +106,25 @@ export function addToCart(product) {
     }
 }
 
+export function deleteFromCart(index) {
+    return {
+        type: DELETE_FROM_CART,
+        payload: axios.delete(`api/cart/${index}`)
+    }
+}
+
 export function updateCartTotal(cartTotal) {
     return {
         type: UPDATE_CART_TOTAL,
         payload: cartTotal
+    }
+}
+
+export function clearCart() {
+    axios.get('/api/clearcart')
+    return {
+        type: CLEAR_CART,
+        payload: []
     }
 }
 
@@ -188,6 +205,14 @@ function reducer(state=initialState, action) {
         case `${ADD_TO_CART}_FULFILLED`:
             return {
                 ...state, cart: action.payload.data
+            }
+        case `${DELETE_FROM_CART}_FULFILLED`:
+            return {
+                ...state, cart: action.payload.data
+            }
+        case `${CLEAR_CART}_FULFILLED`:
+            return {
+                ...state, cart: action.payload
             }
         case UPDATE_CART_TOTAL:
             return {

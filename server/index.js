@@ -5,7 +5,7 @@ const massive = require('massive')
 const session = require('express-session')
 const app = express()
 const {getYeast,getCake,getKolaches,getDrinks,login,signup,addProduct,
-        deleteProduct,updateProduct,addToCart,getUser,logOut,getAllProducts} = require('./controller')
+        deleteProduct,updateProduct,addToCart,getUser,logOut,getAllProducts,clearCart,deleteFromCart} = require('./controller')
 app.use(json())
 
 // connect the database
@@ -32,11 +32,14 @@ app.get('/api/products/cake', getCake)      // returns cake donuts from database
 app.get('/api/products/kolaches', getKolaches)      // returns kolaches from database
 app.get('/api/products/drinks', getDrinks)      // returns drinks from database
 app.get('/api/user', getUser)
+app.get('/api/delete', logOut)
+app.get('/api/clearcart', clearCart)        // clear items from cart
 
 app.post('/auth/login', login)      // logs user in
+app.post('/api/createpayment')      // used with stripe to process cc payments
 app.post('/auth/signup', signup)    // user signs up for account
 app.post('/api/products',addProduct)   // adds new product to the database
-app.post('/api/cart', (req,res,next)=>{
+app.post('/api/cart', (req,res,next) => {
     if (!req.session.cart){
         req.session.cart=[]
         next()
@@ -45,8 +48,10 @@ app.post('/api/cart', (req,res,next)=>{
     }
 } , addToCart)    // adds product to users cart
 
-app.get('/api/delete', logOut)
 app.delete('/api/products/:id', deleteProduct)      // deletes product from the database
+app.delete('/api/cart/:id', deleteFromCart)     // removes items from cart
+
 app.put('/api/products/:id', updateProduct)     // updates a product in the database
+
 
 app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}`))
