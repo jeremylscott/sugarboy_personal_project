@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Home from '../Home/Home'
 import './yeast.scss'
-import {getYeast,getUser} from '../../ducks/reducer'
+import {getYeast,getUser,addToCart} from '../../ducks/reducer'
 
 
 class Yeast extends Component {
@@ -19,6 +19,7 @@ componentDidMount() {
                     <img className='cardImg3' src={yeast.prodimg} alt='donut'/>
                     <span className='name3'>{yeast.prodname}</span>
                     <span className='descrip3'>{yeast.proddesc}</span>
+                    <span className='price3'>${yeast.price}</span>
                 </div>
             )
         })
@@ -29,7 +30,8 @@ componentDidMount() {
                     <img className='cardImg3' src={yeast.prodimg} alt='donut'/>
                     <span className='name3'>{yeast.prodname}</span>
                     <span className='descrip3'>{yeast.proddesc}</span>
-                    <button className='butt3'>Add to Cart</button>
+                    <span className='price3'>${yeast.price}</span>
+                    <button onClick={() => this.props.addToCart(yeast)} className='butt3'>Add to Cart</button>
                 </div>
             )
         })
@@ -65,5 +67,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getYeast,getUser})(Yeast)
+export default connect(mapStateToProps,{getYeast,getUser,addToCart})(Yeast)
 

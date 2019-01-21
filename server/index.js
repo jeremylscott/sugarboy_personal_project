@@ -35,8 +35,15 @@ app.get('/api/user', getUser)
 
 app.post('/auth/login', login)      // logs user in
 app.post('/auth/signup', signup)    // user signs up for account
-app.post('/api/products', addProduct)   // adds new product to the database
-app.post('/api/cart', addToCart)    // adds product to users cart
+app.post('/api/products',addProduct)   // adds new product to the database
+app.post('/api/cart', (req,res,next)=>{
+    if (!req.session.cart){
+        req.session.cart=[]
+        next()
+    } else {
+        next()
+    }
+} , addToCart)    // adds product to users cart
 
 app.get('/api/delete', logOut)
 app.delete('/api/products/:id', deleteProduct)      // deletes product from the database

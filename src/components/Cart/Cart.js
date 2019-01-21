@@ -7,6 +7,7 @@ class Cart extends Component {
         return (
             <div>
                 <Home/>
+                
             </div>
         )
     }

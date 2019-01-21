@@ -117,7 +117,7 @@ class Home extends Component {
                         <button className='burgButton' onClick={this.handleToggle}
                             >Menu &#9776;</button>
                         <img className='homeLogo' src={logo} alt='logo'/>
-                        <Link className='cartLink' to='/cart'>Cart: {this.props.cart.length ? `(${this.props.cart.length})` : null}</Link>
+                        <Link className='cartLink' to='/cart'>Cart: {this.props.cart.length}</Link>
                     </div>
 
                 {this.state.regToggle ?            // Determines whether register menu shows or not

@@ -190,7 +190,7 @@ button:hover {background-color: #001D4A}
     top: 2.5vh;
     text-decoration: none;
     color: white;
-    width: 6vw;
+    width: 4vw;
 }
 
 .buttCont {
@@ -404,6 +404,10 @@ homeButt:active {
         height: 6vh
     }
 
+    .cartLink {
+        width: 7vw;
+    }
+
     .showRegNav {
         margin-top: 8vh;
     
@@ -445,6 +449,7 @@ homeButt:active {
     .cartLink {
         font-size: .5em;
         top: 1.25vh;
+        width: 7vw;
     }
 
     .fullDropDownMenu {
@@ -520,6 +525,8 @@ homeButt:active {
     .cartLink {
         font-size: .35em;
         top: 1vh;
+        height: 1.4vh;
+        width: 7vw
     }
 
     .fullDropDownMenu {

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Home from '../Home/Home'
 import './drinks.scss'
-import {getDrinks,getUser} from '../../ducks/reducer'
+import {getDrinks,getUser,addToCart} from '../../ducks/reducer'
 
 class Drinks extends Component {
 
@@ -18,6 +18,7 @@ class Drinks extends Component {
                     <img className='cardImg' src={drink.prodimg} alt='donut'/>
                     <span className='name'>{drink.prodname}</span>
                     <span className='descrip'>{drink.proddesc}</span>
+                    <span className='price'>${drink.price}</span>
                 </div>
             )
         })
@@ -28,7 +29,8 @@ class Drinks extends Component {
                     <img className='cardImg' src={drink.prodimg} alt='donut'/>
                     <span className='name'>{drink.prodname}</span>
                     <span className='descrip'>{drink.proddesc}</span>
-                    <button className='butt'>Add to Cart</button>
+                    <span className='price'>${drink.price}</span>
+                    <button onClick={() => this.props.addToCart(drink)} className='butt'>Add to Cart</button>
                 </div>
             )
         })
@@ -64,5 +66,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getDrinks,getUser})(Drinks)
+export default connect(mapStateToProps,{getDrinks,getUser,addToCart})(Drinks)
 

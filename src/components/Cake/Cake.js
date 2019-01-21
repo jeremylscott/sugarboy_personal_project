@@ -26,6 +26,7 @@ class Cake extends Component {
                     <img className='cardImg2' src={cake.prodimg} alt='donut'/>
                     <span className='name2'>{cake.prodname}</span>
                     <span className='descrip2'>{cake.proddesc}</span>
+                    <span className='price2'>${cake.price}</span>
                 </div>
             )
         })
@@ -36,7 +37,7 @@ class Cake extends Component {
                     <img className='cardImg2' src={cake.prodimg} alt='donut'/>
                     <span className='name2'>{cake.prodname}</span>
                     <span className='descrip2'>{cake.proddesc}</span>
-                    <span className='price2'>{cake.prodprice}</span>
+                    <span className='price2'>${cake.price}</span>
                     <button onClick={() => this.props.addToCart(cake)} className='butt2'>Add to Cart</button>
                 </div>
             )

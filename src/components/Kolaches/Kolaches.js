@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Home from '../Home/Home'
 import './kolaches.scss'
-import {getKolaches,getUser} from '../../ducks/reducer'
+import {getKolaches,getUser,addToCart} from '../../ducks/reducer'
 
 
 class Kolaches extends Component {
@@ -19,6 +19,7 @@ class Kolaches extends Component {
                         <img className='cardImg4' src={kolache.prodimg} alt='donut'/>
                         <span className='name4'>{kolache.prodname}</span>
                         <span className='descrip'>{kolache.proddesc}</span>
+                        <span className='price'>${kolache.price}</span>
                     </div>
             )
         })
@@ -29,7 +30,8 @@ class Kolaches extends Component {
                         <img className='cardImg4' src={kolache.prodimg} alt='donut'/>
                         <span className='name4'>{kolache.prodname}</span>
                         <span className='descrip4'>{kolache.proddesc}</span>
-                        <button className='butt4'>Add to Cart</button>
+                        <span className='price'>${kolache.price}</span>
+                        <button onClick={() => this.props.addToCart(kolache)}className='butt4'>Add to Cart</button>
                     </div>
             )
         })
@@ -66,5 +68,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getKolaches,getUser})(Kolaches)
+export default connect(mapStateToProps,{getKolaches,getUser,addToCart})(Kolaches)
 
