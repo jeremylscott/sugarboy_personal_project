@@ -4,17 +4,19 @@ $mainColor: #F58220;
 $chosenFont: 'Mukta', sans-serif;
 $secondaryColor: #001D4A;
 
+* {
+    vertical-align: middle !important;
+}
+
 .cartDisplay {
     display: flex;
     flex-direction: column;
+ 
 }
 
 .cartBody {
     margin-top: 14vh;
-
-    th {
-        margin-bottom: -2vh;
-    }
+  
 }
 
 .cartTitle {
@@ -24,9 +26,73 @@ $secondaryColor: #001D4A;
     margin-bottom: 4vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
-    border-top: 1px solid $mainColor
+    border-top: 1px solid $mainColor;
 }
 
-.test { 
-    background: black;
+.priceCol {
+    font-size: .9em !important;
+    align-items: center !important;
+    margin: none !important;
+    padding-bottom: none !important;
+    height: 4vh !important;
+    margin-top: 1vh !important;
+}
+
+.productCol {
+    font-size: .9em !important;
+    align-items: center !important;
+    margin: none !important;
+    padding-bottom: none !important;
+    height: 4vh !important;
+}
+
+.noItems {
+    display: flex;
+    justify-content: center;
+    font-size: 1.7em;
+    font-family: $chosenFont;
+    color: $mainColor;
+}
+
+.submitOrder {
+    border-radius: 8px;
+    width: 8vw;
+    height: 4vh;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    font-size: 1.2em;
+    color: white;
+
+}
+
+.quantityCol {
+    font-size: .9em !important;
+    align-items: center !important;
+    margin: none !important;
+    padding-bottom: none !important;
+    height: 4vh !important;
+}
+
+.totalCol {
+    font-size: .9em !important;
+    align-items: center !important;
+    margin: none !important;
+    padding-bottom: none !important;
+    height: 4vh !important;
+}
+
+.deleteCol {
+    font-size: .9em !important;
+    align-items: center !important;
+    margin: none !important;
+    padding-bottom: none !important;
+    height: 4vh !important;
+}
+
+@media (max-width: 414px) {
+    * {
+        font-size: .4em !important;
+    }
 }

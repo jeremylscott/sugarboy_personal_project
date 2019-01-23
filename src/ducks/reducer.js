@@ -9,7 +9,6 @@ const initialState = {
     allProducts: [],
     product: [],
     prodId: 0,
-    prodPrice: 10,
     cart: [],
     cartTotal: 0,
     currentProp: '' 
@@ -23,6 +22,7 @@ const GET_CAKES = 'GET_CAKES'
 const GET_KOLACHES = 'GET_KOLACHES'
 const GET_DRINKS = 'GET_DRINKS'
 const ADD_PRODUCT = 'ADD_PRODUCT'
+const ADD_SALE = 'ADD_SALE'
 const DELETE_PRODUCT = 'DELETE_PRODUCT'
 const UPDATE_PRODUCT = 'CHANGE_PRODUCT'
 const ADD_TO_CART = 'ADD_TO_CART'
@@ -78,10 +78,10 @@ export function getDrinks() {
     }
 }
 
-export function addProduct(prodImg,prodName,prodType,prodDesc) {
+export function addProduct(prodImg,prodName,prodType,prodDesc,prodPrice) {
     return {
         type: ADD_PRODUCT,
-        payload: axios.post('/api/products', {prodImg,prodName,prodType,prodDesc})
+        payload: axios.post('/api/products', {prodImg,prodName,prodType,prodDesc,prodPrice})
     }
 }
 
@@ -92,17 +92,24 @@ export function deleteProduct(prodId) {
     }
 }
 
-export function updateProduct(prodId,prodImg,prodName,prodType,prodDesc) {
+export function updateProduct(prodId,prodImg,prodName,prodType,prodDesc,prodPrice) {
     return {
         type: UPDATE_PRODUCT,
-        payload: axios.put(`/api/products/${prodId}`, {prodImg,prodName,prodType,prodDesc})
+        payload: axios.put(`/api/products/${prodId}`, {prodImg,prodName,prodType,prodDesc,prodPrice})
     }
 }
 
 export function addToCart(product) {
     return {
         type: ADD_TO_CART,
-        payload: axios.post('/api/cart', product)
+        payload: axios.post('/api/cart', product)  
+    }
+}
+
+export function addSale(cart) {
+    return {
+        type: ADD_SALE,
+        payload: axios.post('/api/sale', {cart})
     }
 }
 

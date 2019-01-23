@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {getAllProducts,propInput,updateProduct,addProduct,clearState,deleteProduct} from '../../ducks/reducer'
 import './admin.scss'
 import Home from '../Home/Home'
@@ -14,7 +15,8 @@ class Admin extends Component {
             prodImg: '',
             prodName: '',
             prodDesc: '',
-            prodType: ''
+            prodType: '',
+            prodPrice: ''
         }
     }
 
@@ -46,6 +48,12 @@ class Admin extends Component {
         })
     }
 
+    updatePrice = (e) => {
+        this.setState({
+            prodPrice: e.target.value
+        })
+    }
+
     updateDesc = (e) => {
         this.setState({
             prodDesc: e.target.value
@@ -53,7 +61,7 @@ class Admin extends Component {
     }
 
     render() {
-             const {prodName,prodDesc,prodImg,prodType} = this.state
+             const {prodName,prodDesc,prodImg,prodType,prodPrice} = this.state
         
         const allProdList = this.props.allProducts.map((product) => {
             return (
@@ -63,13 +71,17 @@ class Admin extends Component {
                         placeholder={product.prodimg} input='text'/>
                     <input className='prodName' onChange={this.updateName} name='prodName'
                         placeholder={product.prodname} input='text'/>
-                    <input className='prodType' onChange={this.updateType} name='prodType'
-                        placeholder={product.prodtype} input='text'/>
+                    <div className='typePriceCont'>
+                        <input className='prodType' onChange={this.updateType} name='prodType'
+                            placeholder={product.prodtype} input='text'/>
+                        <input className='prodPrice' onChange={this.updatePrice} name='prodPrice'
+                            placeholder={product.price} input='text'/>
+                    </div>
                     <input className='prodDesc' onChange={this.updateDesc} name='prodDesc'
                         placeholder={product.proddesc} input='text'/>
                     <div className='adminButts'>
                         <button className='delete' onClick={() => this.props.deleteProduct(product.prodid)} title='Delete product'>X</button>
-                        <button onClick={() => this.props.updateProduct(product.prodid,prodImg,prodName,prodType,prodDesc)} title='Make changes to products' className='butt8'>Save</button>
+                        <button onClick={() => this.props.updateProduct(product.prodid,prodImg,prodName,prodType,prodDesc,prodPrice)} title='Make changes to products' className='butt8'>Save</button>
                         <button className='cancel' onClick={() => this.props.clearState} title='Cancel changes'>Cancel</button>
                     </div>
                 </div>
@@ -82,6 +94,7 @@ class Admin extends Component {
                 <Home/>
                 <div className='adminTitle'>
                     <h1 className='pageAdmin'>Admin Portal</h1>
+                    <Link to='/reports' className='rLinks'><div className='reportLink'>Reports</div></Link>
                     <button onClick={this.handleToggle} className='addNewButt'>Add New Product</button>
                 </div>
 
@@ -90,9 +103,12 @@ class Admin extends Component {
                         <h1>Create Product</h1>
                         <input className='addNew' onChange={this.updateImg} name='prodImg' type='text' placeholder='Product image URL'/>
                         <input className='addNew' onChange={this.updateName} name='prodName' type='text' placeholder='Product Name'/>
-                        <input className='addNew' onChange={this.updateType} name='prodType' type='text' placeholder='Product Type'/>
+                        <div className='priceType'>
+                            <input className='addProdT' onChange={this.updateType} name='prodType' type='text' placeholder='Type'/>
+                            <input className='addPrice' onChange={this.updatePrice} name='prodPrice' type='text' placeholder='Price'/>
+                        </div>
                         <input className='addNew' onChange={this.updateDesc} name='prodDesc' type='text' placeholder='Product Description'/>
-                        <button className='subButt' onClick={() => this.props.addProduct(prodImg,prodName,prodType,prodDesc)}>Submit</button>
+                        <button className='subButt' onClick={() => this.props.addProduct(prodImg,prodName,prodType,prodDesc,prodPrice)}>Submit</button>
                     </form>
                     :
                     <div className='hideAddForm'></div>}

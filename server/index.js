@@ -3,9 +3,13 @@ const express = require('express')
 const {json} = require('body-parser')
 const massive = require('massive')
 const session = require('express-session')
+const nodemailer = require('nodemailer')
 const app = express()
+const paymentApi = require('./stripe')
 const {getYeast,getCake,getKolaches,getDrinks,login,signup,addProduct,
-        deleteProduct,updateProduct,addToCart,getUser,logOut,getAllProducts,clearCart,deleteFromCart} = require('./controller')
+        deleteProduct,updateProduct,addToCart,getUser,logOut,getAllProducts,clearCart,
+        deleteFromCart,addSale} = require('./controller')
+
 app.use(json())
 
 // connect the database
@@ -26,6 +30,9 @@ app.use(session({
     }
 }))
 
+
+
+
 app.get('/api/products', getAllProducts)    // returns all products for admins
 app.get('/api/products/yeast', getYeast)        // returns yeast donuts from database
 app.get('/api/products/cake', getCake)      // returns cake donuts from database
@@ -36,9 +43,9 @@ app.get('/api/delete', logOut)
 app.get('/api/clearcart', clearCart)        // clear items from cart
 
 app.post('/auth/login', login)      // logs user in
-app.post('/api/createpayment')      // used with stripe to process cc payments
 app.post('/auth/signup', signup)    // user signs up for account
-app.post('/api/products',addProduct)   // adds new product to the database
+app.post('/api/products', addProduct)   // adds new product to the database
+app.post('/api/sale', addSale)       // add sale to database
 app.post('/api/cart', (req,res,next) => {
     if (!req.session.cart){
         req.session.cart=[]

@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Home from '../Home/Home'
+import Masonry from 'react-masonry-component'
 import './yeast.scss'
 import {getYeast,getUser,addToCart} from '../../ducks/reducer'
-
 
 class Yeast extends Component {
 

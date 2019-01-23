@@ -51,6 +51,34 @@
     font-family: $chosenFont;
 }
 
+.reportLink {
+    position: absolute;
+    right: 80vw;
+    left: 20vw;
+    margin: auto;
+    top: 15.5vh;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: $chosenFont;
+    font-size: 1.5em;
+    background: $mainColor;
+    width: 6vw;
+    height: 3vh;
+    text-align: center;
+    border: 1px solid $secondaryColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2.5px 2.5px gray;
+}
+
+.rLinks {
+}
+
+.typePriceCont {
+    display: flex;
+}
+
 .butt8 {
     border-radius: 5px;
     width: 4vw;
@@ -174,6 +202,54 @@
     margin-top: 30px;
 }
 
+.priceType {
+    display: flex;
+}
+
+.addPrice {
+    margin-right: 10px;
+    width: 154px;
+    border-radius: 5px;
+    height: 3vh;
+    padding: 0px 4px;
+    border: 1px solid $mainColor;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.addProdT {
+    margin-right: 10px;
+    width: 154px;
+    border-radius: 5px;
+    height: 3vh;
+    padding: 0px 4px;
+    border: 1px solid $mainColor;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.prodType {
+    font-size: 1.2em;
+    width: 100px;
+    height: auto;
+    font-family: $chosenFont;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.prodPrice {
+    font-size: 1.2em;
+    width: 100px;
+    height: auto;
+    font-family: $chosenFont;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
 button:active {
     background-color: #001D4A;
     box-shadow: 0 2px #666;
@@ -220,6 +296,15 @@ button:hover {background-color: #001D4A}
         width: 22vw;
         height: 3vh;
     }
+
+    .addProdT {
+        width: 10vw;
+        margin-left: 1vw;
+    }
+
+    .addPrice {
+        width: 10vw;
+    }
     
     .adminTitle {
         margin-top: .5vh;
@@ -247,6 +332,15 @@ button:hover {background-color: #001D4A}
         width: 22vw;
         height: 3vh;
         margin-top: 1.3vh;
+    }
+
+    
+    .addProdT {
+        margin-top: 1vh;
+    }
+
+    .addPrice {
+        margin-top: 1vh;
     }
 
     .addNewButt {
@@ -293,6 +387,26 @@ button:hover {background-color: #001D4A}
         margin-top: .7vh;
     }
 
+    .addProdT {
+        width: 6vh;
+        height: 3vh;
+        margin-top: .7vh; 
+    }
+
+    .addPrice {
+        width: 6vh;
+        height: 3vh;
+        margin-top: .7vh; 
+    }
+
+    .addPrice::placeholder {
+        font-size: .7em;
+    }
+
+    .addProdT::placeholder {
+        font-size: .7em;
+    }
+
     .addNew::placeholder {
         font-size: .7em;
     }
@@ -333,6 +447,18 @@ button:hover {background-color: #001D4A}
     
     .addNew {
         width: 25vw;
+        height: 2vh;
+        margin-top: .3vh;
+    }
+
+    .addProdT {
+        width: 9.5vw;
+        height: 2vh;
+        margin-top: .3vh;
+    }
+
+    .addPrice {
+        width: 9.5vw;
         height: 2vh;
         margin-top: .3vh;
     }

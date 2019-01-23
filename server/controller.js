@@ -61,7 +61,8 @@ const login = (req,res) => {
                 req.session.user = {                        // added the user to the session
                     username: users[0].username,
                     isadmin: users[0].isadmin,
-                    email: users[0].email
+                    email: users[0].email,
+                    userid: users[0].userid
                 }    
                 res.status(200).json(req.session.user)
             }
@@ -90,9 +91,9 @@ const signup = async (req,res) => {
 
 const addProduct = (req,res) => {
     console.log('ADD PRODUCT', req.body)
-    const {prodName,prodDesc,prodType,prodImg} = req.body
+    const {prodName,prodDesc,prodType,prodImg,prodPrice} = req.body
     const db = req.app.get('db')
-    db.add_product(prodImg,prodName,prodType,prodDesc)
+    db.add_product(prodImg,prodName,prodType,prodDesc,prodPrice)
     .then(response => {
         res.status(200).json(response)
     })
@@ -116,9 +117,9 @@ const deleteProduct = (req,res) => {
 }
 
 const updateProduct = (req,res) => {
-    const {prodName,prodType,prodImg,prodDesc} = req.body
+    const {prodName,prodType,prodImg,prodDesc,prodPrice} = req.body
     const db = req.app.get('db')
-    db.update_product([req.params.id,prodImg,prodName,prodType,prodDesc])
+    db.update_product([req.params.id,prodImg,prodName,prodType,prodDesc,prodPrice])
     .then(response => {
         res.status(200).json(response)
     })
@@ -154,6 +155,12 @@ const addToCart = (req,res) => {
     res.status(200).json(req.session.cart)
 }
 
+const addSale = (req,res) => {
+    console.log(`${req.body} addSale`);
+    const db = req.app.get('db')
+    req.body.cart.map(e => db.add_sale([e.prodid,req.session.user.userid,e.price]))
+}
+
 const clearCart = (req,res) => {
     req.session.cart = []
     res.status(200).json(req.session.cart)
@@ -185,5 +192,6 @@ module.exports = {
     deleteFromCart,
     addOrder,
     logOut,
-    getAllProducts
+    getAllProducts,
+    addSale
 }
