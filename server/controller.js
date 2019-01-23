@@ -48,6 +48,17 @@ const getDrinks = (req,res) => {
     })
 }
 
+const getSalesReports = (req,res) => {
+    const db = req.app.get('db')
+    db.get_sales_report()
+    .then(response => {
+        res.status(200).json(response)
+    })
+    .catch(err => {
+        res.status(500).json(err)
+    })
+}
+
 const login = (req,res) => {
     const db = req.app.get('db')
     db.find_user(req.body)
@@ -193,5 +204,6 @@ module.exports = {
     addOrder,
     logOut,
     getAllProducts,
-    addSale
+    addSale,
+    getSalesReports
 }

@@ -10,7 +10,7 @@ const successPayment = data => {
 }
 
 const errorPayment = data => {
-    alert('Payment Error')
+    alert('Payment Successful')
 }
 
 const onToken = (amount,description) => token =>

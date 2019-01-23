@@ -2,13 +2,8 @@ const configureStripe = require('stripe')
 
 const stripe = configureStripe('sk_test_v9DpZubxry0EP1kwUtoMXG3N')
 
-const postStripeCharges = res => (stripeErr,stripeRes) => {
-    if (stripeErr) {
-        res.status(500).json({error: stripeErr})
-    }
-    else {
+const postStripeCharges = res => (stripeRes) => {
         res.status(200).json({success: stripeRes})
-    }
 }
 
 const paymentApi = app => {

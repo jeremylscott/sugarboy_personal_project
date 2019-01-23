@@ -11,7 +11,8 @@ const initialState = {
     prodId: 0,
     cart: [],
     cartTotal: 0,
-    currentProp: '' 
+    currentProp: '',
+    salesReports: []
 }
 
 // action types
@@ -21,6 +22,7 @@ const GET_YEASTS = 'GET_YEASTS'
 const GET_CAKES = 'GET_CAKES'
 const GET_KOLACHES = 'GET_KOLACHES'
 const GET_DRINKS = 'GET_DRINKS'
+const GET_SALES_REPORTS = 'GET_SALES_REPORTS'
 const ADD_PRODUCT = 'ADD_PRODUCT'
 const ADD_SALE = 'ADD_SALE'
 const DELETE_PRODUCT = 'DELETE_PRODUCT'
@@ -169,6 +171,13 @@ export function clearState() {
     }
 }
 
+export function getSalesReports() {
+    return {
+        type: GET_SALES_REPORTS,
+        payload: axios.get('/api/salesreports')
+    }
+}
+
 
 // reducer function
 function reducer(state=initialState, action) {
@@ -236,6 +245,10 @@ function reducer(state=initialState, action) {
         case `${GET_ALL_PRODUCTS}_FULFILLED`:
             return {
                 ...state, allProducts: action.payload.data
+            }
+        case `${GET_SALES_REPORTS}_FULFILLED`:
+            return {
+                ...state, salesReports: action.payload.data
             }
         case PROP_INPUT:
             return {
