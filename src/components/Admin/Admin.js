@@ -108,12 +108,12 @@ class Admin extends Component {
                     <input className='prodDesc' onChange={(e) => this.updateDesc(e,product)} name='prodDesc'
                         placeholder={product.proddesc} input='text'/>
                     <div className='adminButts'>
-                        <div className='delete' onClick={() => this.props.deleteProduct(product.prodid)} title='Delete product'/>
+                        <div className='delete' onClick={() => {this.props.deleteProduct(product.prodid)
+                            alert('Item has been deleted.')}} title='Delete product'/>
                         <div onClick={() => {this.props.updateProduct(product.prodid,prodImg,prodName,prodType,prodDesc,prodPrice)
                             this.forceUpdate()
                             alert('Item has been updated')
                             }} title='Make changes to products' className='butt8'/>
-                        <button className='cancel' onClick={() => this.props.clearState} title='Cancel changes'>Cancel</button>
                     </div>
                 </div>
             )
