@@ -178,7 +178,6 @@ button:hover {background-color: #001D4A}
 
 .cartLink {
     font-family: $chosenFont;
-    background: black;
     border: none;
     border-radius: 5px;
     padding: .5vh;
@@ -187,10 +186,11 @@ button:hover {background-color: #001D4A}
     position: fixed;
     z-index: 3;
     right: 6vw;
-    top: 2.5vh;
+    top: .3vh;
     text-decoration: none;
-    color: white;
-    width: 4vw;
+    color: black;
+    height: 2vh;
+    width: 9vw;
 }
 
 .buttCont {
@@ -405,7 +405,7 @@ homeButt:active {
     }
 
     .cartLink {
-        width: 7vw;
+        width: 12vw;
     }
 
     .showRegNav {
@@ -448,8 +448,8 @@ homeButt:active {
 
     .cartLink {
         font-size: .5em;
-        top: 1.25vh;
-        width: 7vw;
+        width: 9vw;
+        height: 2vh;
     }
 
     .fullDropDownMenu {
@@ -524,9 +524,8 @@ homeButt:active {
 
     .cartLink {
         font-size: .35em;
-        top: 1vh;
         height: 1.4vh;
-        width: 7vw
+        width: 10vw
     }
 
     .fullDropDownMenu {

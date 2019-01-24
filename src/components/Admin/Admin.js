@@ -16,7 +16,8 @@ class Admin extends Component {
             prodName: '',
             prodDesc: '',
             prodType: '',
-            prodPrice: ''
+            prodPrice: '',
+            prodSelected: false
         }
     }
 
@@ -30,34 +31,61 @@ class Admin extends Component {
         })
     }
 
-    updateImg = (e) => {
+    setItemToState = (product) => {
+        console.log(product);
         this.setState({
-            prodImg: e.target.value
+            prodImg: product.prodimg,
+            prodName: product.prodname,
+            prodDesc: product.proddesc,
+            prodType: product.prodtype,
+            prodPrice: product.price,
+            prodSelected: true
         })
     }
 
-    updateName = (e) => {
-        this.setState({
-            prodName: e.target.value
-        })
+    updateImg = (e,product) => {
+        if(!this.state.prodSelected) {
+           this.setItemToState(product)
+        }
+            this.setState({
+                prodImg: e.target.value
+            })
+    }
+    
+    updateName = (e,product) => {
+        if(!this.state.prodSelected) {
+            this.setItemToState(product)
+        }
+            this.setState({
+                prodName: e.target.value
+            })
     }
 
-    updateType = (e) => {
-        this.setState({
-            prodType: e.target.value
-        })
+    updateType = (e,product) => {
+        if(!this.state.prodSelected) {
+            this.setItemToState(product)
+        }
+            this.setState({
+                prodType: e.target.value
+            })
     }
 
-    updatePrice = (e) => {
-        this.setState({
-            prodPrice: e.target.value
-        })
+    updatePrice = (e,product) => {
+        if(!this.state.prodSelected) {
+            this.setItemToState(product)
+        }
+            this.setState({
+                prodPrice: e.target.value
+            })
     }
 
-    updateDesc = (e) => {
-        this.setState({
-            prodDesc: e.target.value
-        })
+    updateDesc = (e,product) => {
+        if(!this.state.prodSelected) {
+            this.setItemToState(product)
+        }
+            this.setState({
+                prodDesc: e.target.value
+            })
     }
 
     render() {
@@ -67,17 +95,17 @@ class Admin extends Component {
             return (
                 <div key={product.prodid} className='cardWrapper8'>
                     <img className='cardImg8' src={product.prodimg} alt='donut'/>
-                    <input className='prodImg' onChange={this.updateImg} name='prodImg'
+                    <input className='prodImg' onChange={(e) => this.updateImg(e,product)} name='prodImg'
                         placeholder={product.prodimg} input='text'/>
-                    <input className='prodName' onChange={this.updateName} name='prodName'
+                    <input className='prodName' onChange={(e) => this.updateName(e,product)} name='prodName'
                         placeholder={product.prodname} input='text'/>
                     <div className='typePriceCont'>
-                        <input className='prodType' onChange={this.updateType} name='prodType'
+                        <input className='prodType' onChange={(e) => this.updateType(e,product)} name='prodType'
                             placeholder={product.prodtype} input='text'/>
-                        <input className='prodPrice' onChange={this.updatePrice} name='prodPrice'
+                        <input className='prodPrice' onChange={(e) => this.updatePrice(e,product)} name='prodPrice'
                             placeholder={product.price} input='text'/>
                     </div>
-                    <input className='prodDesc' onChange={this.updateDesc} name='prodDesc'
+                    <input className='prodDesc' onChange={(e) => this.updateDesc(e,product)} name='prodDesc'
                         placeholder={product.proddesc} input='text'/>
                     <div className='adminButts'>
                         <div className='delete' onClick={() => this.props.deleteProduct(product.prodid)} title='Delete product'/>

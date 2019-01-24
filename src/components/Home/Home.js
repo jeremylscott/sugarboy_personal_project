@@ -78,7 +78,15 @@ class Home extends Component {
         this.setState({
             logToggle: !this.state.logToggle
         })
-        alert(`${this.state.username} has been signed in`)
+
+        alert(`You've been signed in`)
+
+        setTimeout(() => {
+            this.setState({
+                username: '',
+                password: ''
+            })   
+        }, 1000);
     }
 
     logOutForceUpdate = () => {
@@ -101,7 +109,7 @@ class Home extends Component {
                 {this.state.toggle ?
                     <nav className='fullDropDownMenu'>
                         {this.state.toggleLinks ?
-                            <div className='fullDropDownMenuText'>
+                            <div className='fullDropDownMenuText' onMouseLeave={this.handleToggle}>
                                 <Link className='link4' to='/'>Home</Link>
                                 <Link className='link4' to='/about'>About Us</Link>
                                 <Link className='link4' to='/contact'>Contact</Link>
@@ -121,7 +129,7 @@ class Home extends Component {
                         <button className='burgButton' onClick={this.handleToggle}
                             >Menu &#9776;</button>
                         <img className='homeLogo' src={logo} alt='logo'/>
-                        <Link className='cartLink' to='/cart'>{this.props.cart.length ? `Cart (${this.props.cart.length})`: `Cart`}</Link>
+                        <Link className='cartLink' to='/cart'>{this.props.cart.length ? `My Cart (${this.props.cart.length})`: null}</Link>
                     </div>
 
                 {this.state.regToggle ?            // Determines whether register menu shows or not

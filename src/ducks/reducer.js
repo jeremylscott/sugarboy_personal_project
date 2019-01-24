@@ -228,7 +228,7 @@ function reducer(state=initialState, action) {
             }
         case `${CLEAR_CART}_FULFILLED`:
             return {
-                ...state, cart: action.payload
+                ...state, cart: {}
             }
         case UPDATE_CART_TOTAL:
             return {

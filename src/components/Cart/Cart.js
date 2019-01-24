@@ -9,6 +9,12 @@ import './cart.scss'
 
 class Cart extends Component {
 
+    handleAddSale = () => {
+        this.props.addSale(this.props.cart, this.props.user.userid)
+        this.props.clearCart()
+        this.forceUpdate()
+    }
+
     render() {
 
         if (this.props.cart.length > 0) {
@@ -59,9 +65,7 @@ class Cart extends Component {
                             </MuiThemeProvider>
 
                             {this.props.user ?
-                            <div className='submitOrder' onClick={() => {this.props.addSale(this.props.cart,this.props.user.userid)
-                                this.props.clearCart()
-                                alert('Thank you for your order')}}>
+                            <div className='submitOrder' onClick={this.handleAddSale}>
                                 <Checkout
                                     name={'Sugarboy Donuts'}
                                     description={'Donuts'}
