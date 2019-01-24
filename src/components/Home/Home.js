@@ -59,6 +59,8 @@ class Home extends Component {
         this.props.signup(this.state.regUsername,this.state.regPassword,this.state.email)
         this.handleRegToggle()
         this.clearState()
+        alert(`Registration successful.  Please sign in`)
+        
     }
 
     clearState = () => {
@@ -76,11 +78,13 @@ class Home extends Component {
         this.setState({
             logToggle: !this.state.logToggle
         })
+        alert(`${this.props.user.username} has been signed in`)
     }
 
     logOutForceUpdate = () => {
         this.props.logOut()
         window.location.reload()
+        alert(`${this.props.user.username} has been signed out`)
     }
 
     componentDidUpdate = (previousProps) => {

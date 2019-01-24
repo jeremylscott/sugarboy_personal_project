@@ -59,7 +59,9 @@ class Cart extends Component {
                             </MuiThemeProvider>
 
                             {this.props.user ?
-                            <div className='submitOrder' onClick={() => this.props.addSale(this.props.cart,this.props.user.userid)}>
+                            <div className='submitOrder' onClick={() => {this.props.addSale(this.props.cart,this.props.user.userid)
+                                this.props.clearCart()
+                                alert('Thank you for your order')}}>
                                 <Checkout
                                     name={'Sugarboy Donuts'}
                                     description={'Donuts'}
