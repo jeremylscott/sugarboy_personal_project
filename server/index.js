@@ -5,7 +5,6 @@ const massive = require('massive')
 const session = require('express-session')
 const nodemailer = require('nodemailer')
 const app = express()
-const paymentApi = require('./stripe')
 const {getYeast,getCake,getKolaches,getDrinks,login,signup,addProduct,
         deleteProduct,updateProduct,addToCart,getUser,logOut,getAllProducts,clearCart,
         deleteFromCart,addSale,getSalesReports} = require('./controller')
@@ -29,9 +28,6 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }))
-
-
-
 
 app.get('/api/products', getAllProducts)    // returns all products for admins
 app.get('/api/products/yeast', getYeast)        // returns yeast donuts from database

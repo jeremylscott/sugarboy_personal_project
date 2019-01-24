@@ -1,4 +1,34 @@
+@import '../partial';
+
+$mainColor: rgb(245, 130, 32);
+$chosenFont: 'Mukta', sans-serif;
+$secondaryColor: rgb(0, 29, 74);
+
+.adminLink {
+    position: fixed;
+    left: 1vw;
+    top: 1vh;
+    text-decoration: none;
+    color: $mainColor;
+    font-weight: bold;
+}
+
+.chartTitle {
+    position: absolute;
+    font-family: $chosenFont;
+    font-size: 2em;
+    text-align: center;
+    text-decoration: double underline;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: .25vh;
+    
+}
 .chartContainer {
-    height: 60vh;
-    width: 60vw;
+    height: 93vh;
+    width: 93vw;
+    margin-top: 5vh;
+    margin-left: 2vh;
+    background: white;
 }

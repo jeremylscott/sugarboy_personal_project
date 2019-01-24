@@ -1,4 +1,5 @@
-SELECT prodname COUNT(transactionid)
-FROM products
-JOIN sales ON products.prodid = sales.prodid
-GROUP BY prodname;
+SELECT COUNT(*), p.prodname
+FROM products p
+JOIN sales s ON p.prodid = s.prodid
+GROUP BY p.prodname
+ORDER BY p.prodname ASC;

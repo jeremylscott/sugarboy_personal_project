@@ -1,33 +1,59 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {Line} from 'react-chartjs-2'
 import './reports.scss'
 import {getSalesReports} from '../../ducks/reducer'
 
 class Reports extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            dataValues: '',
+            labelValues: ''
+        }
+    }
 
     componentDidMount() {
         this.props.getSalesReports()
+        setTimeout(() => {
+            this.format(this.props.salesReports)
+        }, 1000);
+    }
+
+    format = (array) => {                       // used to loop thru the salesReport array and dynamically get the values for the chart.
+        const dataValues = []
+        const labelValues = array.map(product => {
+            dataValues.push(product.count)
+            return product.prodname
+        })
+        this.setState({
+            dataValues,
+            labelValues
+        })
     }
 
     render() {
-        console.log(this.props.getSalesReports);
         const data = {
-            labels: [
-                'Jalepeno','Classic','Glazed','Cinnamon Sugar','Cotton Candy','Maple Baconator','Bavarian Cream',
-                'Raspberry Sugar','Cereal Rainbow','French Toast','Brawndo','Blueberry Cake','Expresso Yo Self',
-                'Pistachio','Maple Bacon','Orange','Salted Caramel','Old Fashion','Chocolate Longjohn','Chocolate',
-                'Donut Holes','Coconut Cream','Sausage Cheese','PB&J','Chocolate Bomb','Mountain Dew','Milk',
-                'Coffee','Chocolate Milk','Fruit Filled','Bacon, Egg, and Cheese','Nutella Strawberry',
-                'Vanilla Cinnamon Cream','Butter Pecan','Barney Rubble','Juan','Birthday Cake','ET','Weird Al'
-            ],
+            labels: this.state.labelValues,
             datasets: [
                 {
                     label: 'Sales By Product',
-                    data: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
-                            32,33,34,35,36,37,38,39],
+                    data: this.state.dataValues,
                     fill: false,
-                    borderColor: 'green'
+                    lineTension: .1,
+                    borderColor: 'rgb(0, 29, 74)',
+                    backgroundColor: 'rgb(0, 29, 74)',
+                    pointBorderColor: 'rgb(245, 130, 32)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 5,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: 'rgb(0, 29, 74)',
+                    pointHoverBorderColor: 'rgb(245, 130, 32)',
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 50
                 }
             ]
         }
@@ -39,8 +65,9 @@ class Reports extends Component {
         return (
             <div>
                 <header>
-                    <h1>Responsive Linear chart using Chart.js</h1>
+                    <h1 className='chartTitle'>Live Chart of Every Product Sold</h1>
                 </header>
+                <Link to='/admin' className='adminLink'>Back to Admin Page</Link>
                 <article className='chartContainer'>
                     <Line data={data} options={options}/>
                 </article>
