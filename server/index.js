@@ -50,6 +50,37 @@ app.post('/api/cart', (req,res,next) => {
         next()
     }
 } , addToCart)    // adds product to users cart
+app.post('/api/sendmail', function(req,res,next) {      // used with nodemailer to send mail
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
+        auth: {
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD
+        },
+
+        tls: {
+            rejectUnauthorized: false
+        }
+
+    })
+    let mailOptions = {
+        from: `${req.body.email}`,
+        to: `${process.env.EMAIL}`,
+        subject: `${req.body.subject}`,
+        text: `${req.body.message}`
+    }
+    console.log(req.body.email);
+    transporter.sendMail(mailOptions, function (err,res) {
+        if(err) {
+            console.log('an error occurred: ', err);
+        }
+        else {
+            null
+        }
+    })
+})       
 
 app.delete('/api/products/:id', deleteProduct)      // deletes product from the database
 app.delete('/api/cart/:id', deleteFromCart)     // removes items from cart

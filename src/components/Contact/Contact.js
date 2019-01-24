@@ -2,17 +2,55 @@ import React, {Component} from 'react'
 import './contact.scss'
 import donut from '../../images/sugarboy_donut.png'
 import Home from '../Home/Home'
+import axios from 'axios'
 import {connect} from 'react-redux'
 import {getUser} from '../../ducks/reducer'
 
-
 class Contact extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            first: '',
+            last: '',
+            email: '',
+            message: ''
+        }
+    }
 
     componentDidMount() {
         this.props.getUser()
     }
 
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    sendMessage() {
+        let body = {
+            subject: `${this.state.first} ${this.state.last} has contacted you`,
+            email: `${this.state.email}`,
+            message: `${this.state.message}   Response Email: ${this.state.email}`
+        }
+
+        this.setState({
+            first: '',
+            last: '',
+            email: '',
+            message: ''
+        })
+
+        axios.post('/api/sendmail', body)
+            .then(res => {
+                res.sendStatus(200)
+            })
+            .catch(err => console.log(err))
+    }
+
     render() {
+        const {first,last,email,message} = this.state
         return (
             <div>
                 <div>
@@ -62,7 +100,18 @@ class Contact extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className='spaceMe'></div>
+                    <div className='contactUs'>
+                        <div className='topTitle'>
+                            <h2 className='contactTitle'>Contact Us</h2>
+                            <button onClick={() => this.sendMessage()} className='mailButton'>Submit</button>
+                        </div>
+                        <div className='firstLast'>
+                            <input onChange={this.handleChange} name='first' className='first' value={first} placeholder='First Name'/>
+                            <input onChange={this.handleChange} name='last' className='last' value={last} placeholder='Last Name'/>
+                        </div>
+                        <input onChange={this.handleChange} name='email' className='email' value={email} placeholder='Email'/>
+                        <textarea rows='5' cols='80' onChange={this.handleChange} name='message' className='message' value={message} placeholder='Message'/>
+                    </div>
                 </div>
             </div>
         )

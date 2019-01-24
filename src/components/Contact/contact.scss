@@ -1,6 +1,10 @@
 @import '../partial';
 
 $chosenFont: 'Mukta', sans-serif;
+$mainColor: #F58220;
+$secondaryColor: #001D4A;
+
+$chosenFont: 'Mukta', sans-serif;
 
 %address {
     display: flex;
@@ -80,7 +84,7 @@ $chosenFont: 'Mukta', sans-serif;
 
 .icon2 {
     @extend %icon;
-    margin-top: 8vh;
+    margin-top: 3vh;
 }
 
 .googleMap2 {
@@ -116,9 +120,91 @@ $chosenFont: 'Mukta', sans-serif;
     height: 27px;
 }
 
-.spaceMe{
-    height: 28.34vh;
-    width: 1vw;
+.topTitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mailButton {
+    background: $mainColor;
+    font-size: .8em;
+    font-family: $chosenFont;
+    border: none;
+    color: white;
+    border-radius: 4px; 
+}
+
+.contactTitle {
+    font-size: 1.3em;
+    font-family: $chosenFont;
+    padding-bottom: 1vh;
+    text-align: center;
+    color: white;
+}
+
+.firstLast {
+    display: flex;
+    
+}
+
+.first {
+    width: 12vw;
+    height: 3vh;
+    margin-right: 2vw;
+    margin-top: 1vh;
+    border-radius: 3px;
+    border: .5px solid $secondaryColor;
+    padding: 0px 3px;
+}
+
+.first::placeholder, .last::placeholder, .email::placeholder, .message::placeholder {
+    font-family: $chosenFont;
+    padding-left: 3px;
+}
+
+.last {
+    width: 12vw;
+    height: 3vh;
+    margin-top: 1vh;
+    border-radius: 3px;
+    border: .5px solid $secondaryColor;
+    padding: 0px 3px;
+}
+
+.email {
+    width: 18vw;
+    height: 3vh;
+    margin-top: 1vh;
+    border-radius: 3px;
+    border: .5px solid $secondaryColor;
+    padding: 0px 3px;
+}
+
+.message {
+    width: 29.5vw;
+    margin-top: 1vh;
+    border-radius: 3px;
+    border: .5px solid $secondaryColor;
+    padding: 0px 3px;
+}
+
+.contactUs{
+    display: flex;
+    border: 3px solid $mainColor;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 4vh;
+    padding: 1vh;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1vh;
+    height: 25vh;
+    width: 30vw;
+    background: black;
+    border-radius: 5px;
 }
 
 .pageTopicCont {@extend %name;}
