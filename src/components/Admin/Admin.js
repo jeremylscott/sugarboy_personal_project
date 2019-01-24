@@ -80,8 +80,11 @@ class Admin extends Component {
                     <input className='prodDesc' onChange={this.updateDesc} name='prodDesc'
                         placeholder={product.proddesc} input='text'/>
                     <div className='adminButts'>
-                        <button className='delete' onClick={() => this.props.deleteProduct(product.prodid)} title='Delete product'>X</button>
-                        <button onClick={() => this.props.updateProduct(product.prodid,prodImg,prodName,prodType,prodDesc,prodPrice)} title='Make changes to products' className='butt8'>Save</button>
+                        <div className='delete' onClick={() => this.props.deleteProduct(product.prodid)} title='Delete product'/>
+                        <div onClick={() => {this.props.updateProduct(product.prodid,prodImg,prodName,prodType,prodDesc,prodPrice)
+                            this.forceUpdate()
+                            alert('Item has been updated')
+                            }} title='Make changes to products' className='butt8'/>
                         <button className='cancel' onClick={() => this.props.clearState} title='Cancel changes'>Cancel</button>
                     </div>
                 </div>
@@ -108,7 +111,9 @@ class Admin extends Component {
                             <input className='addPrice' onChange={this.updatePrice} name='prodPrice' type='text' placeholder='Price'/>
                         </div>
                         <input className='addNew' onChange={this.updateDesc} name='prodDesc' type='text' placeholder='Product Description'/>
-                        <button className='subButt' onClick={() => this.props.addProduct(prodImg,prodName,prodType,prodDesc,prodPrice)}>Submit</button>
+                        <button className='subButt' onClick={() => {
+                            this.props.addProduct(prodImg,prodName,prodType,prodDesc,prodPrice)
+                            alert('Item added successfully')}}>Submit</button>
                     </form>
                     :
                     <div className='hideAddForm'></div>}

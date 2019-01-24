@@ -45,8 +45,8 @@
     width: 200px;
     justify-content: space-around;
     align-content: center;
-    align-items: baseline;
-    background: $secondaryColor;
+    align-items: center;
+    
     border-radius: 5px;
     font-family: $chosenFont;
 }
@@ -72,45 +72,34 @@
     box-shadow: 2.5px 2.5px gray;
 }
 
-.rLinks {
-}
-
 .typePriceCont {
     display: flex;
 }
 
 .butt8 {
-    border-radius: 5px;
-    width: 4vw;
-    height: 4vh;
-    background: $secondaryColor;
-    border: none;
-    color: rgb(75, 206, 75);
-    margin-top: .5vh;
-    font-family: $chosenFont;
-    font-size: 1em;
+    background-image: url('../../images/floppy-disk.png');
+    width: 1.5vw;
+    height: 3vh;
+    cursor: pointer;
 }
 
 .delete {
-    border-radius: 5px;
-    width: 2vw;
-    height: 4vh;
-    background: $secondaryColor;
-    border: none;
-    color: red;
-    font-size: 1em;
+    background-image: url('../../images/delete.png');
+    width: 1.2vw;
+    height: 3vh;
+    cursor: pointer;
 }
 
 .cancel {
     border-radius: 5px;
     width: 4vw;
-    height: 4vh;
+    height: 3vh;
     background: $secondaryColor;
     border: none;
     color: white;
     font-family: $chosenFont;
-    font-size: 1em;
-
+    font-size: .8em;
+    cursor: pointer;
 }
 
 .firstAdmin {@extend %pageStructure;}  
