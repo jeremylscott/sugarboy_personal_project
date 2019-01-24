@@ -78,13 +78,13 @@ class Home extends Component {
         this.setState({
             logToggle: !this.state.logToggle
         })
-        alert(`${this.props.user.username} has been signed in`)
+        alert(`${this.state.username} has been signed in`)
     }
 
     logOutForceUpdate = () => {
         this.props.logOut()
         window.location.reload()
-        alert(`${this.props.user.username} has been signed out`)
+        alert(`You have been signed out`)
     }
 
     componentDidUpdate = (previousProps) => {
