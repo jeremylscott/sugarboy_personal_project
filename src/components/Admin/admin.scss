@@ -78,22 +78,22 @@
 
 .butt8 {
     background-image: url('../../images/floppy-disk.png');
-    width: 1.5vw;
-    height: 3vh;
+    width: 17px;
+    height: 20px;
     cursor: pointer;
 }
 
 .delete {
     background-image: url('../../images/delete.png');
-    width: 1.2vw;
-    height: 3vh;
+    width: 17px;
+    height: 20px;
     cursor: pointer;
 }
 
 .cancel {
     border-radius: 5px;
-    width: 4vw;
-    height: 3vh;
+    width: 50px;
+    height: 20px;
     background: $secondaryColor;
     border: none;
     color: white;
@@ -262,7 +262,6 @@ button:hover {background-color: #001D4A}
     height: 0vh;
 }   
 
-
 @media (max-width: 1024px) {
     .pageAdmin {
         margin-top: 8vh;
@@ -298,7 +297,32 @@ button:hover {background-color: #001D4A}
     .adminTitle {
         margin-top: .5vh;
     }
+
+    .butt8 {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .delete {
+        width: 16px;
+        height: 21px;
+    }
+    
+    .cancel {
+        width: 46px;
+        height: 20px;
+        color: white;
+        font-size: .8em;
+    }
+
+    .reportLink {
+        top: 9.5vh;
+        font-size: 1em;
+        color: white;
+        height: 2vh;
+    }
 }
+
 
 @media (max-width: 768px) {
     .showAddForm {
@@ -323,7 +347,6 @@ button:hover {background-color: #001D4A}
         margin-top: 1.3vh;
     }
 
-    
     .addProdT {
         margin-top: 1vh;
     }
@@ -335,20 +358,43 @@ button:hover {background-color: #001D4A}
     .addNewButt {
         margin-top: -2vh;
     }
+
+    .butt8 {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .delete {
+        width: 17px;
+        height: 20px;
+    }
+    
+    .cancel {
+        width: 46px;
+        height: 2opx;
+        color: white;
+        font-size: .8em;
+    }
+
+    .reportLink {
+        top: 9.5vh;
+        width: 7vw;
+        font-size: .8em;
+        color: white;
+        height: 2vh;
+    }
 }
 
 @media (max-width: 414px) {
     .pageAdmin {
         margin-top: 6vh;
         padding-top: 1vh;
-        font-size: 1.3em;
-       
     }
 
     .addNewButt {
         font-size: .7em;
-        width: 24vw;
-        height: 4vh;
+        width: 15vw;
+        height: 3vh;
         margin-bottom: 2vh;
     }
 
@@ -399,6 +445,22 @@ button:hover {background-color: #001D4A}
     .addNew::placeholder {
         font-size: .7em;
     }
+    
+    .cancel {
+        width: 30px;
+        height: 20px;
+        color: white;
+        font-size: 1em;
+    }
+
+    .reportLink {
+        top: 7vh;
+        width: 7vw;
+        font-size: .8em;
+        color: white;
+        height: 1.6vh;
+    }
+
 }
 
 @media (max-width: 320px) {
@@ -410,8 +472,8 @@ button:hover {background-color: #001D4A}
 
     .addNewButt {
         font-size: .5em;
-        width: 24vw;
-        height: 4vh;
+        width: 19vw;
+        height: 3vh;
         margin-bottom: 1vh;
     }
 
@@ -454,5 +516,13 @@ button:hover {background-color: #001D4A}
 
     .addNew::placeholder {
         font-size: .6em;
+    }
+
+    .reportLink {
+        top: 7vh;
+        width: 7vw;
+        font-size: .8em;
+        color: white;
+        height: 1.6vh;
     }
 }
