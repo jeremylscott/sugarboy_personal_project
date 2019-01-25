@@ -145,10 +145,10 @@ class Home extends Component {
 
                 {this.state.logToggle ?              // Determines whether login menu shows or not
                     <div  className='showRegLogin'>
-                        <h1>Account Login</h1>
+                        <h1 className='logHead'>Account Login</h1>
                         <input className='homeInput' onChange={this.handleChange} name='username' value={username} 
                             placeholder='Username'/>
-                        <input className='homeInput' onChange={this.handleChange} type='password' name='password' value={password} 
+                        <input className='homeInput2' onChange={this.handleChange} type='password' name='password' value={password} 
                             placeholder='Password'/>
                         <button onClick={this.handleLogClear} title='Login to account' className='homeButt'>Submit</button>
                     </div>

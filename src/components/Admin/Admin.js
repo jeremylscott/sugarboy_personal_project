@@ -98,8 +98,6 @@ class Admin extends Component {
     render() {
 
         const {prodName,prodDesc,prodImg,prodType,prodPrice,searchText} = this.state
-        
-        // const allProdList = this.props.allProducts.map((product) => {
 
         const allProdList = this.props.allProducts.filter((product) => product.prodname.toLowerCase().includes(searchText)).map((product) => {
             return (

@@ -46,10 +46,27 @@ $secondaryColor: #001D4A;
     height: 3vh;
     border-radius: 5px;
     padding: 0px 4px;
-    border: 1px solid #001D4A
+    border: 2px solid #001D4A;
+    margin-top: 10vh;
+
+}
+
+.homeInput2 {
+    width: 15vw;
+    height: 3vh;
+    border-radius: 5px;
+    padding: 0px 4px;
+    border: 2px solid #001D4A;
 }
 
 .homeInput::placeholder {
+    color: $mainColor;
+    font-family: $chosenFont;
+    font-weight: bold;
+    opacity: .6;
+}
+
+.homeInput2::placeholder {
     color: $mainColor;
     font-family: $chosenFont;
     font-weight: bold;
@@ -63,6 +80,7 @@ $secondaryColor: #001D4A;
     height: 30px;
     font-size: 14px;
     color: white;
+    border: 2px solid $secondaryColor;
 }
   
 .homeButt:hover {background-color: #001D4A}
@@ -220,13 +238,22 @@ button:hover {background-color: #001D4A}
     border-radius: 8px;
     box-shadow: 3px 3px black;
     border: 1px solid #001D4A;
+}
 
-    h1 {
-        color: #001D4A;
-        font-size: 30px;
-        margin-top: -3vh;
-        font-weight: bold;
-    }
+.logHead {
+    color: #001D4A;
+    font-size: 30px;
+    width: 21vw;
+    height: 4vw;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    padding-top: 2vh;
+    margin-bottom: 4vh;
+    text-align: center;
+    background: #F58220;
+    box-shadow: 2.5px 2.5px $secondaryColor;
+    border-radius: 3px;
 }
 
 .burgButton {
@@ -328,12 +355,8 @@ homeButt:active {
     .showRegLogin {
         margin-top: 10vh;
         width: 26vw;
-        height: 28vh;
-
-        h1 {
-            font-size: 2em;
-            margin-top: -2vh;
-        }
+        height: 27vh;
+    }
 
         .homeButt {
             border-radius: 6px;
@@ -343,7 +366,6 @@ homeButt:active {
             font-size: 1.2em;
             color: white;
         }
-    }
 
     .showRegNav {
         margin-top: 10vh;
@@ -366,6 +388,13 @@ homeButt:active {
             font-size: 1.2em;
         }
     }
+
+    .logHead {
+        width: 26vw;
+        height: 6vw;
+        font-size: 2em;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -379,11 +408,6 @@ homeButt:active {
         width: 26vw;
         height: 28vh;
 
-        h1 {
-            font-size: 1.5em;
-            margin-top: -2vh;
-        }
-
         .homeButt {
             border-radius: 6px;
             min-width: 8vw;
@@ -392,6 +416,11 @@ homeButt:active {
             font-size: 1em;
             color: white;
         }
+    }
+
+    .logHead {
+        font-size: 1.5em;
+
     }
 
     .fullDropDownMenu {
@@ -429,12 +458,6 @@ homeButt:active {
         width: 26vw;
         height: 22vh;
 
-        h1 {
-            
-            font-size: .8em;
-            margin-top: -1vh;
-        }
-
         .homeButt {
             min-width: 7vw;
             height: 3vh;
@@ -444,6 +467,14 @@ homeButt:active {
         .homeInput {
             width: 20vw;
         }
+
+        .homeInput2 {
+            width: 20vw;
+        }
+    }
+
+    .logHead {   
+        font-size: .8em;
     }
 
     .cartLink {
@@ -503,11 +534,10 @@ homeButt:active {
     .showRegLogin {
         margin-top: 6vh;
         width: 26vw;
-        height: 18vh;
+        height: 22vh;
 
-        h1 {
+        .logHead {
             font-size: .7em;
-            margin-top: -1vh;
         }
 
         .homeButt {
@@ -517,6 +547,11 @@ homeButt:active {
         }
 
         .homeInput {
+            width: 20vw;
+            height: 2vh;
+        }
+
+        .homeInput2 {
             width: 20vw;
             height: 2vh;
         }
