@@ -88,6 +88,12 @@ class Admin extends Component {
             })
     }
 
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
     render() {
              const {prodName,prodDesc,prodImg,prodType,prodPrice} = this.state
         
@@ -132,13 +138,13 @@ class Admin extends Component {
                 {this.state.toggle ?            // Determines whether add menu shows or not
                     <form className='showAddForm'>
                         <h1>Create Product</h1>
-                        <input className='addNew' onChange={this.updateImg} name='prodImg' type='text' placeholder='Product image URL'/>
-                        <input className='addNew' onChange={this.updateName} name='prodName' type='text' placeholder='Product Name'/>
+                        <input className='addNew' onChange={this.handleChange} name='prodImg' type='text' placeholder='Product image URL'/>
+                        <input className='addNew' onChange={this.handleChange} name='prodName' type='text' placeholder='Product Name'/>
                         <div className='priceType'>
-                            <input className='addProdT' onChange={this.updateType} name='prodType' type='text' placeholder='Type'/>
-                            <input className='addPrice' onChange={this.updatePrice} name='prodPrice' type='text' placeholder='Price'/>
+                            <input className='addProdT' onChange={this.handleChange} name='prodType' type='text' placeholder='Type'/>
+                            <input className='addPrice' onChange={this.handleChange} name='prodPrice' type='text' placeholder='Price'/>
                         </div>
-                        <input className='addNew' onChange={this.updateDesc} name='prodDesc' type='text' placeholder='Product Description'/>
+                        <input className='addNew' onChange={this.handleChange} name='prodDesc' type='text' placeholder='Product Description'/>
                         <button className='subButt' onClick={() => {
                             this.props.addProduct(prodImg,prodName,prodType,prodDesc,prodPrice)
                             alert('Item added successfully')}}>Submit</button>

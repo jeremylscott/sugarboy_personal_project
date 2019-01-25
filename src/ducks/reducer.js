@@ -122,10 +122,10 @@ export function deleteFromCart(index) {
     }
 }
 
-export function updateCartTotal(cartTotal) {
+export function updateCartTotal(total) {
     return {
         type: UPDATE_CART_TOTAL,
-        payload: cartTotal
+        payload: total
     }
 }
 
@@ -232,7 +232,7 @@ function reducer(state=initialState, action) {
             }
         case UPDATE_CART_TOTAL:
             return {
-                ...state, cartTotal: action.payload.data
+                ...state, cartTotal: action.payload
             }
         case `${GET_USER}_FULFILLED`:
             return {
