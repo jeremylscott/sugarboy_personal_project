@@ -34,7 +34,6 @@ class Admin extends Component {
     }
 
     setItemToState = (product) => {
-        console.log(product);
         this.setState({
             prodImg: product.prodimg,
             prodName: product.prodname,
@@ -97,9 +96,12 @@ class Admin extends Component {
     }
 
     render() {
-             const {prodName,prodDesc,prodImg,prodType,prodPrice,searchText} = this.state
+
+        const {prodName,prodDesc,prodImg,prodType,prodPrice,searchText} = this.state
         
-        const allProdList = this.props.allProducts.map((product) => {
+        // const allProdList = this.props.allProducts.map((product) => {
+
+        const allProdList = this.props.allProducts.filter((product) => product.prodname.toLowerCase().includes(searchText)).map((product) => {
             return (
                 <div key={product.prodid} className='cardWrapper8'>
                     <img className='cardImg8' src={product.prodimg} alt='donut'/>
