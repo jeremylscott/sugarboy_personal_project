@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {getAllProducts,propInput,updateProduct,addProduct,clearState,deleteProduct} from '../../ducks/reducer'
+import {getAllProducts,updateProduct,addProduct,clearState,deleteProduct} from '../../ducks/reducer'
+import search from '../../images/magnifier.png'
 import './admin.scss'
 import Home from '../Home/Home'
 
@@ -17,7 +18,8 @@ class Admin extends Component {
             prodDesc: '',
             prodType: '',
             prodPrice: '',
-            prodSelected: false
+            prodSelected: false,
+            searchText: ''
         }
     }
 
@@ -95,7 +97,7 @@ class Admin extends Component {
     }
 
     render() {
-             const {prodName,prodDesc,prodImg,prodType,prodPrice} = this.state
+             const {prodName,prodDesc,prodImg,prodType,prodPrice,searchText} = this.state
         
         const allProdList = this.props.allProducts.map((product) => {
             return (
@@ -132,6 +134,11 @@ class Admin extends Component {
                 <div className='adminTitle'>
                     <h1 className='pageAdmin'>Admin Portal</h1>
                     <Link to='/reports' className='rLinks'><div className='reportLink'>Reports</div></Link>
+                    <div className='searchCont'>
+                        <img src={search} className='searchIcon'/>
+                        <input className='searchBox' onChange={this.handleChange} name='searchText' type='text'
+                            placeholder='Search' value={searchText}/>
+                    </div>
                     <button onClick={this.handleToggle} className='addNewButt'>Add New Product</button>
                 </div>
 
@@ -167,4 +174,4 @@ class Admin extends Component {
 
 const mapStateToProps = (state) => state
 
-export default connect(mapStateToProps,{getAllProducts,propInput,clearState,deleteProduct,addProduct,updateProduct})(Admin)
+export default connect(mapStateToProps,{getAllProducts,clearState,deleteProduct,addProduct,updateProduct})(Admin)
