@@ -16,7 +16,6 @@ class Cart extends Component {
     }
 
     render() {
-console.log(this.props.cart);
         if (this.props.cart.length > 0) {
             var total = this.props.cart.map(item => item.price).reduce(((prev, next) => prev + next),0)
             this.props.updateCartTotal(total)

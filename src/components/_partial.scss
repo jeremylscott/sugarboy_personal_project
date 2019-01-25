@@ -28,7 +28,6 @@ $secondaryColor: #001D4A;
     width: 100vw;
     height: 30px;
     font-size: 1.7em;
-    text-decoration: underline;
     font-family: $chosenFont;
     text-align: center;
     margin-bottom: 2vh;
@@ -51,7 +50,7 @@ $secondaryColor: #001D4A;
 
 %cardImg {
     width: 200px;
-    height: auto;
+    height: 200px;
     border-radius: 5px;
     margin-bottom: 10px;
     margin-left: 5px;

@@ -12,7 +12,7 @@
        
 .descrip8 {@extend %descrip;}
 
-.prodImg {@extend %cardImg};
+.prodImg {@extend %prodTitle};
 
 .prodImg::placeholder {
     padding-left: .1vw;
@@ -46,9 +46,9 @@
     justify-content: space-around;
     align-content: center;
     align-items: center;
-    
     border-radius: 5px;
     font-family: $chosenFont;
+    margin-bottom: 10px;
 }
 
 .reportLink {
@@ -117,10 +117,9 @@
 }
 
 .pageAdmin {
-    width: 60vw;
+    width: 100vw;
     height: 5vh;
-    font-size: 2em;
-    text-decoration: underline;
+    font-size: 2.2em;
     font-family: $chosenFont;
     text-align: center;
     margin-bottom: 10px;
@@ -384,17 +383,19 @@ button:hover {background-color: #001D4A}
         font-size: .8em;
         height: 2vh;
     }
+
+    .pageAdmin {
+        font-size: 1.7em;
+    }
 }
 
 @media (max-width: 414px) {
     .pageAdmin {
-        margin-top: 6vh;
-        padding-top: 1vh;
+        font-size: 1.3em;
     }
-
     .addNewButt {
-        font-size: .7em;
-        width: 15vw;
+        font-size: .6em;
+        width: 22vw;
         height: 3vh;
         margin-bottom: 2vh;
     }
@@ -455,10 +456,10 @@ button:hover {background-color: #001D4A}
     }
 
     .reportLink {
-        top: 7vh;
-        width: 7vw;
+        top: 9.5vh;
+        width: 11vw;
         font-size: .8em;
-        height: 1.6vh;
+        height: 2.5vh;
     }
 
 }
@@ -467,12 +468,12 @@ button:hover {background-color: #001D4A}
     .pageAdmin {
         margin-top: 6vh;
         padding-top: 1vh;
-        font-size: .9em;
+        font-size: 1em;
     }
 
     .addNewButt {
         font-size: .5em;
-        width: 19vw;
+        width: 24vw;
         height: 3vh;
         margin-bottom: 1vh;
     }
@@ -519,10 +520,10 @@ button:hover {background-color: #001D4A}
     }
 
     .reportLink {
-        top: 7vh;
-        width: 7vw;
-        font-size: .8em;
-        height: 1.6vh;
+        top: 7.5vh;
+        width: 12vw;
+        font-size: .6em;
+        height: 2vh;
         border-radius: 3px;
 
     }
