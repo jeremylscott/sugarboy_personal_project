@@ -2,8 +2,10 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../../images/sugarboy_logo.png'
 import {connect} from 'react-redux'
+import {toast, ToastContainer} from 'react-toastify'
 import {login,signup,getUser,logOut} from '../../ducks/reducer'
 import './home.scss'
+import 'react-toastify/dist/ReactToastify.css'
 
 class Home extends Component {
     constructor(props) {
@@ -55,12 +57,29 @@ class Home extends Component {
         }, 500);
     }
 
+    notifyLogIn = () => {
+        toast(`Login successful!`, {
+            position: toast.POSITION.TOP_CENTER
+        })
+    }
+
+    notifyReg = () => {
+        toast(`Account has been created`, {
+            position: toast.POSITION.TOP_CENTER
+        })
+    }
+
+    notifyLogOut = () => {
+        toast(`You have been signed out`, {
+            position: toast.POSITION.TOP_CENTER
+        })
+    }
+
     handleReg = (e) => {
         this.props.signup(this.state.regUsername,this.state.regPassword,this.state.email)
         this.handleRegToggle()
         this.clearState()
-        alert(`Registration successful.  Please sign in`)
-        
+        this.notifyReg()
     }
 
     clearState = () => {
@@ -79,20 +98,23 @@ class Home extends Component {
             logToggle: !this.state.logToggle
         })
 
-        alert(`You've been signed in`)
+        this.notifyLogIn()
 
         setTimeout(() => {
             this.setState({
                 username: '',
                 password: ''
             })   
-        }, 1000);
+        }, 2500);
     }
 
     logOutForceUpdate = () => {
         this.props.logOut()
-        window.location.reload()
-        alert(`You have been signed out`)
+        this.notifyLogOut()
+        
+        setTimeout(() => {
+            window.location.reload()
+        }, 2500);
     }
 
     componentDidUpdate = (previousProps) => {
@@ -106,6 +128,7 @@ class Home extends Component {
 
         return (
             <div>
+                <ToastContainer autoClose={2000}/>
                 {this.state.toggle ?
                     <nav className='fullDropDownMenu'>
                         {this.state.toggleLinks ?

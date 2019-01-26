@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
-import {getAllProducts,updateProduct,addProduct,clearState,deleteProduct} from '../../ducks/reducer'
+import {Link,Redirect} from 'react-router-dom'
+import {toast,ToastContainer} from 'react-toastify'
+import {getAllProducts,updateProduct,addProduct,deleteProduct} from '../../ducks/reducer'
 import search from '../../images/magnifier.png'
 import './admin.scss'
 import Home from '../Home/Home'
-
 
 class Admin extends Component {
     constructor(props) {
@@ -96,7 +96,10 @@ class Admin extends Component {
     }
 
     render() {
-
+        if(this.props.user.isadmin !== true) {
+            this.forceUpdate()
+            return <Redirect to='/'/>   // redirect to home page if not an admin
+        }
         const {prodName,prodDesc,prodImg,prodType,prodPrice,searchText} = this.state
 
         const allProdList = this.props.allProducts.filter((product) => product.prodname.toLowerCase().includes(searchText)).map((product) => {
@@ -117,10 +120,17 @@ class Admin extends Component {
                         placeholder={product.proddesc} input='text'/>
                     <div className='adminButts'>
                         <div className='delete' onClick={() => {this.props.deleteProduct(product.prodid)
-                            alert('Item has been deleted.')}} title='Delete product'/>
+                            toast('Item has been deleted!', {
+                                position: toast.POSITION.TOP_CENTER
+                            })
+                            }} title='Delete product'/>
                         <div onClick={() => {this.props.updateProduct(product.prodid,prodImg,prodName,prodType,prodDesc,prodPrice)
-                            this.forceUpdate()
-                            alert('Item has been updated')
+                            toast('Item has been updated!', {
+                                position: toast.POSITION.TOP_CENTER
+                            })
+                                setTimeout(() => {
+                                    this.forceUpdate()
+                                }, 2500);
                             }} title='Make changes to products' className='butt8'/>
                     </div>
                 </div>
@@ -129,6 +139,7 @@ class Admin extends Component {
   
         return (
             <div className='firstAdmin'>
+                <ToastContainer autoClose={2000}/>
             <div className='secAdmin'>
                 <Home/>
                 <div className='adminTitle'>
@@ -154,7 +165,13 @@ class Admin extends Component {
                         <input className='addNew' onChange={this.handleChange} name='prodDesc' type='text' placeholder='Product Description'/>
                         <button className='subButt' onClick={() => {
                             this.props.addProduct(prodImg,prodName,prodType,prodDesc,prodPrice)
-                            alert('Item added successfully')}}>Submit</button>
+                            toast('Item added successfully!', {
+                                position: toast.POSITION.TOP_CENTER
+                            })
+                                setTimeout(() => {
+                                    this.forceUpdate()
+                                }, 2500);
+                            }}>Submit</button>
                     </form>
                     :
                     <div className='hideAddForm'></div>}
@@ -174,4 +191,4 @@ class Admin extends Component {
 
 const mapStateToProps = (state) => state
 
-export default connect(mapStateToProps,{getAllProducts,clearState,deleteProduct,addProduct,updateProduct})(Admin)
+export default connect(mapStateToProps,{getAllProducts,deleteProduct,addProduct,updateProduct})(Admin)

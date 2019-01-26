@@ -11,7 +11,6 @@ const initialState = {
     prodId: 0,
     cart: [],
     cartTotal: 0,
-    currentProp: '',
     salesReports: []
 }
 
@@ -34,8 +33,6 @@ const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL'
 const GET_USER = 'GET_USER'
 const LOG_OUT = 'LOG_OUT'
 const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS'
-const PROP_INPUT = 'PROP_INPUT'
-const CLEAR_STATE = 'CLEAR_STATE'
 
 // action creators 
 export function login(username,password) {
@@ -158,19 +155,6 @@ export function getAllProducts() {
     }
 }
 
-export function propInput(donuts) {
-    return {
-        type: PROP_INPUT,
-        payload: donuts
-    }
-}
-
-export function clearState() {
-    return {
-        type: CLEAR_STATE
-    }
-}
-
 export function getSalesReports() {
     return {
         type: GET_SALES_REPORTS,
@@ -249,22 +233,6 @@ function reducer(state=initialState, action) {
         case `${GET_SALES_REPORTS}_FULFILLED`:
             return {
                 ...state, salesReports: action.payload.data
-            }
-        case PROP_INPUT:
-            return {
-                ...state, prodName: action.payload.prodName,
-                          prodDesc: action.payload.prodDesc,
-                          prodImg: action.payload.prodImg,
-                          prodType: action.payload.prodType,
-                          currentProp: action.payload
-            }
-        case CLEAR_STATE:
-            return {
-                ...state, 
-                    prodName: '',
-                    prodDesc: '',
-                    prodImg: '',
-                    prodType: ''
             }
 
             default: return state;
