@@ -1,16 +1,21 @@
 import React from 'react'
 import axios from 'axios'
+import {toast, ToastContainer} from 'react-toastify'
 import StripeCheckout from 'react-stripe-checkout'
   
     const CURRENCY = 'USD'
     const fromDollarToCent = amount => amount * 100
 
     const successPayment = data => {
-        alert('Payment Successful')
+        toast('Payment Successful', {
+             position: toast.POSITION.TOP_CENTER
+        })
     }
-
+    
     const errorPayment = data => {
-        alert('Payment Successful')
+        toast('Payment Successful', {
+            position: toast.POSITION.TOP_CENTER
+        })
     }
 
     const onToken = (amount,description) => token =>
