@@ -20,18 +20,10 @@ componentDidMount() {
                     <span className='name3'>{yeast.prodname}</span>
                     <span className='descrip3'>{yeast.proddesc}</span>
                     <span className='price3'>${yeast.price}</span>
-                </div>
-            )
-        })
-
-        let userYeastList = this.props.yeasts.map((yeast,i) => {
-            return (
-                <div key={i} className='cardWrapper3'>
-                    <img className='cardImg3' src={yeast.prodimg} alt='donut'/>
-                    <span className='name3'>{yeast.prodname}</span>
-                    <span className='descrip3'>{yeast.proddesc}</span>
-                    <span className='price3'>${yeast.price}</span>
-                    <button onClick={() => this.props.addToCart(yeast)} className='butt3'>Add to Cart</button>
+                    {this.props.user.username ? 
+                        <button onClick={() => this.props.addToCart(yeast)} className='butt3'>Add to Cart</button>
+                        : null
+                    } 
                 </div>
             )
         })
@@ -46,11 +38,7 @@ componentDidMount() {
                     <div className='mainDisplay3'>
                         <div className='leftCol3'></div>
                         <div className='yeastDisplay'>
-                            {this.props.user.username ?
-                                userYeastList
-                                :
-                                yeastList
-                            }
+                            {yeastList}
                         </div>
                         <div className='rightCol3'></div>
                     </div>

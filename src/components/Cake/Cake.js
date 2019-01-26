@@ -27,18 +27,10 @@ class Cake extends Component {
                     <span className='name2'>{cake.prodname}</span>
                     <span className='descrip2'>{cake.proddesc}</span>
                     <span className='price2'>${cake.price}</span>
-                </div>
-            )
-        })
-
-        let userCakeList = this.props.cakes.map((cake) => {
-            return (
-                <div key={cake.prodid} className='cardWrapper2'>
-                    <img className='cardImg2' src={cake.prodimg} alt='donut'/>
-                    <span className='name2'>{cake.prodname}</span>
-                    <span className='descrip2'>{cake.proddesc}</span>
-                    <span className='price2'>${cake.price}</span>
-                    <button onClick={() => this.props.addToCart(cake)} className='butt2'>Add to Cart</button>
+                    {this.props.user.username ? 
+                        <button onClick={() => this.props.addToCart(cake)} className='butt2'>Add to Cart</button>
+                        : null
+                    }   
                 </div>
             )
         })
@@ -53,11 +45,7 @@ class Cake extends Component {
                     <div className='mainDisplay2'>
                         <div className='leftCol2'></div>
                         <div className='cakeDisplay'>
-                            {this.props.user.username ?
-                                userCakeList
-                                :
-                                cakeList
-                            }
+                            {cakeList}
                         </div>
                         <div className='rightCol2'></div>
                     </div>

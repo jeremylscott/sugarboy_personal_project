@@ -20,22 +20,13 @@ class Kolaches extends Component {
                         <span className='name4'>{kolache.prodname}</span>
                         <span className='descrip'>{kolache.proddesc}</span>
                         <span className='price'>${kolache.price}</span>
+                        {this.props.user.username ? 
+                        <button onClick={() => this.props.addToCart(kolache)} className='butt4'>Add to Cart</button>
+                        : null
+                    } 
                     </div>
             )
         })
-
-        let userKolacheList = this.props.kolaches.map((kolache,i) => {
-            return (
-                    <div key={i}className='cardWrapper4'>
-                        <img className='cardImg4' src={kolache.prodimg} alt='donut'/>
-                        <span className='name4'>{kolache.prodname}</span>
-                        <span className='descrip4'>{kolache.proddesc}</span>
-                        <span className='price'>${kolache.price}</span>
-                        <button onClick={() => this.props.addToCart(kolache)}className='butt4'>Add to Cart</button>
-                    </div>
-            )
-        })
-
 
         return (
             <div className='pageStructure4'>
@@ -47,11 +38,7 @@ class Kolaches extends Component {
                     <div className='mainDisplay4'>
                         <div className='leftCol4'></div>
                         <div className='kolacheDisplay'>
-                        {this.props.user.username ?
-                            userKolacheList
-                            :
-                            kolacheList   
-                        }
+                            {kolacheList}   
                         </div>
                         <div className='rightCol4'></div>
                     </div>

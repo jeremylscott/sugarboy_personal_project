@@ -19,18 +19,10 @@ class Drinks extends Component {
                     <span className='name'>{drink.prodname}</span>
                     <span className='descrip'>{drink.proddesc}</span>
                     <span className='price'>${drink.price}</span>
-                </div>
-            )
-        })
-
-        let userDrinkList = this.props.drinks.map((drink,i) => {
-            return (
-                <div key={i} className='cardWrapper'>
-                    <img className='cardImg' src={drink.prodimg} alt='donut'/>
-                    <span className='name'>{drink.prodname}</span>
-                    <span className='descrip'>{drink.proddesc}</span>
-                    <span className='price'>${drink.price}</span>
-                    <button onClick={() => this.props.addToCart(drink)} className='butt'>Add to Cart</button>
+                    {this.props.user.username ? 
+                        <button onClick={() => this.props.addToCart(drink)} className='butt'>Add to Cart</button>
+                        : null
+                    } 
                 </div>
             )
         })
@@ -45,11 +37,7 @@ class Drinks extends Component {
                     <div className='mainDisplay'>
                         <div className='leftCol'></div>
                         <div className='drinkDisplay'>
-                            {this.props.user.username ?
-                                userDrinkList
-                                :
-                                drinkList
-                            }
+                            {drinkList}
                         </div>
                         <div className='rightCol'></div>
                     </div>
