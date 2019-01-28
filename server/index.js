@@ -11,7 +11,7 @@ const {getYeast,getCake,getKolaches,getDrinks,login,signup,addProduct,
         deleteFromCart,addSale,getSalesReports} = require('./controller')
 
 app.use(json())
-app.use(express.static(`${_dirname}/../build`))
+app.use(express.static(`${__dirname}/../build`))
 
 // connect the database
 massive(process.env.CONNECTION_STRING)
