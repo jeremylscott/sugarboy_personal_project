@@ -87,5 +87,6 @@ app.delete('/api/cart/:id', deleteFromCart)     // removes items from cart
 
 app.put('/api/products/:id', updateProduct)     // updates a product in the database
 
+app.use(express.static(`{$_dirname}/../build`))
 
 app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}`))
