@@ -90,7 +90,7 @@ app.delete('/api/cart/:id', deleteFromCart)     // removes items from cart
 app.put('/api/products/:id', updateProduct)     // updates a product in the database
 
 app.get('*', (req,res) => {
-    res.sendFile(path.join(_dirname, '../build/index.html'))
+    res.sendFile(path.join(__dirname, '../build/index.html'))
 })
 
 app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}`))
