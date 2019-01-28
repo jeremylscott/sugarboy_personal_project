@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const {json} = require('body-parser')
+const path = require('path')
 const massive = require('massive')
 const session = require('express-session')
 const nodemailer = require('nodemailer')
@@ -10,6 +11,7 @@ const {getYeast,getCake,getKolaches,getDrinks,login,signup,addProduct,
         deleteFromCart,addSale,getSalesReports} = require('./controller')
 
 app.use(json())
+app.use(express.static(`${_dirname}/../build`))
 
 // connect the database
 massive(process.env.CONNECTION_STRING)
@@ -87,6 +89,8 @@ app.delete('/api/cart/:id', deleteFromCart)     // removes items from cart
 
 app.put('/api/products/:id', updateProduct)     // updates a product in the database
 
-app.use(express.static(`${_dirname}/../build`))
+app.get('*', (req,res) => {
+    res.sendFile(path.join(_dirname, '../build/index.html'))
+}
 
 app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}`))
