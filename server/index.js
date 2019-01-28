@@ -11,10 +11,7 @@ const {getYeast,getCake,getKolaches,getDrinks,login,signup,addProduct,
         deleteFromCart,addSale,getSalesReports} = require('./controller')
 
 app.use(json())
-app.use((req, res, next)=> {
-    console.log('middleware')
-    next();
-})
+
 app.use(express.static(`${__dirname}/../build`))
 
 // connect the database
