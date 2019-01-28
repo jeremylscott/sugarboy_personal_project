@@ -91,6 +91,6 @@ app.put('/api/products/:id', updateProduct)     // updates a product in the data
 
 app.get('*', (req,res) => {
     res.sendFile(path.join(_dirname, '../build/index.html'))
-}
+})
 
 app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}`))
