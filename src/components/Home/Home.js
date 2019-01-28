@@ -4,6 +4,7 @@ import logo from '../../images/sugarboy_logo.png'
 import {connect} from 'react-redux'
 import {toast, ToastContainer} from 'react-toastify'
 import {login,signup,getUser,logOut} from '../../ducks/reducer'
+import PropTypes from 'prop-types'
 import './home.scss'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -181,6 +182,10 @@ class Home extends Component {
         )
     }
 }
+
+ Home.propTypes = {
+        username: PropTypes.string.isRequired
+    }
 
 function mapStateToProps(state) {
     return {

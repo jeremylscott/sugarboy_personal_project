@@ -57,7 +57,7 @@ class Cart extends Component {
                                             <TableRowColumn>{`           `}</TableRowColumn>
                                             <TableRowColumn>{`           `}</TableRowColumn>
                                             <TableRowColumn>Order Total:</TableRowColumn>
-                                            <TableRowColumn>{total ? parseFloat(total.toFixed(2)) : null}</TableRowColumn>
+                                            <TableRowColumn>${total ? parseFloat(total.toFixed(2)) : null}.00</TableRowColumn>
                                         </TableRow>
                                     </TableBody>
                                 </Table>

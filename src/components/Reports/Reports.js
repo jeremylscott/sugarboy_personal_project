@@ -22,7 +22,7 @@ class Reports extends Component {
         }, 1000);
     }
 
-    format = (array) => {                       // used to loop thru the salesReport array and dynamically get the values for the chart.
+    format = (array) => {        // used to loop thru the salesReport array and dynamically get the values for the chart.
         const dataValues = []
         const labelValues = array.map(product => {
             dataValues.push(product.count)
