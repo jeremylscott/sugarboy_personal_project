@@ -127,15 +127,18 @@ $chosenFont: 'Mukta', sans-serif;
 
 .mailButton {
     background: $mainColor;
-    font-size: .8em;
+    font-size: 1em;
     font-family: $chosenFont;
     border: none;
     color: white;
-    border-radius: 4px; 
+    border-radius: 4px;
+    margin-bottom: 2vh; 
+    height: 4vh;
+    width: 5vw;
 }
 
 .contactTitle {
-    font-size: 1.3em;
+    font-size: 1.6em;
     font-family: $chosenFont;
     padding-bottom: 1vh;
     text-align: center;
@@ -188,7 +191,7 @@ $chosenFont: 'Mukta', sans-serif;
     padding: 0px 3px;
 }
 
-.contactUs{
+.contactUs  {
     display: flex;
     border: 3px solid $mainColor;
     position: absolute;
@@ -221,6 +224,39 @@ $chosenFont: 'Mukta', sans-serif;
         padding-right: 5vw;
         border-right: 1px solid #F58220
     }
+
+    .contactUs {
+        width: 45vw; 
+        margin-bottom: 10vh;
+    }
+
+    .first {
+        width: 20vw;
+    }
+
+    .last {
+        width: 20vw;
+    }
+
+    .email {
+        width: 30vw;
+    }
+
+    .message {
+        width: 40vw;
+        height: 10vh;
+    }
+
+    .contactTitle {
+        font-size: 2em;
+    }
+
+    .mailButton {
+        height: 3vh;
+        width: 8vw;
+        margin-bottom: 2vh;
+        font-size: 1.4em;
+    }
 }
 
 @media (max-width: 768px) {
@@ -247,6 +283,13 @@ $chosenFont: 'Mukta', sans-serif;
         height: 20vw;
         padding-right: 5vw;
         border-right: 1px solid #F58220
+    }
+
+    .mailButton {
+        height: 3vh;
+        width: 9vw;
+        margin-bottom: 2vh;
+        font-size: 1.2em;
     }
 }
 
@@ -275,9 +318,42 @@ $chosenFont: 'Mukta', sans-serif;
         padding-right: 5vw;
         border-right: 1px solid #F58220
     }
+
+    .contactTitle {
+        font-size: 1.3em;
+    }
+
+    .mailButton {
+        height: 3vh;
+        width: 11vw;
+        margin-bottom: 2vh;
+        font-size: .7em;
+    }
+
+    .contactUs {
+        width: 60vw; 
+        margin-bottom: 10vh;
+    }
+
+    .first {
+        width: 24vw;
+    }
+
+    .last {
+        width: 24vw;
+    }
+
+    .email {
+        width: 35vw;
+    }
+
+    .message {
+        width: 52vw;
+        height: 10vh;
+    }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
     .pageTopicCont {
         font-size: .8em; 
         margin-top: 11vh;
@@ -301,5 +377,16 @@ $chosenFont: 'Mukta', sans-serif;
         height: 30vw;
         padding-right: 5vw;
         border-right: 1px solid #F58220
+    }
+
+    .mailButton {
+        height: 3.2vh;
+        width: 14vw;
+        margin-bottom: 2vh;
+        font-size: .7em;
+    }
+
+    .contactUs {
+        margin-bottom: 4vh;
     }
 }
