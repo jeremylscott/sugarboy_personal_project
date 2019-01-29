@@ -333,13 +333,20 @@ homeButt:active {
 
 @media (max-width: 1024px) {
     .burgButton {
-        width: 12vw;
+        width: 16vw;
         height: 5vh;
+        font-size: 2.2em;
+    }
+
+    .cartLink {
+        width: 18vw;
+        height: 4vh;
+        font-size: 2em;
     }
 
     .fullDropDownMenu {
-        width: 20vw;
-        height: 47vh;
+        width: 30vw;
+        height: 58vh;
         top: 4.9vh;
     }
 
@@ -347,8 +354,12 @@ homeButt:active {
         top: 4.9vh;
     }
 
+    .link4 {
+        font-size: 2.1em;
+    }
+
     .homeLogo {
-        width: 20vw;
+        width: 30vw;
         height: 7vh
     }
 
@@ -399,8 +410,9 @@ homeButt:active {
 
 @media (max-width: 768px) {
     .burgButton {
-        width: 13vw;
+        width: 15vw;
         height: 5vh;
+        font-size: 1.5em;
     }
 
     .showRegLogin {
@@ -424,17 +436,22 @@ homeButt:active {
     }
 
     .fullDropDownMenu {
-        width: 22vw;
-        height: 52vh;
+        width: 32vw;
+        height: 61vh;
+    }
+
+    .link4 {
+        font-size: 1.7em;
     }
 
     .homeLogo {
-        width: 18vw;
+        width: 26vw;
         height: 6vh
     }
 
     .cartLink {
-        width: 12vw;
+        width: 18vw;
+        font-size: 1.4em;
     }
 
     .showRegNav {
@@ -448,9 +465,9 @@ homeButt:active {
 
 @media (max-width: 414px) {
     .burgButton {
-        width: 16vw;
+        width: 18vw;
         height: 4vh;
-        font-size: .9em;
+        font-size: 1.1em;
     }
 
     .showRegLogin {
@@ -478,20 +495,21 @@ homeButt:active {
     }
 
     .cartLink {
-        font-size: .5em;
-        width: 9vw;
+        font-size: .8em;
+        width: 15vw;
         height: 2vh;
     }
 
     .fullDropDownMenu {
-        width: 24vw;
-        height: 24vh;
+        width: 34vw;
+        height: 52vh;
         top: 3.8vh;
-        font-size: .4em;
+        font-size: .6em;
     }
 
     .link4 {
         margin-top: 1em;
+        font-size: 1.8em;
     }
 
     .hideFullDropMenu {
@@ -499,7 +517,7 @@ homeButt:active {
     }
 
     .homeLogo {
-        width: 17vw;
+        width: 24vw;
         height: 5vh
     }
 
@@ -526,9 +544,9 @@ homeButt:active {
 
 @media (max-width: 375px) {
     .burgButton {
-        width: 15vw;
-        height: 3vh;
-        font-size: .5em;
+        width: 23vw;
+        height: 5vh;
+        font-size: 1em;
     }
 
     .showRegLogin {
@@ -558,29 +576,30 @@ homeButt:active {
     }
 
     .cartLink {
-        font-size: .35em;
-        height: 1.4vh;
-        width: 10vw
+        font-size: .8em;
+        height: 2vh;
+        width: 20vw
     }
 
     .fullDropDownMenu {
-        width: 22vw;
-        height: 27vh;
-        top: 3vh;
+        width: 32vw;
+        height: 44vh;
+        top: 5vh;
         font-size: .4em;
     }
 
     .hideFullDropMenu {
-        top: 3vh;
+        top: 5vh;
     }
 
     .link4 {
         margin-top: .8em;
+        font-size: 2em;
     }
 
     .homeLogo {
-        width: 16vw;
-        height: 4vh
+        width: 28vw;
+        height: 6vh
     }
 
     .showRegNav {
