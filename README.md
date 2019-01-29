@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>Sugarboy Donuts (For demonstration purposes only)</h2>
 
-## Available Scripts
+<a href='http://www.lekkerdonuts.com'>Sugarboy Donuts</a>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p>
+While this is actually the name of a real donut shop from the town that I live in (Prosper, TX), it is not affiliated with them or made with their permission.  It was for training and experience purposes only.  The products on the website are from a variety of sources on the internet.  They are not exclusively products sold by Sugarboy Donuts.  That being said, if you find yourself in Prosper, TX, their donuts are great!
+</p>
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<p>
+This project was completed over the course of 2 weeks.  It is a full front to back application and is fully responsive.  This readme is meant to share some of the functionality, technologies, and features used.
+</p>
 
-### `npm test`
+<p>
+This project was created via React JS.  
+</p>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>
+Other technologies used include:  Material UI, ChartJS, Stripe, Nodemailer, Axios, Massive, Postgres, Redux, CSS, and SASS.
+</p>
 
-### `npm run build`
+<p>
+The site was intented to imitate a real website.  The front end allows users to view all products offered on the site.  The Contact link shows users the two locations available as well as the contact information for both.  Also on the Contact page is a contact us form that allows them to send questions or inquiries to the company.  A viewer can click the link from the menu that allows them to register for an account.  After a viewer registers for an account, they are then able to login, and add items to their cart for purchase.  All prices listed are by the dozen.  Once items are added to their cart, the My Cart link appears and keeps track of how many items have been added.  Once the user is ready to checkout, they can click on the cart link which will take them to their cart and allow them to pay with a cc via stripe, or delete items from their cart.  
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p> 
+ On the backend, users who are admins, login and are able to click on the Home page link to be taken to the Admin page.  On the admin page, they are able to add a new product, delete a product, or change a prodcuts name, description, image, price, or type.  Also on the admin page there is a link to Reports.  When they click on that link they will see a chart that shows them the amount of purchases (by the dozen) that have been purchased via the website.
+ </p>
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+                                  
+  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
