@@ -26,7 +26,7 @@ massive(process.env.CONNECTION_STRING)
 app.use(session({
     secret: process.env.SECRET,
     resave: true,
-    saveUnitialized: false,
+    saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
