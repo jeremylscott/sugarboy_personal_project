@@ -9,6 +9,12 @@ import Home from '../Home/Home'
 
 function HomePic(props) {
 
+     const images = [
+        '../../images/mainpic9.jpg',
+        '../../images/mainpic8.jpg',
+        '../../images/mainpic5.jpg'
+     ]
+    
     if(props.user.isadmin === true) {
         return <Redirect to='/admin'/>   //  Go to admin portal if user is an admin
     }
