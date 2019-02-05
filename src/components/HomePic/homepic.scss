@@ -11,30 +11,10 @@ $chosenFont: 'Mukta', sans-serif;
 }
 
 .mainPic9 {
-    width: 99vw;
-    height: auto;
-    margin-top: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
-.mainPic8 {
-    width: 99vw;
-    height: auto;
-    margin-top: none;
-    position: absolute;
-    top: 135.5vh;
-    z-index: 1;
-}
-
-.mainPic5 {
-    width: 99vw;
-    height: auto;
-    margin-top: none;
-    position: absolute;
-    top: 297.5vh;
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 .space1 {
