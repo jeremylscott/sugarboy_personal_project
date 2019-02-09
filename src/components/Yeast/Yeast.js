@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import Home from '../Home/Home'
-import Masonry from 'react-masonry-component'
 import './yeast.scss'
 import {getYeast,getUser,addToCart} from '../../ducks/reducer'
 
@@ -16,10 +16,9 @@ componentDidMount() {
         let yeastList = this.props.yeasts.map((yeast,i) => {
             return (
                 <div key={i} className='cardWrapper3'>
-                    <img className='cardImg3' src={yeast.prodimg} alt='donut'/>
+                    <Link to={`/product-info/${yeast.prodid}`}><img className='cardImg3' src={yeast.prodimg} alt='donut'/></Link>
                     <span className='name3'>{yeast.prodname}</span>
-                    <span className='descrip3'>{yeast.proddesc}</span>
-                    <span className='price3'>${yeast.price}</span>
+                    <span className='price3'>${yeast.price} per dozen</span>
                     {this.props.user.username ? 
                         <button onClick={() => this.props.addToCart(yeast)} className='butt3'>Add to Cart</button>
                         : null

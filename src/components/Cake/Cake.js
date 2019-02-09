@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {getCake,getUser,addToCart} from '../../ducks/reducer'
 import Home from '../Home/Home'
 import './cake.scss'
@@ -23,10 +24,9 @@ class Cake extends Component {
         let cakeList = this.props.cakes.map((cake) => {
             return (
                 <div key={cake.prodid} className='cardWrapper2'>
-                    <img className='cardImg2' src={cake.prodimg} alt='donut'/>
+                    <Link to={`/product-info/${cake.prodid}`}><img className='cardImg2' src={cake.prodimg} alt='donut'/></Link>
                     <span className='name2'>{cake.prodname}</span>
-                    <span className='descrip2'>{cake.proddesc}</span>
-                    <span className='price2'>${cake.price}</span>
+                    <span className='price2'>${cake.price} per dozen</span>
                     {this.props.user.username ? 
                         <button onClick={() => this.props.addToCart(cake)} className='butt2'>Add to Cart</button>
                         : null

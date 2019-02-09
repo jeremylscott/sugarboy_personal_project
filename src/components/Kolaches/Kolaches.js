@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import Home from '../Home/Home'
 import './kolaches.scss'
 import {getKolaches,getUser,addToCart} from '../../ducks/reducer'
@@ -16,10 +17,9 @@ class Kolaches extends Component {
         let kolacheList = this.props.kolaches.map((kolache,i) => {
             return (
                     <div key={i}className='cardWrapper4'>
-                        <img className='cardImg4' src={kolache.prodimg} alt='donut'/>
+                        <Link to={`/product-info/${kolache.prodid}`}><img className='cardImg4' src={kolache.prodimg} alt='donut'/></Link>
                         <span className='name4'>{kolache.prodname}</span>
-                        <span className='descrip'>{kolache.proddesc}</span>
-                        <span className='price'>${kolache.price}</span>
+                        <span className='price'>${kolache.price} per dozen</span>
                         {this.props.user.username ? 
                         <button onClick={() => this.props.addToCart(kolache)} className='butt4'>Add to Cart</button>
                         : null

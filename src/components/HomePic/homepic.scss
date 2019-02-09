@@ -1,6 +1,6 @@
 $mainColor: #F58220;
 $chosenFont: 'Mukta', sans-serif;
-
+$secondaryColor: #001D4A;
 
 .mainHome {
     display: flex;
@@ -8,6 +8,24 @@ $chosenFont: 'Mukta', sans-serif;
     position: relative;
     top: auto;
     z-index: -1;
+}
+
+.site-info {
+    top: 25vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2em;
+    z-index: 1;
+    background: white;
+    width: 50vw;
+    color: $mainColor;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 12px;
+    opacity: .9
 }
 
 .mainPic9 {
@@ -35,6 +53,12 @@ $chosenFont: 'Mukta', sans-serif;
         width: 100vw;
         top: 110vh;
     }
+
+    .site-info {
+        top: 20vh;
+        font-size: 2.5em;
+        width: 60vw;
+    }
 }
 
 @media (max-width: 414px) {
@@ -46,6 +70,12 @@ $chosenFont: 'Mukta', sans-serif;
     .mainPic5 {
         top: 82vh;
     }
+
+    .site-info {
+        top: 10vh;
+        font-size: 1.7em;
+        width: 70vw;
+    }
 }
 
 @media (max-width: 375px) {
@@ -56,5 +86,11 @@ $chosenFont: 'Mukta', sans-serif;
 
     .mainPic5 {
         top: 67vh;
+    }
+
+    .site-info {
+        top: 10vh;
+        font-size: 1.2em;
+        width: 70vw;
     }
 }

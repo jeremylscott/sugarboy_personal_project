@@ -4,7 +4,6 @@ import logo from '../../images/sugarboy_logo.png'
 import {connect} from 'react-redux'
 import {toast, ToastContainer} from 'react-toastify'
 import {login,signup,getUser,logOut} from '../../ducks/reducer'
-import PropTypes from 'prop-types'
 import './home.scss'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -153,7 +152,10 @@ class Home extends Component {
                         <button className='burgButton' onClick={this.handleToggle}
                             >Menu &#9776;</button>
                         <img className='homeLogo' src={logo} alt='logo'/>
-                        <Link className='cartLink' to='/cart'>{this.props.cart.length ? `My Cart (${this.props.cart.length})`: null}</Link>
+                        {this.props.cart.length ? <Link className='cartLink' to='/cart'>My Cart ({this.props.cart.length})</Link>
+                        : 
+                        null}
+                        
                     </div>
 
                 {this.state.regToggle ?            // Determines whether register menu shows or not
@@ -182,10 +184,6 @@ class Home extends Component {
         )
     }
 }
-
- Home.propTypes = {
-        username: PropTypes.string.isRequired
-    }
 
 function mapStateToProps(state) {
     return {
