@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import Home from '../Home/Home'
 import './yeast.scss'
-import {getYeast,getUser,addToCart} from '../../ducks/reducer'
+import {getYeast,getUser,addToCart,updateProdInfo} from '../../ducks/reducer'
 
 class Yeast extends Component {
 
@@ -16,7 +16,8 @@ componentDidMount() {
         let yeastList = this.props.yeasts.map((yeast,i) => {
             return (
                 <div key={i} className='cardWrapper3'>
-                    <Link to={`/product-info/${yeast.prodid}`}><img className='cardImg3' src={yeast.prodimg} alt='donut'/></Link>
+                    <Link to={`/product-info/${yeast.prodid}`}><img onClick={() => this.props.updateProdInfo(yeast.prodid)} 
+                        className='cardImg3' src={yeast.prodimg} alt='donut'/></Link>
                     <span className='name3'>{yeast.prodname}</span>
                     <span className='price3'>${yeast.price} per dozen</span>
                     {this.props.user.username ? 
@@ -54,5 +55,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getYeast,getUser,addToCart})(Yeast)
+export default connect(mapStateToProps,{getYeast,getUser,addToCart,updateProdInfo})(Yeast)
 

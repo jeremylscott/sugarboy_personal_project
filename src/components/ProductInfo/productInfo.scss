@@ -1,15 +1,134 @@
+$chosenFont: 'Mukta', sans-serif;
+
 .prodInfoCont {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20vh;
+    margin-top: 18vh;
     width: 80vw;
     height: 70vh;
-    background: grey;
+    background: white;
 }
 
 .infoPic {
     display: flex;
-    width: 40vw;
-    height: 50vh;
+    width: 30vw;
+    height: 40vh;
+    border-radius: 8px;
+}
+
+.more-info-title {
+    width: 30vw;
+    height: 6vh;
+    margin-top: 2vh;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: $chosenFont;
+}
+
+.prodText {
+    width: 30vw;
+    height: 8vh;
+    margin-top: 2vh;
+    font-family: $chosenFont;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.back-link {
+    position: absolute;
+    left: 2vw;
+    top: 10vh;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+    .infoPic {
+        width: 70vw;
+    }
+    
+    .more-info-title {
+        width: 70vw;
+        height: 6vh;
+        font-size: 3.5em;
+    }
+    
+    .prodText {
+        width: 70vw;
+        height: 8vh;
+        margin-top: 1vh;
+        font-size: 2.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .infoPic {
+        width: 70vw;
+    }
+
+    .more-info-title {
+        font-size: 3em;
+    }
+    
+    .prodText {
+        margin-top: 1vh;
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 414px) {
+    .infoPic {
+        width: 70vw;
+        margin-top: -5vh;
+    }
+    
+    .more-info-title {
+        font-size: 2em;
+    }
+    
+    .prodText {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 375px) {
+    .infoPic {
+        width: 70vw;
+        margin-top: -5vh;
+    }
+    
+    .more-info-title {
+        width: 70vw;
+        height: 6vh;
+        font-size: 1.7em;
+    }
+    
+    .prodText {
+        width: 70vw;
+        height: 8vh;
+        margin-top: 1vh;
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 320px) {
+    .infoPic {
+        width: 70vw;
+        margin-top: -5vh;
+    }
+    
+    .more-info-title {
+        width: 70vw;
+        height: 6vh;
+        font-size: 1.5em;
+    }
+    
+    .prodText {
+        width: 70vw;
+        height: 8vh;
+        margin-top: 1vh;
+        font-size: 1.1em;
+    }
 }

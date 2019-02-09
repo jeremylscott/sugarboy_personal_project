@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer')
 const app = express()
 const {getYeast,getCake,getKolaches,getDrinks,login,signup,addProduct,
         deleteProduct,updateProduct,addToCart,getUser,logOut,getAllProducts,clearCart,
-        deleteFromCart,addSale,getSalesReports} = require('./controller')
+        deleteFromCart,addSale,getSalesReports,updateProdInfo} = require('./controller')
 
 app.use(json())
 
@@ -41,6 +41,7 @@ app.get('/api/user', getUser)
 app.get('/api/delete', logOut)
 app.get('/api/clearcart', clearCart)        // clear items from cart
 app.get('/api/salesreports', getSalesReports)       // get the items used in report component
+app.get('/api/products/:id', updateProdInfo)        // gets a specific product for prod info component
 app.post('/auth/login', login)      // logs user in
 app.post('/auth/signup', signup)    // user signs up for account
 app.post('/api/products', addProduct)   // adds new product to the database

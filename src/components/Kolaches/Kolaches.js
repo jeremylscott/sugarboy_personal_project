@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import Home from '../Home/Home'
 import './kolaches.scss'
-import {getKolaches,getUser,addToCart} from '../../ducks/reducer'
+import {getKolaches,getUser,addToCart,updateProdInfo} from '../../ducks/reducer'
 
 
 class Kolaches extends Component {
@@ -17,7 +17,8 @@ class Kolaches extends Component {
         let kolacheList = this.props.kolaches.map((kolache,i) => {
             return (
                     <div key={i}className='cardWrapper4'>
-                        <Link to={`/product-info/${kolache.prodid}`}><img className='cardImg4' src={kolache.prodimg} alt='donut'/></Link>
+                        <Link to={`/product-info/${kolache.prodid}`}><img onClick={() => this.props.updateProdInfo(kolache.prodid)} 
+                            className='cardImg4' src={kolache.prodimg} alt='donut'/></Link>
                         <span className='name4'>{kolache.prodname}</span>
                         <span className='price'>${kolache.price} per dozen</span>
                         {this.props.user.username ? 
@@ -55,5 +56,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getKolaches,getUser,addToCart})(Kolaches)
+export default connect(mapStateToProps,{getKolaches,getUser,addToCart,updateProdInfo})(Kolaches)
 

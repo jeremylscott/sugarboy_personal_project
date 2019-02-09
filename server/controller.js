@@ -59,6 +59,18 @@ const getSalesReports = (req,res) => {
     })
 }
 
+const updateProdInfo = (req,res) => {
+    const db = req.app.get('db')
+    db.get_specific_prod(req.params.id)
+    .then(response => {
+        res.status(200).json(response)
+    })
+    .catch(err => {
+        res.status(500).json('Item not returned')
+        console.log(err);
+    })
+}
+
 const login = (req,res) => {
     const db = req.app.get('db')
     db.find_user(req.body)
@@ -205,5 +217,6 @@ module.exports = {
     logOut,
     getAllProducts,
     addSale,
-    getSalesReports
+    getSalesReports,
+    updateProdInfo
 }

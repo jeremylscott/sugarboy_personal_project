@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import Home from '../Home/Home'
 import './drinks.scss'
-import {getDrinks,getUser,addToCart} from '../../ducks/reducer'
+import {getDrinks,getUser,addToCart,updateProdInfo} from '../../ducks/reducer'
 
 class Drinks extends Component {
 
@@ -16,7 +16,8 @@ class Drinks extends Component {
         const drinkList = this.props.drinks.map((drink,i) => {
             return (
                 <div key={i} className='cardWrapper'>
-                    <Link to={`/product-info/${drink.prodid}`}><img className='cardImg' src={drink.prodimg} alt='donut'/></Link>
+                    <Link to={`/product-info/${drink.prodid}`}><img onClick={() => this.props.updateProdInfo(drink.prodid)} 
+                        className='cardImg' src={drink.prodimg} alt='donut'/></Link>
                     <span className='name'>{drink.prodname}</span>
                     <span className='price'>${drink.price}</span>
                     {this.props.user.username ? 
@@ -54,5 +55,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{getDrinks,getUser,addToCart})(Drinks)
+export default connect(mapStateToProps,{getDrinks,getUser,addToCart,updateProdInfo})(Drinks)
 

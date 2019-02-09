@@ -9,6 +9,9 @@ const initialState = {
     allProducts: [],
     product: [],
     prodId: 0,
+    prodImg: '',
+    prodDesc: '',
+    prodName: '',
     cart: [],
     cartTotal: 0,
     salesReports: []
@@ -26,6 +29,7 @@ const ADD_PRODUCT = 'ADD_PRODUCT'
 const ADD_SALE = 'ADD_SALE'
 const DELETE_PRODUCT = 'DELETE_PRODUCT'
 const UPDATE_PRODUCT = 'CHANGE_PRODUCT'
+const UPDATE_PROD_INFO = 'UPDATE_PROD_INFO'
 const ADD_TO_CART = 'ADD_TO_CART'
 const DELETE_FROM_CART = 'REMOVE_FROM_CART'
 const CLEAR_CART = 'CLEAR_CART'
@@ -33,12 +37,20 @@ const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL'
 const GET_USER = 'GET_USER'
 const LOG_OUT = 'LOG_OUT'
 const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS'
+const CLEAR_STATE = 'CLEAR_STATE'
 
 // action creators 
 export function login(username,password) {
     return {
         type: LOGIN,
         payload: axios.post('/auth/login', {username,password})
+    }
+}
+
+export function updateProdInfo(prodId) {
+    return {
+        type: UPDATE_PROD_INFO,
+        payload: axios.get(`/api/products/${prodId}`)
     }
 }
 
@@ -162,6 +174,13 @@ export function getSalesReports() {
     }
 }
 
+export function clearState() {
+    return {
+        type: CLEAR_STATE,
+        payload: ''
+    }
+}
+
 
 // reducer function
 function reducer(state=initialState, action) {
@@ -233,6 +252,12 @@ function reducer(state=initialState, action) {
         case `${GET_SALES_REPORTS}_FULFILLED`:
             return {
                 ...state, salesReports: action.payload.data
+            }
+        case `${UPDATE_PROD_INFO}_FULFILLED`:
+            return {
+                ...state, prodImg: action.payload.data[0].prodimg,
+                        prodDesc: action.payload.data[0].proddesc,
+                        prodName: action.payload.data[0].prodname,           
             }
 
             default: return state;

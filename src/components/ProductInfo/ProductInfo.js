@@ -1,22 +1,23 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import {updateProdInfo} from '../../ducks/reducer'
 import './productInfo.scss'
 import Home from '../../components/Home/Home'
 
 class ProductInfo extends Component {
-
+    
     render() {
-        const {allProducts} = this.props
+        const {prodImg,prodName,prodDesc} = this.props
 
         return (
             <div className='pageStructure'>
                 <div className='topStructure'></div>
                     <Home/>
                 <div className='prodInfoCont'>
-                    <img className='infoPic' src={allProducts.prodimg}/>
-                    <p className='more-info-title'>{allProducts.prodname}</p>
-                    <p className='prodText'>{allProducts.proddesc}</p>
+                    <img className='infoPic' src={prodImg}/>
+                    <p className='more-info-title'>{prodName}</p>
+                    <p className='prodText'>{prodDesc}</p>
                 </div>
             </div>
     
@@ -27,4 +28,4 @@ class ProductInfo extends Component {
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps)(ProductInfo)
+export default connect(mapStateToProps, {updateProdInfo})(ProductInfo)
