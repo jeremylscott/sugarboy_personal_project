@@ -146,8 +146,7 @@ $chosenFont: 'Mukta', sans-serif;
 }
 
 .firstLast {
-    display: flex;
-    
+    display: flex;  
 }
 
 .first {
@@ -331,8 +330,9 @@ $chosenFont: 'Mukta', sans-serif;
     }
 
     .contactUs {
-        width: 60vw; 
-        margin-bottom: 10vh;
+        // width: 60vw; 
+        // margin-bottom: 10vh;
+        display: none;
     }
 
     .first {
@@ -384,9 +384,5 @@ $chosenFont: 'Mukta', sans-serif;
         width: 14vw;
         margin-bottom: 2vh;
         font-size: .7em;
-    }
-
-    .contactUs {
-        margin-bottom: 4vh;
     }
 }

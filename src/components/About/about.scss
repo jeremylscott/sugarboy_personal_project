@@ -5,8 +5,8 @@ $mainColor: #F58220;
 .aboutName {@extend %name;}
 
 .aboutImg {
-    width: 30vw;
-    max-height: 40vh;
+    width: 40vw;
+    max-height: 45vh;
     border-radius: 10px;
     margin-left: 2vw;
     margin-right: 2vw;
@@ -42,7 +42,9 @@ $mainColor: #F58220;
     font-family: $chosenFont;
     border-right: 1px solid $mainColor;
     height: 510px;
+    width: 60vw;
     margin-bottom: 2vh;
+    line-height: 6vh;
 }
 
 .title {
@@ -55,11 +57,15 @@ $mainColor: #F58220;
 
 @media (max-width: 1024px) {
     .aboutImg {
-        width: 20vw;
-        max-height: 15vh;
+        width: 23vw;
+        max-height: 17vh;
         border-radius: 10px;
         margin-left: 2vw;
         margin-right: 2vw;
+    }
+
+    .aboutText {
+        line-height: 4vh;
     }
 
     .aboutName {
@@ -69,8 +75,8 @@ $mainColor: #F58220;
 
 @media (max-width: 414px) {
     .aboutImg {
-        width: 15vw;
-        max-height: 10vh;
+        width: 25vw;
+        max-height: 14vh;
         border-radius: 10px;
         margin-left: 2vw;
         margin-right: 2vw;
@@ -81,7 +87,8 @@ $mainColor: #F58220;
     }
 
     .aboutText {
-        font-size: .9em; 
+        font-size: .9em;
+        line-height: 3vh; 
     }
 }
 

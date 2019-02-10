@@ -21,6 +21,7 @@ $secondaryColor: #001D4A;
     z-index: 1;
     background: white;
     width: 50vw;
+    line-height: 6vh;
     color: $mainColor;
     font-weight: bold;
     border-radius: 8px;
@@ -55,9 +56,18 @@ $secondaryColor: #001D4A;
     }
 
     .site-info {
-        top: 20vh;
+        top: 15vh;
         font-size: 2.5em;
-        width: 60vw;
+        width: 70vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-info {
+        top: 15vh;
+        font-size: 2.3em;
+        width: 75vw;
+        line-height: 5vh;
     }
 }
 
@@ -73,8 +83,8 @@ $secondaryColor: #001D4A;
 
     .site-info {
         top: 10vh;
-        font-size: 1.7em;
-        width: 70vw;
+        font-size: 1.2em;
+        width: 75vw;
     }
 }
 
@@ -90,7 +100,8 @@ $secondaryColor: #001D4A;
 
     .site-info {
         top: 10vh;
-        font-size: 1.2em;
-        width: 70vw;
+        font-size: 1em;
+        width: 75vw;
+        line-height: 4vh;
     }
 }

@@ -54,7 +54,7 @@ class Home extends Component {
             this.setState({
                 toggleLinks: !this.state.toggleLinks
             })
-        }, 500);
+        }, 750);
     }
 
     notifyLogIn = () => {
