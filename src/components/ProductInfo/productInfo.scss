@@ -132,3 +132,40 @@ $chosenFont: 'Mukta', sans-serif;
         font-size: 1.1em;
     }
 }
+
+@keyframes loading {
+   from {
+       transform: rotate(0deg)
+   }
+   to {
+       transform: rotate(359deg)
+   }
+}
+
+.loadingAnimation {
+   animation: rotation 4s infinite linear;
+   animation-name: loading;
+   width: 10vw;
+   height: 20vh;
+   margin-top: 7vh;
+}
+
+.loading-title {
+    font-size: 2em;
+    font-family: $chosenFont;
+}
+
+.loadingCont {
+    width: 30vw;
+    height: 40vh;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 3;
+    background: white;
+    top: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
