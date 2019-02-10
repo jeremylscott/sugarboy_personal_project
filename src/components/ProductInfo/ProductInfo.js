@@ -15,16 +15,14 @@ class ProductInfo extends Component {
         }
     }
 
-    componentDidMount() {
-        setTimeout(() => {
+    componentDidUpdate(previousProps) {
+        if(previousProps.prodImg !== this.props.prodImg){
             this.setState({
                 toggleLoading: !this.state.toggleLoading
             })
-        }, 3000);
+        }
     }
 
-
-    
     render() {
         const {prodImg,prodName,prodDesc} = this.props
 
