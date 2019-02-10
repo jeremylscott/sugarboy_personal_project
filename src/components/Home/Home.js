@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../../images/sugarboy_logo.png'
 import {connect} from 'react-redux'
-import {toast, ToastContainer} from 'react-toastify'
+import {toast,Zoom,ToastContainer} from 'react-toastify'
 import {login,signup,getUser,logOut} from '../../ducks/reducer'
 import './home.scss'
 import 'react-toastify/dist/ReactToastify.css'
@@ -59,19 +59,19 @@ class Home extends Component {
 
     notifyLogIn = () => {
         toast(`Login successful!`, {
-            position: toast.POSITION.TOP_CENTER
+            position: "top-center"
         })
     }
 
     notifyReg = () => {
         toast(`Account has been created`, {
-            position: toast.POSITION.TOP_CENTER
+            position: "top-center"
         })
     }
 
     notifyLogOut = () => {
         toast(`You have been signed out`, {
-            position: toast.POSITION.TOP_CENTER
+            position: "top-center"
         })
     }
 
@@ -128,7 +128,13 @@ class Home extends Component {
 
         return (
             <div>
-                <ToastContainer autoClose={2000}/>
+                <ToastContainer autoClose={2000}
+                                transition={Zoom}
+                                className={'toast-container'}
+                                toastClassName={"dark-toast"}
+                                bodyClassName={'body-toast'}
+                                progressClassName={'toast-progress'}
+                />
                 {this.state.toggle ?
                     <nav className='fullDropDownMenu'>
                         {this.state.toggleLinks ?

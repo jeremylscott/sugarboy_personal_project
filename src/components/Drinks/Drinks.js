@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Home from '../Home/Home'
 import './drinks.scss'
 import {getDrinks,getUser,addToCart,updateProdInfo} from '../../ducks/reducer'
@@ -21,7 +23,10 @@ class Drinks extends Component {
                     <span className='name'>{drink.prodname}</span>
                     <span className='price'>${drink.price}</span>
                     {this.props.user.username ? 
-                        <button onClick={() => this.props.addToCart(drink)} className='butt'>Add to Cart</button>
+                        <button onClick={() => {this.props.addToCart(drink)
+                            toast('Item successfully added to cart!', {
+                                position: "top-center"
+                            })}} className='butt'>Add to Cart</button>
                         : null
                     } 
                 </div>

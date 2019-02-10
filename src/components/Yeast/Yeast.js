@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Home from '../Home/Home'
 import './yeast.scss'
 import {getYeast,getUser,addToCart,updateProdInfo} from '../../ducks/reducer'
@@ -21,7 +23,10 @@ componentDidMount() {
                     <span className='name3'>{yeast.prodname}</span>
                     <span className='price3'>${yeast.price} per dozen</span>
                     {this.props.user.username ? 
-                        <button onClick={() => this.props.addToCart(yeast)} className='butt3'>Add to Cart</button>
+                        <button onClick={() => {this.props.addToCart(yeast)
+                            toast('Item successfully added to cart!', {
+                                position: "top-center"
+                            })}} className='butt3'>Add to Cart</button>
                         : null
                     } 
                 </div>

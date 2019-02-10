@@ -122,12 +122,12 @@ class Admin extends Component {
                     <div className='adminButts'>
                         <div className='delete' onClick={() => {this.props.deleteProduct(product.prodid)
                             toast('Item has been deleted!', {
-                                position: toast.POSITION.TOP_CENTER
+                                position: "top-center"
                             })
                             }} title='Delete product'/>
                         <div onClick={() => {this.props.updateProduct(product.prodid,prodImg,prodName,prodType,prodDesc,prodPrice)
                             toast('Item has been updated!', {
-                                position: toast.POSITION.TOP_CENTER
+                                position: "top-center"
                             })
                                 setTimeout(() => {
                                     this.forceUpdate()
@@ -167,7 +167,7 @@ class Admin extends Component {
                         <button className='subButt' onClick={() => {
                             this.props.addProduct(prodImg,prodName,prodType,prodDesc,prodPrice)
                             toast('Item added successfully!', {
-                                position: toast.POSITION.TOP_CENTER
+                                position: "top-center"
                             })
                                 setTimeout(() => {
                                     this.forceUpdate()

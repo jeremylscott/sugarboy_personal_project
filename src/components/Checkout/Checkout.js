@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {toast, ToastContainer} from 'react-toastify'
+import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import StripeCheckout from 'react-stripe-checkout'
   
@@ -9,13 +9,13 @@ import StripeCheckout from 'react-stripe-checkout'
 
     const successPayment = data => {
         toast('Payment Successful', {
-             position: toast.POSITION.TOP_CENTER
+             position: "top-center"
         })
     }
     
     const errorPayment = data => {
         toast('Payment Successful', {
-            position: toast.POSITION.TOP_CENTER
+            position: "top-center"
         })
     }
 

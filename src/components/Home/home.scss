@@ -276,7 +276,7 @@ button:hover {background-color: #001D4A}
     position: fixed;
     z-index: 5;
     background: $secondaryColor;
-    height: 63vh;
+    height: 58.5vh;
     width: 13vw;
     border-radius: 0 8px 8px 0;
     left: 0;
@@ -306,11 +306,11 @@ button:hover {background-color: #001D4A}
     color: white;
     font-size: 1.3em;
     text-decoration: none;
-    margin-top: 3vh;
-    margin-left: 3px;
-    padding-left: 5px;
+    padding-left: 9px;
     cursor: pointer;
     opacity: .9;
+    line-height: 6vh;
+    border-radius: 0 8px 8px 0;
 }
 
 .link4:hover {
@@ -331,6 +331,24 @@ homeButt:active {
     transform: translateY(2px);
 }
 
+.body-toast {
+    width: 22vw !important;
+    height: 10vh;
+    background: $secondaryColor !important;
+    color: white !important ;
+    font-family: $chosenFont !important;
+    padding: 8px !important;
+    margin: 3px !important;
+    border-radius: 3px !important;
+}
+
+.dark-toast {
+    width: 22vw !important;
+    background: $secondaryColor !important;
+    color: white !important;
+    border-radius: 5px !important;
+}
+
 @media (max-width: 1024px) {
     .burgButton {
         width: 16vw;
@@ -346,7 +364,7 @@ homeButt:active {
 
     .fullDropDownMenu {
         width: 30vw;
-        height: 58vh;
+        height: 51vh;
         top: 4.9vh;
     }
 
@@ -356,6 +374,7 @@ homeButt:active {
 
     .link4 {
         font-size: 2.1em;
+        line-height: 5vh;
     }
 
     .homeLogo {
@@ -432,12 +451,11 @@ homeButt:active {
 
     .logHead {
         font-size: 1.5em;
-
     }
 
     .fullDropDownMenu {
         width: 32vw;
-        height: 61vh;
+        height: 51vh;
     }
 
     .link4 {
@@ -502,14 +520,14 @@ homeButt:active {
 
     .fullDropDownMenu {
         width: 34vw;
-        height: 52vh;
+        height: 46vh;
         top: 3.8vh;
         font-size: .6em;
     }
 
     .link4 {
-        margin-top: 1em;
         font-size: 1.8em;
+        line-height: 4.5vh;
     }
 
     .hideFullDropMenu {
@@ -583,7 +601,7 @@ homeButt:active {
 
     .fullDropDownMenu {
         width: 32vw;
-        height: 40vh;
+        height: 44vh;
         top: 5vh;
         font-size: .4em;
     }
@@ -594,7 +612,8 @@ homeButt:active {
 
     .link4 {
         margin-top: .8em;
-        font-size: 2em;
+        font-size: 2.4em;
+        line-height: 2.5vh;
     }
 
     .homeLogo {
@@ -628,6 +647,18 @@ homeButt:active {
         padding: 0px 4px;
         font-weight: bold;
         opacity: .3;
+    }
+}
+
+@media (max-width: 320px) {
+    .link4 {
+        font-size: 2.1em;
+    }
+
+    .fullDropDownMenu {
+        height: 45vh;
+        width: 33vw;
+        
     }
 }
 
