@@ -9,13 +9,13 @@ import StripeCheckout from 'react-stripe-checkout'
 
     const successPayment = data => {
         toast('Payment Successful', {
-             position: "top-center"
+             position: "top-left"
         })
     }
     
     const errorPayment = data => {
         toast('Payment Successful', {
-            position: "top-center"
+            position: "top-left"
         })
     }
 

@@ -25,7 +25,7 @@ componentDidMount() {
                     {this.props.user.username ? 
                         <button onClick={() => {this.props.addToCart(yeast)
                             toast('Item successfully added to cart!', {
-                                position: "top-center"
+                                position: "top-left"
                             })}} className='butt3'>Add to Cart</button>
                         : null
                     } 

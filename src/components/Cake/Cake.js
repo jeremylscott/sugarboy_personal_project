@@ -33,7 +33,7 @@ class Cake extends Component {
                     {this.props.user.username ? 
                         <button onClick={() => {this.props.addToCart(cake)
                             toast('Item successfully added to cart!', {
-                                position: "top-center"
+                                position: "top-left"
                             })}} className='butt2'>Add to Cart</button>
                         : null
                     }   

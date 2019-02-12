@@ -122,12 +122,12 @@ class Admin extends Component {
                     <div className='adminButts'>
                         <div className='delete' onClick={() => {this.props.deleteProduct(product.prodid)
                             toast('Item has been deleted!', {
-                                position: "top-center"
+                                position: "top-left"
                             })
                             }} title='Delete product'/>
                         <div onClick={() => {this.props.updateProduct(product.prodid,prodImg,prodName,prodType,prodDesc,prodPrice)
                             toast('Item has been updated!', {
-                                position: "top-center"
+                                position: "top-left"
                             })
                                 setTimeout(() => {
                                     this.forceUpdate()
@@ -147,7 +147,7 @@ class Admin extends Component {
                     <h1 className='pageAdmin'>Admin Portal</h1>
                     <Link to='/reports' className='rLinks'><div className='reportLink'>Reports</div></Link>
                     <div className='searchCont'>
-                        <img src={search} className='searchIcon'/>
+                        <img src={search} className='searchIcon' alt='magnifying glass'/>
                         <input className='searchBox' onChange={this.handleChange} name='searchText' type='text'
                             placeholder='Search' value={searchText}/>
                     </div>
@@ -167,7 +167,7 @@ class Admin extends Component {
                         <button className='subButt' onClick={() => {
                             this.props.addProduct(prodImg,prodName,prodType,prodDesc,prodPrice)
                             toast('Item added successfully!', {
-                                position: "top-center"
+                                position: "top-left"
                             })
                                 setTimeout(() => {
                                     this.forceUpdate()

@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {updateProdInfo} from '../../ducks/reducer'
 import './productInfo.scss'
@@ -31,7 +30,7 @@ class ProductInfo extends Component {
                 <div className='topStructure'></div>
                     <Home/>
                 <div className='prodInfoCont'>
-                    <img className='infoPic' src={prodImg}/>
+                    <img className='infoPic' src={prodImg} alt='donut'/>
                     <p className='more-info-title'>{prodName}</p>
                     <p className='prodText'>{prodDesc}</p>
                 </div>
@@ -39,7 +38,7 @@ class ProductInfo extends Component {
                 {this.state.toggleLoading ?
                     <div className='loadingCont'>
                         <span className='loading-title'>Loading...</span>
-                        <img src={donut} className='loadingAnimation'/>
+                        <img src={donut} className='loadingAnimation' alt='spinning donut'/>
                     </div>
                 :
                     null

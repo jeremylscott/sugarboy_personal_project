@@ -59,19 +59,19 @@ class Home extends Component {
 
     notifyLogIn = () => {
         toast(`Login successful!`, {
-            position: "top-center"
+            position: "top-left"
         })
     }
 
     notifyReg = () => {
         toast(`Account has been created`, {
-            position: "top-center"
+            position: "top-left"
         })
     }
 
     notifyLogOut = () => {
         toast(`You have been signed out`, {
-            position: "top-center"
+            position: "top-left"
         })
     }
 
@@ -177,7 +177,7 @@ class Home extends Component {
 
                 {this.state.logToggle ?              // Determines whether login menu shows or not
                     <div  className='showRegLogin'>
-                        <h1 className='logHead'>Account Login</h1>
+                        <span className='logHead'>Login</span>
                         <input className='homeInput' onChange={this.handleChange} name='username' value={username} 
                             placeholder='Username'/>
                         <input className='homeInput2' onChange={this.handleChange} type='password' name='password' value={password} 

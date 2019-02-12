@@ -25,7 +25,7 @@ class Drinks extends Component {
                     {this.props.user.username ? 
                         <button onClick={() => {this.props.addToCart(drink)
                             toast('Item successfully added to cart!', {
-                                position: "top-center"
+                                position: "top-left"
                             })}} className='butt'>Add to Cart</button>
                         : null
                     } 
