@@ -166,11 +166,11 @@ class Home extends Component {
 
                 {this.state.regToggle ?            // Determines whether register menu shows or not
                     <form onSubmit={this.handleReg} className='showRegNav'>
-                        <h1>Create Account</h1>
-                        <input className='inp' onChange={this.handleChange} name='regUsername' value={regUsername} placeholder='Username'/>
-                        <input className='inp' onChange={this.handleChange} name='regPassword' type='password' value={regPassword} placeholder='Password'/>
-                        <input className='inp' onChange={this.handleChange} name='email' value={email} placeholder='Email'/>
-                        <button>Submit</button>
+                        <h1 className='createTitle'>Create Account</h1>
+                        <input className='createInput' onChange={this.handleChange} name='regUsername' value={regUsername} placeholder='Username'/>
+                        <input className='createInput' onChange={this.handleChange} name='regPassword' type='password' value={regPassword} placeholder='Password'/>
+                        <input className='createInput' onChange={this.handleChange} name='email' value={email} placeholder='Email'/>
+                        <button className='submitButton'>Submit</button>
                     </form>
                     :
                     <div className='hideRegNav'></div>}

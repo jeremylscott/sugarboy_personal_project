@@ -43,7 +43,7 @@ $secondaryColor: #001D4A;
     border-radius: 0  0 30px 30px;
 }
 
-.homeInput {
+.homeInput, .createInput {
     min-width: 20vw;
     min-height: 4vh;
     border-radius: 5px;
@@ -74,6 +74,14 @@ $secondaryColor: #001D4A;
     opacity: .6;
 }
 
+.createInput::placeholder {
+    color: $mainColor;
+    font-family: $chosenFont;
+    font-size: 1.3em;
+    font-weight: bold;
+    opacity: .6;
+}
+
 .homeButt {
     border-radius: 6px;
     min-width: 10vw;
@@ -83,7 +91,18 @@ $secondaryColor: #001D4A;
     font-size: 1.8em;
     color: white;
     border: none;
-    
+}
+
+.submitButton {
+    border-radius: 6px;
+    min-width: 10vw;
+    background: $mainColor;
+    padding: 6px;
+    min-height: 8vh;
+    font-size: 1.8em;
+    color: white;
+    border: none;
+    margin-top: 6vh;
 }
   
 .homeButt:hover {background-color: #001D4A}
@@ -138,40 +157,13 @@ $secondaryColor: #001D4A;
     right: 0;
     margin: auto;
     margin-top: 20vh;
-    justify-content: space-evenly;
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 21vw;
-    height: 50vh;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 3px 3px black;
-    border: 1px solid $secondaryColor;
-
-    input {
-        width: 15vw;
-        border-radius: 5px;
-        height: 3vh;
-        padding: 0px 4px;
-        border: 1px solid $mainColor;
-    }
-
-    h1 {
-        color: #001D4A;
-        font-size: 30px;
-        margin-top: -3vh;
-        font-weight: bold;
-    }
-
-    button {
-        border-radius: 6px;
-        min-width: 80px;
-        background: $mainColor;
-        height: 30px;
-        font-size: 14px;
-        color: white;
-    }
+    min-width: 100vw;
+    min-height: 70vh;
+    background: black;
+    justify-content: center;
 }
 
 button:active {
@@ -181,13 +173,6 @@ button:active {
 }
 
 button:hover {background-color: #001D4A}
-
-.inp::placeholder {
-    color: #001D4A;
-    padding: 0px 4px;
-    font-weight: bold;
-    opacity: .3;
-}
 
 .hideRegNav {
     position: fixed;
@@ -241,6 +226,17 @@ button:hover {background-color: #001D4A}
 }
 
 .logHead {
+    color: #001D4A;
+    font-size: 3em;
+    min-width: 22vw;
+    min-height: 5vw;
+    color: white;
+    position: absolute;
+    top: 4vh;
+    text-align: center;
+}
+
+.createTitle {
     color: #001D4A;
     font-size: 3em;
     min-width: 22vw;
@@ -382,34 +378,29 @@ homeButt:active {
         height: 8vh
     }
 
-        .homeButt {
-            min-width: 20vw;
-            min-height: 6vh;
-            font-size: 2.5em;
-         
-        }
-
-    .showRegNav {
-        margin-top: 10vh;
-        width: 28vw;
-        height: 40vh;
-    
-        input {
-            width: 20vw;
-            height: 3vh;
-        }
-    
-        h1 {
-            font-size: 2em;
-            margin-top: -2vh;
-        }
-    
-        button {
-            min-width: 10vw;
-            height: 3vh;
-            font-size: 1.2em;
-        }
+    .homeButt {
+        min-width: 22vw;
+        min-height: 7vh;
+        font-size: 3.2em;
     }
+
+    .createInput {
+        min-width: 30vw;
+        padding: 6px;
+        font-size: 2.2em;
+    }
+
+    .createTitle {
+        width: 50vw;
+        height: 8vw;
+        font-size: 4em;
+    }
+    
+    .submitButton {
+        min-width: 22vw;
+        min-height: 7vh;
+        font-size: 3.2em;
+    }  
 
     .logHead {
         width: 30vw;
@@ -431,24 +422,19 @@ homeButt:active {
         font-size: 1.5em;
     }
 
-    .homeButt {
+    .homeButt, .submitButton {
             border-radius: 6px;
             min-width: 25vw;
-            min-height: 6vh;
-            font-size: 2.2em;
+            min-height: 7vh;
+            font-size: 2.4em;
     }
 
-    .homeInput {
+    .homeInput, .homeInput2, .createInput {
         min-width: 50vw;
         font-size: 1.6em;
     }
 
-    .homeInput2 {
-        min-width: 50vw;
-        font-size: 1.6em;
-    }
-
-    .logHead {
+    .logHead, .createTitle {
         font-size: 3.5em;
     }
 
@@ -470,14 +456,6 @@ homeButt:active {
         width: 18vw;
         font-size: 1.4em;
     }
-
-    .showRegNav {
-        margin-top: 8vh;
-    
-        h1 {
-            font-size: 1.5em;
-        }
-    }
 }
 
 @media (max-width: 414px) {
@@ -487,24 +465,20 @@ homeButt:active {
         font-size: 1.1em;
     }
 
-    .homeButt {
+    .homeButt, .submitButton {
         min-width: 28vw;
         min-height: 7vh;
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 
-    .homeInput {
+    .homeInput, .homeInput2, .createInput {
         min-width: 20vw;
         font-size: 1.3em;
     }
 
-    .homeInput2 {
-        min-width: 20vw;
-        font-size: 1.3em;
-    }
-
-    .logHead {   
+    .logHead, .createTitle {   
         font-size: 2.3em;
+        width: 70vw;
     }
 
     .cartLink {
@@ -533,26 +507,6 @@ homeButt:active {
         width: 34vw;
         height: 8vh
     }
-
-    .showRegNav {
-        margin-top: 7vh;
-        height: 28vh;
-    
-        h1 {
-            font-size: .9em;
-        }
-
-        input {
-            width: 18vw;
-            height: 2vh;
-        }
-    
-        button {
-            min-width: 8vw;
-            height: 3vh;
-            font-size: .9em;
-        }
-    }
 }
 
 @media (max-width: 375px) {
@@ -561,23 +515,17 @@ homeButt:active {
         font-size: 1em;
     }
 
-    .logHead {
+    .logHead, .createTitle {
         font-size: 2em;
     }
 
-    .homeButt {
+    .homeButt, .submitButton {
         min-width: 25vw;
-        height: 2.7vh;
+        min-height: 6vh;
         font-size: 1.3em;
     }
 
-    .homeInput {
-        min-width: 30vw;
-        min-height: 2vh;
-        font-size: 1.2em;
-    }
-
-    .homeInput2 {
+    .homeInput, .homeInput2, .createInput {
         min-width: 30vw;
         min-height: 2vh;
         font-size: 1.2em;
@@ -608,34 +556,6 @@ homeButt:active {
         width: 34vw;
         height: 8vh
     }
-
-    .showRegNav {
-        margin-top: 6vh;
-        height: 26vh;
-    
-        h1 {
-            font-size: .7em;
-        }
-
-        input {
-            width: 17vw;
-            height: 2vh;
-        }
-    
-        button {
-            min-width: 7vw;
-            height: 2.7vh;
-            font-size: .6em;
-        }
-    }
-
-    .inp::placeholder {
-        color: #001D4A;
-        font-size: .7em;
-        padding: 0px 4px;
-        font-weight: bold;
-        opacity: .3;
-    }
 }
 
 @media (max-width: 320px) {
@@ -648,23 +568,17 @@ homeButt:active {
         width: 50vw;
     }
 
-    .logHead {
+    .logHead, .createTitle {
         font-size: 1.8em;
     }
 
-    .homeButt {
+    .homeButt, .submitButton {
         min-width: 25vw;
-        height: 2.7vh;
+        min-height: 7vh;
         font-size: 1.3em;
     }
 
-    .homeInput {
-        min-width: 25vw;
-        min-height: 2vh;
-        font-size: 1em;
-    }
-
-    .homeInput2 {
+    .homeInput, .homeInput2, .createInput {
         min-width: 25vw;
         min-height: 2vh;
         font-size: 1em;

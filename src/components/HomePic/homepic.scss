@@ -40,6 +40,14 @@ $secondaryColor: #001D4A;
     height: 500vh;
 }
 
+.timer {
+    position: absolute;
+    top: 20vh;
+    right: 15vw;
+    width: 5vw;
+    z-index: 50;
+}
+
 @media (max-width: 1024px) {
     .mainPic9 {
         width: 100vw; 

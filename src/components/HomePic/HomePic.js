@@ -41,7 +41,7 @@ class HomePic extends Component {
                 <Home/>
                 <div className='mainHome'>
                     <Carousel
-                        animationSpeed={3000}
+                        animationSpeed={2000}
                         autoPlay={5000}
                         stopAutoPlayOnHover
                         centered
